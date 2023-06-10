@@ -38,8 +38,7 @@ class MySantaCoder(nn.Module):
         output = self.tokenizer.decode(encoded_output[0])
         return output
     
-    def post_generation_processing(self,encoded_output):
-        code = self.tokenizer.decode(encoded_output[0])
+    def post_generation_processing(self,code):
         # split it into list of blocks
         list_blocks = re.split('def |class |assert |print ', code)
         if 'init' in list_blocks[1]:

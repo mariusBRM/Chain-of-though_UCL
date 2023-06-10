@@ -98,10 +98,10 @@ def load_mbpp_data():
     os.makedirs(path, exist_ok=True)
 
     # preprocess the data
-    df_train = preprocessing_instruction(df_train)
-    df_test = preprocessing_instruction(df_test)
-    df_val = preprocessing_instruction(df_val)
-    df_prompt = preprocessing_instruction(df_prompt)
+    df_train = processing(df_train)
+    df_test = processing(df_test)
+    df_val = processing(df_val)
+    df_prompt = processing(df_prompt)
 
     # save it
     df_train.to_csv(path + "/mbpp_train.csv", index=False)

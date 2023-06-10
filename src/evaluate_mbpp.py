@@ -3,6 +3,42 @@ from tokenizer import *
 import sys
 import pandas as pd
 
+def eval(test_loader, model):
+    """
+    This function evaluate the model on the test data
+    """
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    model.to(device)
+
+    fin_targets=[]
+    fin_outputs=[]
+    fin_tests = []
+    running_loss = 0.0
+
+    with torch.no_grad():
+        for _, data in enumerate(test_loader, 0):
+
+            ids = data['input_ids'].to(device, dtype = torch.long)
+            targets = data['labels'].to(device, dtype = torch.long)
+            tests = data['tests'].to(device, dtype = torch.long)
+            # forward
+            output = model.forward(ids)
+            # this is supposed to be a list of 200 sequence
+
+            # decode and process the output
+            decoded_output = model.decode_output(output)
+            code_generated = model.post_generation_processing(decoded_output)
+
+            # decode the label and the tests
+            label = model.decode_output(targets)
+            test_list = model.decode_output(tests)
+
+            fin_targets.append()
+            fin_outputs.append()
+            fin_tests.append()
+
+    return fin_outputs, fin_targets, running_loss/len(test_loader)
+
 # eval
 def eval(path_to_hub, path_to_data, path_to_save, early_stop = 3):
 
@@ -36,12 +72,5 @@ def eval(path_to_hub, path_to_data, path_to_save, early_stop = 3):
 
 
 
-def main():
-
-    #define the variables
-    
-    return None
-
-
 if __name__=="__main__":
-    sys.exit(main())
+    print('dfdsf')
