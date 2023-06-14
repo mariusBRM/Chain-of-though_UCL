@@ -4,6 +4,7 @@ import sys
 import pandas as pd
 import ast
 import re
+import numpy as np
 
 ####################
 # Download mbpp data
@@ -34,7 +35,7 @@ def preprocessing_instruction(df):
     # generating the instruction format for eahc row
     for i in range(len(df)):
         # encapsulate the original instruction into format '# Write a function ...'
-        description = '"""' + df.iloc[i]['text'] + '"""'
+        description = '\t"""' + df.iloc[i]['text'] + '"""'
         # keeping the name of the function with the parameters
         code = df.iloc[i]['code']
         function_name = extract_signature(code)
@@ -68,17 +69,19 @@ def extract_assertions(input_string):
     return processed_assertions
 
 def process_assertions(df):
-    """ Process the assestion """
+    list_assertions = []
     for i in range(len(df)):
-        test_list = extract_assertions(df.iloc[i]['test_list'])
-        df.at[i,'test_list'] = test_list
+        assertions = np.array(df.iloc[i]['test_list']).tolist()  # Convert NumPy array to Python list
+        list_assertions.append(extract_assertions(assertions))
 
+    df['tests'] = list_assertions
     return df
 
-def processing(df):
+def processing(df, is_test):
     """ Process both instruction and test_list"""
     df = preprocessing_instruction(df)
-    df = process_assertions(df)
+    if is_test == True:
+        df = process_assertions(df)
     return df
 
 def load_mbpp_data():
@@ -98,10 +101,10 @@ def load_mbpp_data():
     os.makedirs(path, exist_ok=True)
 
     # preprocess the data
-    df_train = processing(df_train)
-    df_test = processing(df_test)
-    df_val = processing(df_val)
-    df_prompt = processing(df_prompt)
+    df_train = processing(df_train, False)
+    df_test = processing(df_test, False)
+    df_val = processing(df_val, False)
+    df_prompt = processing(df_prompt, False)
 
     # save it
     df_train.to_csv(path + "/mbpp_train.csv", index=False)

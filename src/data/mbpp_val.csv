@@ -1,0 +1,881 @@
+task_id,text,code,test_list,test_setup_code,challenge_test_list,instruction
+511,Write a python function to find minimum sum of factors of a given number.,"def find_Min_Sum(num): 
+    sum = 0
+    i = 2
+    while(i * i <= num): 
+        while(num % i == 0): 
+            sum += i 
+            num /= i 
+        i += 1
+    sum += num 
+    return sum","['assert find_Min_Sum(12) == 7' 'assert find_Min_Sum(105) == 15'
+ 'assert find_Min_Sum(2) == 2']",,[],"def find_Min_Sum(num):
+	""""""Write a python function to find minimum sum of factors of a given number."""""""
+512,Write a function to count the element frequency in the mixed nested tuple.,"def flatten(test_tuple): 
+	for tup in test_tuple: 
+		if isinstance(tup, tuple): 
+			yield from flatten(tup) 
+		else: 
+			yield tup 
+def count_element_freq(test_tuple):
+  res = {}
+  for ele in flatten(test_tuple):
+    if ele not in res:
+      res[ele] = 0
+    res[ele] += 1
+  return (res) ","['assert count_element_freq((5, 6, (5, 6), 7, (8, 9), 9) ) == {5: 2, 6: 2, 7: 1, 8: 1, 9: 2}'
+ 'assert count_element_freq((6, 7, (6, 7), 8, (9, 10), 10) ) == {6: 2, 7: 2, 8: 1, 9: 1, 10: 2}'
+ 'assert count_element_freq((7, 8, (7, 8), 9, (10, 11), 11) ) == {7: 2, 8: 2, 9: 1, 10: 1, 11: 2}']",,[],"def flatten(test_tuple):
+	""""""Write a function to count the element frequency in the mixed nested tuple."""""""
+513,Write a function to convert tuple into list by adding the given string after every element.,"def add_str(test_tup, K):
+  res = [ele for sub in test_tup for ele in (sub, K)]
+  return (res) ","['assert add_str((5, 6, 7, 4, 9) , ""FDF"") == [5, \'FDF\', 6, \'FDF\', 7, \'FDF\', 4, \'FDF\', 9, \'FDF\']'
+ 'assert add_str((7, 8, 9, 10) , ""PF"") == [7, \'PF\', 8, \'PF\', 9, \'PF\', 10, \'PF\']'
+ 'assert add_str((11, 14, 12, 1, 4) , ""JH"") == [11, \'JH\', 14, \'JH\', 12, \'JH\', 1, \'JH\', 4, \'JH\']']",,[],"def add_str(test_tup, K):
+	""""""Write a function to convert tuple into list by adding the given string after every element."""""""
+514,Write a function to find the summation of tuple elements in the given tuple list.,"def sum_elements(test_tup):
+  res = sum(list(test_tup))
+  return (res) ","['assert sum_elements((7, 8, 9, 1, 10, 7)) == 42'
+ 'assert sum_elements((1, 2, 3, 4, 5, 6)) == 21'
+ 'assert sum_elements((11, 12 ,13 ,45, 14)) == 95']",,[],"def sum_elements(test_tup):
+	""""""Write a function to find the summation of tuple elements in the given tuple list."""""""
+515,Write a function to check if there is a subset with sum divisible by m.,"def modular_sum(arr, n, m): 
+	if (n > m): 
+		return True
+	DP = [False for i in range(m)] 
+	for i in range(n): 
+		if (DP[0]): 
+			return True
+		temp = [False for i in range(m)] 
+		for j in range(m): 
+			if (DP[j] == True): 
+				if (DP[(j + arr[i]) % m] == False): 
+					temp[(j + arr[i]) % m] = True
+		for j in range(m): 
+			if (temp[j]): 
+				DP[j] = True
+		DP[arr[i] % m] = True
+	return DP[0]","['assert modular_sum([3, 1, 7, 5], 4, 6) == True'
+ 'assert modular_sum([1, 7], 2, 5) == False'
+ 'assert modular_sum([1, 6], 2, 5) == False']",,[],"def modular_sum(arr, n, m):
+	""""""Write a function to check if there is a subset with sum divisible by m."""""""
+516,Write a function to sort a list of elements using radix sort.,"def radix_sort(nums):
+    RADIX = 10
+    placement = 1
+    max_digit = max(nums)
+
+    while placement < max_digit:
+      buckets = [list() for _ in range( RADIX )]
+      for i in nums:
+        tmp = int((i / placement) % RADIX)
+        buckets[tmp].append(i)
+      a = 0
+      for b in range( RADIX ):
+        buck = buckets[b]
+        for i in buck:
+          nums[a] = i
+          a += 1
+      placement *= RADIX
+    return nums","['assert radix_sort([15, 79, 25, 68, 37]) == [15, 25, 37, 68, 79]'
+ 'assert radix_sort([9, 11, 8, 7, 3, 2]) == [2, 3, 7, 8, 9, 11]'
+ 'assert radix_sort([36, 12, 24, 26, 29]) == [12, 24, 26, 29, 36]']",,[],"def radix_sort(nums):
+	""""""Write a function to sort a list of elements using radix sort."""""""
+517,Write a python function to find the largest postive number from the given list.,"def largest_pos(list1): 
+    max = list1[0] 
+    for x in list1: 
+        if x > max : 
+             max = x  
+    return max","['assert largest_pos([1,2,3,4,-1]) == 4'
+ 'assert largest_pos([0,1,2,-5,-1,6]) == 6'
+ 'assert largest_pos([0,0,1,0]) == 1']",,[],"def largest_pos(list1):
+	""""""Write a python function to find the largest postive number from the given list."""""""
+518,Write a function to find the square root of a perfect number.,"import math
+def sqrt_root(num):
+ sqrt_root = math.pow(num, 0.5)
+ return sqrt_root ","['assert sqrt_root(4)==2' 'assert sqrt_root(16)==4'
+ 'assert sqrt_root(400)==20']",,[],"def sqrt_root(num):
+	""""""Write a function to find the square root of a perfect number."""""""
+519,Write a function to calculate volume of a tetrahedron.,"import math
+def volume_tetrahedron(num):
+	volume = (num ** 3 / (6 * math.sqrt(2)))	
+	return round(volume, 2)","['assert volume_tetrahedron(10)==117.85'
+ 'assert volume_tetrahedron(15)==397.75'
+ 'assert volume_tetrahedron(20)==942.81']",,[],"def volume_tetrahedron(num):
+	""""""Write a function to calculate volume of a tetrahedron."""""""
+520,Write a function to find the lcm of the given array elements.,"def find_lcm(num1, num2): 
+	if(num1>num2): 
+		num = num1 
+		den = num2 
+	else: 
+		num = num2 
+		den = num1 
+	rem = num % den 
+	while (rem != 0): 
+		num = den 
+		den = rem 
+		rem = num % den 
+	gcd = den 
+	lcm = int(int(num1 * num2)/int(gcd)) 
+	return lcm 
+def get_lcm(l):
+  num1 = l[0]
+  num2 = l[1]
+  lcm = find_lcm(num1, num2)
+  for i in range(2, len(l)):
+    lcm = find_lcm(lcm, l[i])
+  return lcm ","['assert get_lcm([2, 7, 3, 9, 4]) == 252'
+ 'assert get_lcm([1, 2, 8, 3]) == 24'
+ 'assert get_lcm([3, 8, 4, 10, 5]) == 120']",,[],"def find_lcm(num1, num2):
+	""""""Write a function to find the lcm of the given array elements."""""""
+521,Write a function to print check if the triangle is scalene or not.,"def check_isosceles(x,y,z):
+  if x!=y & y!=z & z!=x:
+	   return True
+  else:
+     return False","['assert check_isosceles(6,8,12)==True'
+ 'assert check_isosceles(6,6,12)==False'
+ 'assert check_isosceles(6,15,20)==True']",,[],"def check_isosceles(x,y,z):
+	""""""Write a function to print check if the triangle is scalene or not."""""""
+522,Write a function to find the longest bitonic subsequence for the given array.,"def lbs(arr): 
+	n = len(arr) 
+	lis = [1 for i in range(n+1)] 
+	for i in range(1 , n): 
+		for j in range(0 , i): 
+			if ((arr[i] > arr[j]) and (lis[i] < lis[j] +1)): 
+				lis[i] = lis[j] + 1
+	lds = [1 for i in range(n+1)] 
+	for i in reversed(range(n-1)): 
+		for j in reversed(range(i-1 ,n)): 
+			if(arr[i] > arr[j] and lds[i] < lds[j] + 1): 
+				lds[i] = lds[j] + 1
+	maximum = lis[0] + lds[0] - 1
+	for i in range(1 , n): 
+		maximum = max((lis[i] + lds[i]-1), maximum) 
+	return maximum","['assert lbs([0 , 8 , 4, 12, 2, 10 , 6 , 14 , 1 , 9 , 5 , 13, 3, 11 , 7 , 15]) == 7'
+ 'assert lbs([1, 11, 2, 10, 4, 5, 2, 1]) == 6'
+ 'assert lbs([80, 60, 30, 40, 20, 10]) == 5']",,[],"def lbs(arr):
+	""""""Write a function to find the longest bitonic subsequence for the given array."""""""
+523,"Write a function to check whether a given string has a capital letter, a lower case letter, a number and specified length using lambda function.","def check_string(str1):
+    messg = [
+    lambda str1: any(x.isupper() for x in str1) or 'String must have 1 upper case character.',
+    lambda str1: any(x.islower() for x in str1) or 'String must have 1 lower case character.',
+    lambda str1: any(x.isdigit() for x in str1) or 'String must have 1 number.',
+    lambda str1: len(str1) >= 7                 or 'String length should be atleast 8.',]
+    result = [x for x in [i(str1) for i in messg] if x != True]
+    if not result:
+        result.append('Valid string.')
+    return result  ","[""assert check_string('python')==['String must have 1 upper case character.', 'String must have 1 number.', 'String length should be atleast 8.']""
+ ""assert check_string('123python')==['String must have 1 upper case character.']""
+ ""assert check_string('123Python')==['Valid string.']""]",,[],"def check_string(str1):
+	""""""Write a function to check whether a given string has a capital letter, a lower case letter, a number and specified length using lambda function."""""""
+524,Write a function to find the sum of maximum increasing subsequence of the given array.,"def max_sum_increasing_subsequence(arr, n): 
+	max = 0
+	msis = [0 for x in range(n)] 
+	for i in range(n): 
+		msis[i] = arr[i] 
+	for i in range(1, n): 
+		for j in range(i): 
+			if (arr[i] > arr[j] and
+				msis[i] < msis[j] + arr[i]): 
+				msis[i] = msis[j] + arr[i] 
+	for i in range(n): 
+		if max < msis[i]: 
+			max = msis[i] 
+	return max","['assert max_sum_increasing_subsequence([1, 101, 2, 3, 100, 4, 5], 7) == 106'
+ 'assert max_sum_increasing_subsequence([3, 4, 5, 10], 4) == 22'
+ 'assert max_sum_increasing_subsequence([10, 5, 4, 3], 4) == 10']",,[],"def max_sum_increasing_subsequence(arr, n):
+	""""""Write a function to find the sum of maximum increasing subsequence of the given array."""""""
+525,Write a python function to check whether two given lines are parallel or not.,"def parallel_lines(line1, line2):
+  return line1[0]/line1[1] == line2[0]/line2[1]","['assert parallel_lines([2,3,4], [2,3,8]) == True'
+ 'assert parallel_lines([2,3,4], [4,-3,8]) == False'
+ 'assert parallel_lines([3,3],[5,5]) == True']",,[],"def parallel_lines(line1, line2):
+	""""""Write a python function to check whether two given lines are parallel or not."""""""
+526,Write a python function to capitalize first and last letters of each word of a given string.,"def capitalize_first_last_letters(str1):
+     str1 = result = str1.title()
+     result =  """"
+     for word in str1.split():
+        result += word[:-1] + word[-1].upper() + "" ""
+     return result[:-1]  ","['assert capitalize_first_last_letters(""python"") == ""PythoN""'
+ 'assert capitalize_first_last_letters(""bigdata"") == ""BigdatA""'
+ 'assert capitalize_first_last_letters(""Hadoop"") == ""HadooP""']",,[],"def capitalize_first_last_letters(str1):
+	""""""Write a python function to capitalize first and last letters of each word of a given string."""""""
+527,Write a function to find all pairs in an integer array whose sum is equal to a given number.,"def get_pairs_count(arr, n, sum):
+    count = 0 
+    for i in range(0, n):
+        for j in range(i + 1, n):
+            if arr[i] + arr[j] == sum:
+                count += 1
+    return count","['assert get_pairs_count([1, 5, 7, -1, 5], 5, 6) == 3'
+ 'assert get_pairs_count([1, 5, 7, -1], 4, 6) == 2'
+ 'assert get_pairs_count([1, 1, 1, 1], 4, 2) == 6']",,[],"def get_pairs_count(arr, n, sum):
+	""""""Write a function to find all pairs in an integer array whose sum is equal to a given number."""""""
+528,Write a function to find the list of lists with minimum length.,"def min_length(list1):
+   min_length = min(len(x) for x in  list1 )  
+   min_list = min((x) for x in   list1)
+   return(min_length, min_list)     ","['assert min_length([[0], [1, 3], [5, 7], [9, 11], [13, 15, 17]])==(1, [0])'
+ 'assert min_length([[1], [5, 7], [10, 12, 14,15]])==(1, [1])'
+ 'assert min_length([[5], [15,20,25]])==(1, [5])']",,[],"def min_length(list1):
+	""""""Write a function to find the list of lists with minimum length."""""""
+529,Write a function to find the nth jacobsthal-lucas number.,"def jacobsthal_lucas(n): 
+	dp=[0] * (n + 1) 
+	dp[0] = 2
+	dp[1] = 1
+	for i in range(2, n+1): 
+		dp[i] = dp[i - 1] + 2 * dp[i - 2]; 
+	return dp[n]","['assert jacobsthal_lucas(5) == 31' 'assert jacobsthal_lucas(2) == 5'
+ 'assert jacobsthal_lucas(4) == 17']",,[],"def jacobsthal_lucas(n):
+	""""""Write a function to find the nth jacobsthal-lucas number."""""""
+530,Write a function to find the ration of negative numbers in an array of integers.,"from array import array
+def negative_count(nums):
+    n = len(nums)
+    n1 = 0
+    for x in nums:
+        if x < 0:
+            n1 += 1
+        else:
+          None
+    return round(n1/n,2)","['assert negative_count([0, 1, 2, -1, -5, 6, 0, -3, -2, 3, 4, 6, 8])==0.31'
+ 'assert negative_count([2, 1, 2, -1, -5, 6, 4, -3, -2, 3, 4, 6, 8])==0.31'
+ 'assert negative_count([2, 4, -6, -9, 11, -12, 14, -5, 17])==0.44']",,[],"def negative_count(nums):
+	""""""Write a function to find the ration of negative numbers in an array of integers."""""""
+531,Write a function to find minimum number of coins that make a given value.,"import sys 
+def min_coins(coins, m, V): 
+    if (V == 0): 
+        return 0
+    res = sys.maxsize 
+    for i in range(0, m): 
+        if (coins[i] <= V): 
+            sub_res = min_coins(coins, m, V-coins[i]) 
+            if (sub_res != sys.maxsize and sub_res + 1 < res): 
+                res = sub_res + 1  
+    return res ","['assert min_coins([9, 6, 5, 1] ,4,11)==2'
+ 'assert min_coins([4,5,6,7,8,9],6,9)==1'
+ 'assert min_coins([1, 2, 3],3,4)==2']",,[],"def min_coins(coins, m, V):
+	""""""Write a function to find minimum number of coins that make a given value."""""""
+532,Write a function to check if the two given strings are permutations of each other.,"def check_permutation(str1, str2):
+  n1=len(str1)
+  n2=len(str2)
+  if(n1!=n2):
+    return False
+  a=sorted(str1)
+  str1="" "".join(a)
+  b=sorted(str2)
+  str2="" "".join(b)
+  for i in range(0, n1, 1):
+    if(str1[i] != str2[i]):
+      return False
+  return True","['assert check_permutation(""abc"", ""cba"") == True'
+ 'assert check_permutation(""test"", ""ttew"") == False'
+ 'assert check_permutation(""xxyz"", ""yxzx"") == True']",,[],"def check_permutation(str1, str2):
+	""""""Write a function to check if the two given strings are permutations of each other."""""""
+533,Write a function to remove particular data type elements from the given tuple.,"def remove_datatype(test_tuple, data_type):
+  res = []
+  for ele in test_tuple:
+    if not isinstance(ele, data_type):
+      res.append(ele)
+  return (res) ","['assert remove_datatype((4, 5, 4, 7.7, 1.2), int) == [7.7, 1.2]'
+ 'assert remove_datatype((7, 8, 9, ""SR""), str) == [7, 8, 9]'
+ 'assert remove_datatype((7, 1.1, 2, 2.2), float) == [7, 2]']",,[],"def remove_datatype(test_tuple, data_type):
+	""""""Write a function to remove particular data type elements from the given tuple."""""""
+534,Write a function to search a literals string in a string and also find the location within the original string where the pattern occurs.,"import re
+def search_literal(pattern,text):
+ match = re.search(pattern, text)
+ s = match.start()
+ e = match.end()
+ return (s, e)","[""assert search_literal('python','python programming language')==(0,6)""
+ ""assert search_literal('programming','python programming language')==(7,18)""
+ ""assert search_literal('language','python programming language')==(19,27)""]",,[],"def search_literal(pattern,text):
+	""""""Write a function to search a literals string in a string and also find the location within the original string where the pattern occurs."""""""
+535,Write a function to find the top or bottom surface area of a cylinder.,"def topbottom_surfacearea(r):
+  toporbottomarea=3.1415*r*r
+  return toporbottomarea","['assert topbottom_surfacearea(10)==314.15000000000003'
+ 'assert topbottom_surfacearea(5)==78.53750000000001'
+ 'assert topbottom_surfacearea(4)==50.264']",,[],"def topbottom_surfacearea(r):
+	""""""Write a function to find the top or bottom surface area of a cylinder."""""""
+536,Write a function to select the nth items of a list.,"def nth_items(list,n):
+ return list[::n]","['assert nth_items([1, 2, 3, 4, 5, 6, 7, 8, 9],2)==[1, 3, 5, 7, 9] '
+ 'assert nth_items([10,15,19,17,16,18],3)==[10,17] '
+ 'assert nth_items([14,16,19,15,17],4)==[14,17]']",,[],"def nth_items(list,n):
+	""""""Write a function to select the nth items of a list."""""""
+537,Write a python function to find the first repeated word in a given string.,"def first_repeated_word(str1):
+  temp = set()
+  for word in str1.split():
+    if word in temp:
+      return word;
+    else:
+      temp.add(word)
+  return 'None'","['assert first_repeated_word(""ab ca bc ab"") == ""ab""'
+ 'assert first_repeated_word(""ab ca bc"") == \'None\''
+ 'assert first_repeated_word(""ab ca bc ca ab bc"") == ""ca""']",,[],"def first_repeated_word(str1):
+	""""""Write a python function to find the first repeated word in a given string."""""""
+538,Write a python function to convert a given string list to a tuple.,"def string_list_to_tuple(str1):
+    result = tuple(x for x in str1 if not x.isspace()) 
+    return result","['assert string_list_to_tuple((""python 3.0"")) == (\'p\', \'y\', \'t\', \'h\', \'o\', \'n\', \'3\', \'.\', \'0\')'
+ 'assert string_list_to_tuple((""bigdata"")) == (\'b\', \'i\', \'g\', \'d\', \'a\', \'t\', \'a\')'
+ 'assert string_list_to_tuple((""language"")) == (\'l\', \'a\', \'n\', \'g\', \'u\', \'a\', \'g\',\'e\')']",,[],"def string_list_to_tuple(str1):
+	""""""Write a python function to convert a given string list to a tuple."""""""
+539,Write a function to create a list containing the power of said number in bases raised to the corresponding number in the index using map function.,"def basesnum_coresspondingnum(bases_num,index):
+  result = list(map(pow, bases_num, index))
+  return result","['assert basesnum_coresspondingnum([10, 20, 30, 40, 50, 60, 70, 80, 90, 100],[1, 2, 3, 4, 5, 6, 7, 8, 9, 10])==[10, 400, 27000, 2560000, 312500000, 46656000000, 8235430000000, 1677721600000000, 387420489000000000, 100000000000000000000]'
+ 'assert basesnum_coresspondingnum([1, 2, 3, 4, 5, 6, 7],[10, 20, 30, 40, 50, 60, 70])==[1, 1048576, 205891132094649, 1208925819614629174706176, 88817841970012523233890533447265625, 48873677980689257489322752273774603865660850176, 143503601609868434285603076356671071740077383739246066639249]'
+ 'assert basesnum_coresspondingnum([4, 8, 12, 16, 20, 24, 28],[3, 6, 9, 12, 15, 18, 21])==[64, 262144, 5159780352, 281474976710656, 32768000000000000000, 6979147079584381377970176, 2456510688823056210273111113728]']",,[],"def basesnum_coresspondingnum(bases_num,index):
+	""""""Write a function to create a list containing the power of said number in bases raised to the corresponding number in the index using map function."""""""
+540,Write a python function to find the difference between highest and least frequencies in a given array.,"def find_Diff(arr,n): 
+    arr.sort()  
+    count = 0; max_count = 0; min_count = n 
+    for i in range(0,(n-1)): 
+        if arr[i] == arr[i + 1]: 
+            count += 1
+            continue
+        else: 
+            max_count = max(max_count,count) 
+            min_count = min(min_count,count) 
+            count = 0
+    return max_count - min_count ","['assert find_Diff([1,1,2,2,7,8,4,5,1,4],10) == 2'
+ 'assert find_Diff([1,7,9,2,3,3,1,3,3],9) == 3'
+ 'assert find_Diff([1,2,1,2],4) == 0']",,[],"def find_Diff(arr,n):
+	""""""Write a python function to find the difference between highest and least frequencies in a given array."""""""
+541,Write a function to find if the given number is abundant or not.,"import math 
+def get_sum(n): 
+	sum = 0
+	i = 1
+	while i <= (math.sqrt(n)): 
+		if n%i == 0: 
+			if n/i == i : 
+				sum = sum + i 
+			else: 
+				sum = sum + i 
+				sum = sum + (n / i ) 
+		i = i + 1
+	sum = sum - n 
+	return sum
+def check_abundant(n): 
+	if (get_sum(n) > n): 
+		return True
+	else: 
+		return False","['assert check_abundant(12) == True' 'assert check_abundant(15) == False'
+ 'assert check_abundant(18) == True']",,[],"def get_sum(n):
+	""""""Write a function to find if the given number is abundant or not."""""""
+542,"Write a function to replace all occurrences of spaces, commas, or dots with a colon in the given string by using regex.","import re
+def fill_spaces(text):
+  return (re.sub(""[ ,.]"", "":"", text))","[""assert fill_spaces('Boult Curve Wireless Neckband') == 'Boult:Curve:Wireless:Neckband'""
+ ""assert fill_spaces('Stereo Sound Sweatproof') == 'Stereo:Sound:Sweatproof'""
+ ""assert fill_spaces('Probass Curve Audio') == 'Probass:Curve:Audio'""]",,[],"def fill_spaces(text):
+	""""""Write a function to replace all occurrences of spaces, commas, or dots with a colon in the given string by using regex."""""""
+543,Write a function to add two numbers and print number of digits of sum.,"def count_digits(num1,num2):
+    number=num1+num2
+    count = 0
+    while(number > 0):
+        number = number // 10
+        count = count + 1
+    return count","['assert count_digits(9875,10)==(4)'
+ 'assert count_digits(98759853034,100)==(11)'
+ 'assert count_digits(1234567,500)==(7)']",,[],"def count_digits(num1,num2):
+	""""""Write a function to add two numbers and print number of digits of sum."""""""
+544,Write a function to flatten the tuple list to a string.,"def flatten_tuple(test_list):
+  res = ' '.join([idx for tup in test_list for idx in tup])
+  return (res) ","[""assert flatten_tuple([('1', '4', '6'), ('5', '8'), ('2', '9'), ('1', '10')]) == '1 4 6 5 8 2 9 1 10'""
+ ""assert flatten_tuple([('2', '3', '4'), ('6', '9'), ('3', '2'), ('2', '11')]) == '2 3 4 6 9 3 2 2 11'""
+ ""assert flatten_tuple([('14', '21', '9'), ('24', '19'), ('12', '29'), ('23', '17')]) == '14 21 9 24 19 12 29 23 17'""]",,[],"def flatten_tuple(test_list):
+	""""""Write a function to flatten the tuple list to a string."""""""
+545,Write a python function to toggle only first and last bits of a given number.,"def take_L_and_F_set_bits(n) : 
+    n = n | n >> 1
+    n = n | n >> 2
+    n = n | n >> 4
+    n = n | n >> 8
+    n = n | n >> 16 
+    return ((n + 1) >> 1) + 1      
+def toggle_F_and_L_bits(n) :  
+    if (n == 1) : 
+        return 0 
+    return n ^ take_L_and_F_set_bits(n) ","['assert toggle_F_and_L_bits(10) == 3'
+ 'assert toggle_F_and_L_bits(15) == 6'
+ 'assert toggle_F_and_L_bits(20) == 5']",,[],"def take_L_and_F_set_bits(n):
+	""""""Write a python function to toggle only first and last bits of a given number."""""""
+546,Write a function to find the last occurrence of a character in a string.,"def last_occurence_char(string,char):
+ flag = -1
+ for i in range(len(string)):
+     if(string[i] == char):
+         flag = i
+ if(flag == -1):
+    return None
+ else:
+    return flag + 1","['assert last_occurence_char(""hello world"",\'l\')==10'
+ 'assert last_occurence_char(""language"",\'g\')==7'
+ 'assert last_occurence_char(""little"",\'y\')==None']",,[],"def last_occurence_char(string,char):
+	""""""Write a function to find the last occurrence of a character in a string."""""""
+547,Write a python function to find the sum of hamming distances of all consecutive numbers from o to n.,"def Total_Hamming_Distance(n):   
+    i = 1
+    sum = 0
+    while (n // i > 0):  
+        sum = sum + n // i  
+        i = i * 2     
+    return sum","['assert Total_Hamming_Distance(4) == 7'
+ 'assert Total_Hamming_Distance(2) == 3'
+ 'assert Total_Hamming_Distance(5) == 8']",,[],"def Total_Hamming_Distance(n):
+	""""""Write a python function to find the sum of hamming distances of all consecutive numbers from o to n."""""""
+548,Write a function to find the length of the longest increasing subsequence of the given sequence.,"def longest_increasing_subsequence(arr): 
+	n = len(arr) 
+	longest_increasing_subsequence = [1]*n 
+	for i in range (1 , n): 
+		for j in range(0 , i): 
+			if arr[i] > arr[j] and longest_increasing_subsequence[i]< longest_increasing_subsequence[j] + 1 : 
+				longest_increasing_subsequence[i] = longest_increasing_subsequence[j]+1
+	maximum = 0
+	for i in range(n): 
+		maximum = max(maximum , longest_increasing_subsequence[i]) 
+	return maximum","['assert longest_increasing_subsequence([10, 22, 9, 33, 21, 50, 41, 60]) == 5'
+ 'assert longest_increasing_subsequence([3, 10, 2, 1, 20]) == 3'
+ 'assert longest_increasing_subsequence([50, 3, 10, 7, 40, 80]) == 4 ']",,[],"def longest_increasing_subsequence(arr):
+	""""""Write a function to find the length of the longest increasing subsequence of the given sequence."""""""
+549,Write a python function to find the sum of fifth power of first n odd natural numbers.,"def odd_Num_Sum(n) : 
+    j = 0
+    sm = 0
+    for i in range(1,n+1) : 
+        j = (2*i-1) 
+        sm = sm + (j*j*j*j*j)     
+    return sm ","['assert odd_Num_Sum(1) == 1' 'assert odd_Num_Sum(2) == 244'
+ 'assert odd_Num_Sum(3) == 3369']",,[],"def odd_Num_Sum(n):
+	""""""Write a python function to find the sum of fifth power of first n odd natural numbers."""""""
+550,Write a python function to find the maximum element in a sorted and rotated array.,"def find_Max(arr,low,high): 
+    if (high < low): 
+        return arr[0] 
+    if (high == low): 
+        return arr[low] 
+    mid = low + (high - low) // 2 
+    if (mid < high and arr[mid + 1] < arr[mid]): 
+        return arr[mid] 
+    if (mid > low and arr[mid] < arr[mid - 1]): 
+        return arr[mid - 1]  
+    if (arr[low] > arr[mid]): 
+        return find_Max(arr,low,mid - 1) 
+    else: 
+        return find_Max(arr,mid + 1,high) ","['assert find_Max([2,3,5,6,9],0,4) == 9'
+ 'assert find_Max([3,4,5,2,1],0,4) == 5'
+ 'assert find_Max([1,2,3],0,2) == 3']",,[],"def find_Max(arr,low,high):
+	""""""Write a python function to find the maximum element in a sorted and rotated array."""""""
+551,Write a function to extract a specified column from a given nested list.,"def extract_column(list1, n):
+   result = [i.pop(n) for i in list1]
+   return result ","['assert extract_column([[1, 2, 3], [2, 4, 5], [1, 1, 1]],0)==[1, 2, 1]'
+ 'assert extract_column([[1, 2, 3], [-2, 4, -5], [1, -1, 1]],2)==[3, -5, 1]'
+ 'assert extract_column([[1, 3], [5, 7], [1, 3], [13, 15, 17], [5, 7], [9, 11]],0)==[1, 5, 1, 13, 5, 9]']",,[],"def extract_column(list1, n):
+	""""""Write a function to extract a specified column from a given nested list."""""""
+552,Write a python function to check whether a given sequence is linear or not.,"def Seq_Linear(seq_nums):
+  seq_nums = [seq_nums[x] - seq_nums[x-1] for x in range(1, len(seq_nums))]
+  if len(set(seq_nums)) == 1: 
+    return ""Linear Sequence""
+  else:
+    return ""Non Linear Sequence""","['assert Seq_Linear([0,2,4,6,8,10]) == ""Linear Sequence""'
+ 'assert Seq_Linear([1,2,3]) == ""Linear Sequence""'
+ 'assert Seq_Linear([1,5,2]) == ""Non Linear Sequence""']",,[],"def Seq_Linear(seq_nums):
+	""""""Write a python function to check whether a given sequence is linear or not."""""""
+553,Write a function to convert the given tuple to a floating-point number.,"def tuple_to_float(test_tup):
+  res = float('.'.join(str(ele) for ele in test_tup))
+  return (res) ","['assert tuple_to_float((4, 56)) == 4.56'
+ 'assert tuple_to_float((7, 256)) == 7.256'
+ 'assert tuple_to_float((8, 123)) == 8.123']",,[],"def tuple_to_float(test_tup):
+	""""""Write a function to convert the given tuple to a floating-point number."""""""
+554,Write a python function to find odd numbers from a mixed list.,"def Split(list): 
+    od_li = [] 
+    for i in list: 
+        if (i % 2 != 0): 
+            od_li.append(i)  
+    return od_li","['assert Split([1,2,3,4,5,6]) == [1,3,5]'
+ 'assert Split([10,11,12,13]) == [11,13]'
+ 'assert Split([7,8,9,1]) == [7,9,1]']",,[],"def Split(list):
+	""""""Write a python function to find odd numbers from a mixed list."""""""
+555,Write a python function to find the difference between sum of cubes of first n natural numbers and the sum of first n natural numbers.,"def difference(n) :  
+    S = (n*(n + 1))//2;  
+    res = S*(S-1);  
+    return res;  ","['assert difference(3) == 30' 'assert difference(5) == 210'
+ 'assert difference(2) == 6']",,[],"def difference(n):
+	""""""Write a python function to find the difference between sum of cubes of first n natural numbers and the sum of first n natural numbers."""""""
+556,Write a python function to count the pairs with xor as an odd number.,"def find_Odd_Pair(A,N) : 
+    oddPair = 0
+    for i in range(0,N) :  
+        for j in range(i+1,N) :  
+            if ((A[i] ^ A[j]) % 2 != 0):  
+                oddPair+=1  
+    return oddPair  ","['assert find_Odd_Pair([5,4,7,2,1],5) == 6'
+ 'assert find_Odd_Pair([7,2,8,1,0,5,11],7) == 12'
+ 'assert find_Odd_Pair([1,2,3],3) == 2']",,[],"def find_Odd_Pair(A,N):
+	""""""Write a python function to count the pairs with xor as an odd number."""""""
+557,Write a function to toggle characters case in a string.,"def toggle_string(string):
+ string1 = string.swapcase()
+ return string1","['assert toggle_string(""Python"")==(""pYTHON"")'
+ 'assert toggle_string(""Pangram"")==(""pANGRAM"")'
+ 'assert toggle_string(""LIttLE"")==(""liTTle"")']",,[],"def toggle_string(string):
+	""""""Write a function to toggle characters case in a string."""""""
+558,Write a python function to find the digit distance between two integers.,"def digit_distance_nums(n1, n2):
+         return sum(map(int,str(abs(n1-n2))))","['assert digit_distance_nums(1,2) == 1'
+ 'assert digit_distance_nums(23,56) == 6'
+ 'assert digit_distance_nums(123,256) == 7']",,[],"def digit_distance_nums(n1, n2):
+	""""""Write a python function to find the digit distance between two integers."""""""
+559,Write a function to find the largest sum of contiguous subarray in the given array.,"def max_sub_array_sum(a, size):
+  max_so_far = 0
+  max_ending_here = 0
+  for i in range(0, size):
+    max_ending_here = max_ending_here + a[i]
+    if max_ending_here < 0:
+      max_ending_here = 0
+    elif (max_so_far < max_ending_here):
+      max_so_far = max_ending_here
+  return max_so_far","['assert max_sub_array_sum([-2, -3, 4, -1, -2, 1, 5, -3], 8) == 7'
+ 'assert max_sub_array_sum([-3, -4, 5, -2, -3, 2, 6, -4], 8) == 8'
+ 'assert max_sub_array_sum([-4, -5, 6, -3, -4, 3, 7, -5], 8) == 10']",,[],"def max_sub_array_sum(a, size):
+	""""""Write a function to find the largest sum of contiguous subarray in the given array."""""""
+560,Write a function to find the union of elements of the given tuples.,"def union_elements(test_tup1, test_tup2):
+  res = tuple(set(test_tup1 + test_tup2))
+  return (res) ","['assert union_elements((3, 4, 5, 6),(5, 7, 4, 10) ) == (3, 4, 5, 6, 7, 10)'
+ 'assert union_elements((1, 2, 3, 4),(3, 4, 5, 6) ) == (1, 2, 3, 4, 5, 6)'
+ 'assert union_elements((11, 12, 13, 14),(13, 15, 16, 17) ) == (11, 12, 13, 14, 15, 16, 17)']",,[],"def union_elements(test_tup1, test_tup2):
+	""""""Write a function to find the union of elements of the given tuples."""""""
+561,"Write a function to assign with each element, its pair elements from other similar pairs in the given tuple.","def assign_elements(test_list):
+  res = dict()
+  for key, val in test_list:
+    res.setdefault(val, [])
+    res.setdefault(key, []).append(val)
+  return (res) ","['assert assign_elements([(5, 3), (7, 5), (2, 7), (3, 8), (8, 4)] ) == {3: [8], 5: [3], 7: [5], 2: [7], 8: [4], 4: []}'
+ 'assert assign_elements([(6, 4), (9, 4), (3, 8), (4, 9), (9, 5)] ) == {4: [9], 6: [4], 9: [4, 5], 8: [], 3: [8], 5: []}'
+ 'assert assign_elements([(6, 2), (6, 8), (4, 9), (4, 9), (3, 7)] ) == {2: [], 6: [2, 8], 8: [], 9: [], 4: [9, 9], 7: [], 3: [7]}']",,[],"def assign_elements(test_list):
+	""""""Write a function to assign with each element, its pair elements from other similar pairs in the given tuple."""""""
+562,Write a python function to find the maximum length of sublist.,"def Find_Max_Length(lst):  
+    maxLength = max(len(x) for x in lst )
+    return maxLength ","['assert Find_Max_Length([[1],[1,4],[5,6,7,8]]) == 4'
+ 'assert Find_Max_Length([[0,1],[2,2,],[3,2,1]]) == 3'
+ 'assert Find_Max_Length([[7],[22,23],[13,14,15],[10,20,30,40,50]]) == 5']",,[],"def Find_Max_Length(lst):
+	""""""Write a python function to find the maximum length of sublist."""""""
+563,Write a function to extract values between quotation marks of a string.,"import re
+def extract_values(text):
+ return (re.findall(r'""(.*?)""', text))","['assert extract_values(\'""Python"", ""PHP"", ""Java""\')==[\'Python\', \'PHP\', \'Java\']'
+ 'assert extract_values(\'""python"",""program"",""language""\')==[\'python\',\'program\',\'language\']'
+ 'assert extract_values(\'""red"",""blue"",""green"",""yellow""\')==[\'red\',\'blue\',\'green\',\'yellow\']']",,[],"def extract_values(text):
+	""""""Write a function to extract values between quotation marks of a string."""""""
+564,Write a python function to count unequal element pairs from the given array.,"def count_Pairs(arr,n): 
+    cnt = 0; 
+    for i in range(n): 
+        for j in range(i + 1,n): 
+            if (arr[i] != arr[j]): 
+                cnt += 1; 
+    return cnt; ","['assert count_Pairs([1,2,1],3) == 2'
+ 'assert count_Pairs([1,1,1,1],4) == 0'
+ 'assert count_Pairs([1,2,3,4,5],5) == 10']",,[],"def count_Pairs(arr,n):
+	""""""Write a python function to count unequal element pairs from the given array."""""""
+565,Write a python function to split a string into characters.,"def split(word): 
+    return [char for char in word] ","[""assert split('python') == ['p','y','t','h','o','n']""
+ ""assert split('Name') == ['N','a','m','e']""
+ ""assert split('program') == ['p','r','o','g','r','a','m']""]",,[],"def split(word):
+	""""""Write a python function to split a string into characters."""""""
+566,Write a function to get the sum of a non-negative integer.,"def sum_digits(n):
+  if n == 0:
+    return 0
+  else:
+    return n % 10 + sum_digits(int(n / 10))","['assert sum_digits(345)==12' 'assert sum_digits(12)==3'
+ 'assert sum_digits(97)==16']",,[],"def sum_digits(n):
+	""""""Write a function to get the sum of a non-negative integer."""""""
+567,Write a function to check whether a specified list is sorted or not.,"def issort_list(list1):
+    result = all(list1[i] <= list1[i+1] for i in range(len(list1)-1))
+    return result","['assert issort_list([1,2,4,6,8,10,12,14,16,17])==True'
+ 'assert issort_list([1, 2, 4, 6, 8, 10, 12, 14, 20, 17])==False'
+ 'assert issort_list([1, 2, 4, 6, 8, 10,15,14,20])==False']",,[],"def issort_list(list1):
+	""""""Write a function to check whether a specified list is sorted or not."""""""
+568,Write a function to create a list of empty dictionaries.,"def empty_list(length):
+ empty_list = [{} for _ in range(length)]
+ return empty_list","['assert empty_list(5)==[{},{},{},{},{}]'
+ 'assert empty_list(6)==[{},{},{},{},{},{}]'
+ 'assert empty_list(7)==[{},{},{},{},{},{},{}]']",,[],"def empty_list(length):
+	""""""Write a function to create a list of empty dictionaries."""""""
+569,Write a function to sort each sublist of strings in a given list of lists.,"def sort_sublists(list1):
+    result = list(map(sorted,list1)) 
+    return result","[""assert sort_sublists([['green', 'orange'], ['black', 'white'], ['white', 'black', 'orange']])==[['green', 'orange'], ['black', 'white'], ['black', 'orange', 'white']]""
+ ""assert sort_sublists([['green', 'orange'], ['black'], ['green', 'orange'], ['white']])==[['green', 'orange'], ['black'], ['green', 'orange'], ['white']]""
+ ""assert sort_sublists([['a','b'],['d','c'],['g','h'] , ['f','e']])==[['a', 'b'], ['c', 'd'], ['g', 'h'], ['e', 'f']]""]",,[],"def sort_sublists(list1):
+	""""""Write a function to sort each sublist of strings in a given list of lists."""""""
+570,Write a function to remove words from a given list of strings containing a character or string.,"def remove_words(list1, charlist):
+    new_list = []
+    for line in list1:
+        new_words = ' '.join([word for word in line.split() if not any([phrase in word for phrase in charlist])])
+        new_list.append(new_words)
+    return new_list","['assert remove_words([\'Red color\', \'Orange#\', \'Green\', \'Orange @\', ""White""],[\'#\', \'color\', \'@\'])==[\'Red\', \'\', \'Green\', \'Orange\', \'White\']'
+ ""assert remove_words(['Red &', 'Orange+', 'Green', 'Orange @', 'White'],['&', '+', '@'])==['Red', '', 'Green', 'Orange', 'White']""
+ ""assert remove_words(['Red &', 'Orange+', 'Green', 'Orange @', 'White'],['@'])==['Red &', 'Orange+', 'Green', 'Orange', 'White']""]",,[],"def remove_words(list1, charlist):
+	""""""Write a function to remove words from a given list of strings containing a character or string."""""""
+571,Write a function to find maximum possible sum of disjoint pairs for the given array of integers and a number k.,"def max_sum_pair_diff_lessthan_K(arr, N, K): 
+	arr.sort() 
+	dp = [0] * N 
+	dp[0] = 0
+	for i in range(1, N): 
+		dp[i] = dp[i-1] 
+		if (arr[i] - arr[i-1] < K): 
+			if (i >= 2): 
+				dp[i] = max(dp[i], dp[i-2] + arr[i] + arr[i-1]); 
+			else: 
+				dp[i] = max(dp[i], arr[i] + arr[i-1]); 
+	return dp[N - 1]","['assert max_sum_pair_diff_lessthan_K([3, 5, 10, 15, 17, 12, 9], 7, 4) == 62'
+ 'assert max_sum_pair_diff_lessthan_K([5, 15, 10, 300], 4, 12) == 25'
+ 'assert max_sum_pair_diff_lessthan_K([1, 2, 3, 4, 5, 6], 6, 6) == 21']",,[],"def max_sum_pair_diff_lessthan_K(arr, N, K):
+	""""""Write a function to find maximum possible sum of disjoint pairs for the given array of integers and a number k."""""""
+572,Write a python function to remove two duplicate numbers from a given number of lists.,"def two_unique_nums(nums):
+  return [i for i in nums if nums.count(i)==1]","['assert two_unique_nums([1,2,3,2,3,4,5]) == [1, 4, 5]'
+ 'assert two_unique_nums([1,2,3,2,4,5]) == [1, 3, 4, 5]'
+ 'assert two_unique_nums([1,2,3,4,5]) == [1, 2, 3, 4, 5]']",,[],"def two_unique_nums(nums):
+	""""""Write a python function to remove two duplicate numbers from a given number of lists."""""""
+573,Write a python function to calculate the product of the unique numbers of a given list.,"def unique_product(list_data):
+    temp = list(set(list_data))
+    p = 1
+    for i in temp:
+        p *= i
+    return p","['assert unique_product([10, 20, 30, 40, 20, 50, 60, 40]) ==  720000000'
+ 'assert unique_product([1, 2, 3, 1,]) == 6'
+ 'assert unique_product([7, 8, 9, 0, 1, 1]) == 0']",,[],"def unique_product(list_data):
+	""""""Write a python function to calculate the product of the unique numbers of a given list."""""""
+574,Write a function to find the surface area of a cylinder.,"def surfacearea_cylinder(r,h):
+  surfacearea=((2*3.1415*r*r) +(2*3.1415*r*h))
+  return surfacearea","['assert surfacearea_cylinder(10,5)==942.45'
+ 'assert surfacearea_cylinder(4,5)==226.18800000000002'
+ 'assert surfacearea_cylinder(4,10)==351.848']",,[],"def surfacearea_cylinder(r,h):
+	""""""Write a function to find the surface area of a cylinder."""""""
+575,Write a python function to find nth number in a sequence which is not a multiple of a given number.,"def count_no (A,N,L,R): 
+    count = 0
+    for i in range (L,R + 1): 
+        if (i % A != 0): 
+            count += 1
+        if (count == N): 
+            break
+    return (i) ","['assert count_no(2,3,1,10) == 5' 'assert count_no(3,6,4,20) == 11'
+ 'assert count_no(5,10,4,20) == 16']",,[],"def count_no(A,N,L,R):
+	""""""Write a python function to find nth number in a sequence which is not a multiple of a given number."""""""
+576,Write a python function to check whether an array is subarray of another or not.,"def is_Sub_Array(A,B,n,m): 
+    i = 0; j = 0; 
+    while (i < n and j < m):  
+        if (A[i] == B[j]): 
+            i += 1; 
+            j += 1; 
+            if (j == m): 
+                return True;  
+        else: 
+            i = i - j + 1; 
+            j = 0;       
+    return False; ","['assert is_Sub_Array([1,4,3,5],[1,2],4,2) == False'
+ 'assert is_Sub_Array([1,2,1],[1,2,1],3,3) == True'
+ 'assert is_Sub_Array([1,0,2,2],[2,2,0],4,3) ==False']",,[],"def is_Sub_Array(A,B,n,m):
+	""""""Write a python function to check whether an array is subarray of another or not."""""""
+577,Write a python function to find the last digit in factorial of a given number.,"def last_Digit_Factorial(n): 
+    if (n == 0): return 1
+    elif (n <= 2): return n  
+    elif (n == 3): return 6
+    elif (n == 4): return 4 
+    else: 
+      return 0","['assert last_Digit_Factorial(4) == 4'
+ 'assert last_Digit_Factorial(21) == 0'
+ 'assert last_Digit_Factorial(30) == 0']",,[],"def last_Digit_Factorial(n):
+	""""""Write a python function to find the last digit in factorial of a given number."""""""
+578,Write a function to interleave lists of the same length.,"def interleave_lists(list1,list2,list3):
+    result = [el for pair in zip(list1, list2, list3) for el in pair]
+    return result","['assert interleave_lists([1,2,3,4,5,6,7],[10,20,30,40,50,60,70],[100,200,300,400,500,600,700])==[1, 10, 100, 2, 20, 200, 3, 30, 300, 4, 40, 400, 5, 50, 500, 6, 60, 600, 7, 70, 700]'
+ 'assert interleave_lists([10,20],[15,2],[5,10])==[10,15,5,20,2,10]'
+ 'assert interleave_lists([11,44], [10,15], [20,5])==[11,10,20,44,15,5]']",,[],"def interleave_lists(list1,list2,list3):
+	""""""Write a function to interleave lists of the same length."""""""
+579,Write a function to find the dissimilar elements in the given two tuples.,"def find_dissimilar(test_tup1, test_tup2):
+  res = tuple(set(test_tup1) ^ set(test_tup2))
+  return (res) ","['assert find_dissimilar((3, 4, 5, 6), (5, 7, 4, 10)) == (3, 6, 7, 10)'
+ 'assert find_dissimilar((1, 2, 3, 4), (7, 2, 3, 9)) == (1, 4, 7, 9)'
+ 'assert find_dissimilar((21, 11, 25, 26), (26, 34, 21, 36)) == (34, 36, 11, 25)']",,[],"def find_dissimilar(test_tup1, test_tup2):
+	""""""Write a function to find the dissimilar elements in the given two tuples."""""""
+580,Write a function to extract the even elements in the nested mixed tuple.,"def even_ele(test_tuple, even_fnc): 
+	res = tuple() 
+	for ele in test_tuple: 
+		if isinstance(ele, tuple): 
+			res += (even_ele(ele, even_fnc), ) 
+		elif even_fnc(ele): 
+			res += (ele, ) 
+	return res 
+def extract_even(test_tuple):
+  res = even_ele(test_tuple, lambda x: x % 2 == 0)
+  return (res) ","['assert extract_even((4, 5, (7, 6, (2, 4)), 6, 8)) == (4, (6, (2, 4)), 6, 8)'
+ 'assert extract_even((5, 6, (8, 7, (4, 8)), 7, 9)) == (6, (8, (4, 8)))'
+ 'assert extract_even((5, 6, (9, 8, (4, 6)), 8, 10)) == (6, (8, (4, 6)), 8, 10)']",,[],"def even_ele(test_tuple, even_fnc):
+	""""""Write a function to extract the even elements in the nested mixed tuple."""""""
+581,Write a python function to find the surface area of the square pyramid.,"def surface_Area(b,s): 
+    return 2 * b * s + pow(b,2) ","['assert surface_Area(3,4) == 33' 'assert surface_Area(4,5) == 56'
+ 'assert surface_Area(1,2) == 5']",,[],"def surface_Area(b,s):
+	""""""Write a python function to find the surface area of the square pyramid."""""""
+582,Write a function to check if a dictionary is empty or not.,"def my_dict(dict1):
+  if bool(dict1):
+     return False
+  else:
+     return True","['assert my_dict({10})==False' 'assert my_dict({11})==False'
+ 'assert my_dict({})==True']",,[],"def my_dict(dict1):
+	""""""Write a function to check if a dictionary is empty or not."""""""
+583,Write a function for nth catalan number.,"def catalan_number(num):
+    if num <=1:
+         return 1   
+    res_num = 0
+    for i in range(num):
+        res_num += catalan_number(i) * catalan_number(num-i-1)
+    return res_num","['assert catalan_number(10)==16796' 'assert catalan_number(9)==4862'
+ 'assert catalan_number(7)==429']",,[],"def catalan_number(num):
+	""""""Write a function for nth catalan number."""""""
+584,Write a function to find all adverbs and their positions in a given sentence by using regex.,"import re
+def find_adverbs(text):
+  for m in re.finditer(r""\w+ly"", text):
+    return ('%d-%d: %s' % (m.start(), m.end(), m.group(0)))","['assert find_adverbs(""Clearly, he has no excuse for such behavior."") == \'0-7: Clearly\''
+ 'assert find_adverbs(""Please handle the situation carefuly"") == \'28-36: carefuly\''
+ 'assert find_adverbs(""Complete the task quickly"") == \'18-25: quickly\'']",,[],"def find_adverbs(text):
+	""""""Write a function to find all adverbs and their positions in a given sentence by using regex."""""""
+585,Write a function to find the n - expensive price items from a given dataset using heap queue algorithm.,"import heapq
+def expensive_items(items,n):
+  expensive_items = heapq.nlargest(n, items, key=lambda s: s['price'])
+  return expensive_items","[""assert expensive_items([{'name': 'Item-1', 'price': 101.1},{'name': 'Item-2', 'price': 555.22}],1)==[{'name': 'Item-2', 'price': 555.22}]""
+ ""assert expensive_items([{'name': 'Item-1', 'price': 101.1},{'name': 'Item-2', 'price': 555.22}, {'name': 'Item-3', 'price': 45.09}],2)==[{'name': 'Item-2', 'price': 555.22},{'name': 'Item-1', 'price': 101.1}]""
+ ""assert expensive_items([{'name': 'Item-1', 'price': 101.1},{'name': 'Item-2', 'price': 555.22}, {'name': 'Item-3', 'price': 45.09},{'name': 'Item-4', 'price': 22.75}],1)==[{'name': 'Item-2', 'price': 555.22}]""]",,[],"def expensive_items(items,n):
+	""""""Write a function to find the n - expensive price items from a given dataset using heap queue algorithm."""""""
+586,Write a python function to split the array and add the first part to the end.,"def split_Arr(a,n,k):  
+   b = a[:k] 
+   return (a[k::]+b[::]) ","['assert split_Arr([12,10,5,6,52,36],6,2) == [5,6,52,36,12,10]'
+ 'assert split_Arr([1,2,3,4],4,1) == [2,3,4,1]'
+ 'assert split_Arr([0,1,2,3,4,5,6,7],8,3) == [3,4,5,6,7,0,1,2]']",,[],"def split_Arr(a,n,k):
+	""""""Write a python function to split the array and add the first part to the end."""""""
+587,Write a function to convert a list to a tuple.,"def list_tuple(listx):
+  tuplex = tuple(listx)
+  return tuplex","['assert list_tuple([5, 10, 7, 4, 15, 3])==(5, 10, 7, 4, 15, 3)'
+ 'assert list_tuple([2, 4, 5, 6, 2, 3, 4, 4, 7])==(2, 4, 5, 6, 2, 3, 4, 4, 7)'
+ 'assert list_tuple([58,44,56])==(58,44,56)']",,[],"def list_tuple(listx):
+	""""""Write a function to convert a list to a tuple."""""""
+588,Write a python function to find the difference between largest and smallest value in a given array.,"def big_diff(nums):
+     diff= max(nums)-min(nums)
+     return diff","['assert big_diff([1,2,3,4]) == 3' 'assert big_diff([4,5,12]) == 8'
+ 'assert big_diff([9,2,3]) == 7']",,[],"def big_diff(nums):
+	""""""Write a python function to find the difference between largest and smallest value in a given array."""""""
+589,Write a function to find perfect squares between two given numbers.,"def perfect_squares(a, b):
+    lists=[]
+    for i in range (a,b+1):
+        j = 1;
+        while j*j <= i:
+            if j*j == i:
+                 lists.append(i)  
+            j = j+1
+        i = i+1
+    return lists","['assert perfect_squares(1,30)==[1, 4, 9, 16, 25]'
+ 'assert perfect_squares(50,100)==[64, 81, 100]'
+ 'assert perfect_squares(100,200)==[100, 121, 144, 169, 196]']",,[],"def perfect_squares(a, b):
+	""""""Write a function to find perfect squares between two given numbers."""""""
+590,Write a function to convert polar coordinates to rectangular coordinates.,"import cmath
+def polar_rect(x,y):
+ cn = complex(x,y)
+ cn=cmath.polar(cn)
+ cn1 = cmath.rect(2, cmath.pi)
+ return (cn,cn1)","['assert polar_rect(3,4)==((5.0, 0.9272952180016122), (-2+2.4492935982947064e-16j))'
+ 'assert polar_rect(4,7)==((8.06225774829855, 1.0516502125483738), (-2+2.4492935982947064e-16j))'
+ 'assert polar_rect(15,17)==((22.67156809750927, 0.8478169733934057), (-2+2.4492935982947064e-16j))']",,[],"def polar_rect(x,y):
+	""""""Write a function to convert polar coordinates to rectangular coordinates."""""""
+591,Write a python function to interchange the first and last elements in a list.,"def swap_List(newList): 
+    size = len(newList) 
+    temp = newList[0] 
+    newList[0] = newList[size - 1] 
+    newList[size - 1] = temp  
+    return newList ","['assert swap_List([12, 35, 9, 56, 24]) == [24, 35, 9, 56, 12]'
+ 'assert swap_List([1, 2, 3]) == [3, 2, 1]'
+ 'assert swap_List([4, 5, 6]) == [6, 5, 4]']",,[],"def swap_List(newList):
+	""""""Write a python function to interchange the first and last elements in a list."""""""
+592,Write a python function to find sum of product of binomial co-efficients.,"def binomial_Coeff(n,k): 
+    C = [0] * (k + 1); 
+    C[0] = 1; # nC0 is 1 
+    for i in range(1,n + 1):  
+        for j in range(min(i, k),0,-1): 
+            C[j] = C[j] + C[j - 1]; 
+    return C[k]; 
+def sum_Of_product(n): 
+    return binomial_Coeff(2 * n,n - 1); ","['assert sum_Of_product(3) == 15' 'assert sum_Of_product(4) == 56'
+ 'assert sum_Of_product(1) == 1']",,[],"def binomial_Coeff(n,k):
+	""""""Write a python function to find sum of product of binomial co-efficients."""""""
+593,Write a function to remove leading zeroes from an ip address.,"import re
+def removezero_ip(ip):
+ string = re.sub('\.[0]*', '.', ip)
+ return string","['assert removezero_ip(""216.08.094.196"")==(\'216.8.94.196\') '
+ 'assert removezero_ip(""12.01.024"")==(\'12.1.24\') '
+ 'assert removezero_ip(""216.08.094.0196"")==(\'216.8.94.196\') ']",,[],"def removezero_ip(ip):
+	""""""Write a function to remove leading zeroes from an ip address."""""""
+594,Write a function to find the difference of first even and odd number of a given list.,"def diff_even_odd(list1):
+    first_even = next((el for el in list1 if el%2==0),-1)
+    first_odd = next((el for el in list1 if el%2!=0),-1)
+    return (first_even-first_odd)","['assert diff_even_odd([1,3,5,7,4,1,6,8])==3'
+ 'assert diff_even_odd([1,2,3,4,5,6,7,8,9,10])==1'
+ 'assert diff_even_odd([1,5,7,9,10])==9']",,[],"def diff_even_odd(list1):
+	""""""Write a function to find the difference of first even and odd number of a given list."""""""
+595,Write a python function to count minimum number of swaps required to convert one binary string to another.,"def min_Swaps(str1,str2) : 
+    count = 0
+    for i in range(len(str1)) :  
+        if str1[i] != str2[i] : 
+            count += 1
+    if count % 2 == 0 : 
+        return (count // 2) 
+    else : 
+        return (""Not Possible"") ","['assert min_Swaps(""1101"",""1110"") == 1'
+ 'assert min_Swaps(""111"",""000"") == ""Not Possible""'
+ 'assert min_Swaps(""111"",""110"") == ""Not Possible""']",,[],"def min_Swaps(str1,str2):
+	""""""Write a python function to count minimum number of swaps required to convert one binary string to another."""""""
+596,Write a function to find the size of the given tuple.,"import sys 
+def tuple_size(tuple_list):
+  return (sys.getsizeof(tuple_list)) ","['assert tuple_size((""A"", 1, ""B"", 2, ""C"", 3) ) == sys.getsizeof((""A"", 1, ""B"", 2, ""C"", 3))'
+ 'assert tuple_size((1, ""Raju"", 2, ""Nikhil"", 3, ""Deepanshu"") ) == sys.getsizeof((1, ""Raju"", 2, ""Nikhil"", 3, ""Deepanshu""))'
+ 'assert tuple_size(((1, ""Lion""), ( 2, ""Tiger""), (3, ""Fox""), (4, ""Wolf""))  ) == sys.getsizeof(((1, ""Lion""), ( 2, ""Tiger""), (3, ""Fox""), (4, ""Wolf"")))']",,[],"def tuple_size(tuple_list):
+	""""""Write a function to find the size of the given tuple."""""""
+597,Write a function to find kth element from the given two sorted arrays.,"def find_kth(arr1, arr2, m, n, k):
+	sorted1 = [0] * (m + n)
+	i = 0
+	j = 0
+	d = 0
+	while (i < m and j < n):
+		if (arr1[i] < arr2[j]):
+			sorted1[d] = arr1[i]
+			i += 1
+		else:
+			sorted1[d] = arr2[j]
+			j += 1
+		d += 1
+	while (i < m):
+		sorted1[d] = arr1[i]
+		d += 1
+		i += 1
+	while (j < n):
+		sorted1[d] = arr2[j]
+		d += 1
+		j += 1
+	return sorted1[k - 1]","['assert find_kth([2, 3, 6, 7, 9], [1, 4, 8, 10], 5, 4, 5) == 6'
+ 'assert find_kth([100, 112, 256, 349, 770], [72, 86, 113, 119, 265, 445, 892], 5, 7, 7) == 256'
+ 'assert find_kth([3, 4, 7, 8, 10], [2, 5, 9, 11], 5, 4, 6) == 8']",,[],"def find_kth(arr1, arr2, m, n, k):
+	""""""Write a function to find kth element from the given two sorted arrays."""""""
+598,Write a function to check whether the given number is armstrong or not.,"def armstrong_number(number):
+ sum = 0
+ times = 0
+ temp = number
+ while temp > 0:
+           times = times + 1
+           temp = temp // 10
+ temp = number
+ while temp > 0:
+           reminder = temp % 10
+           sum = sum + (reminder ** times)
+           temp //= 10
+ if number == sum:
+           return True
+ else:
+           return False","['assert armstrong_number(153)==True'
+ 'assert armstrong_number(259)==False'
+ 'assert armstrong_number(4458)==False']",,[],"def armstrong_number(number):
+	""""""Write a function to check whether the given number is armstrong or not."""""""
+599,Write a function to find sum and average of first n natural numbers.,"def sum_average(number):
+ total = 0
+ for value in range(1, number + 1):
+    total = total + value
+ average = total / number
+ return (total,average)","['assert sum_average(10)==(55, 5.5)' 'assert sum_average(15)==(120, 8.0)'
+ 'assert sum_average(20)==(210, 10.5)']",,[],"def sum_average(number):
+	""""""Write a function to find sum and average of first n natural numbers."""""""
+600,Write a python function to check whether the given number is even or not using bitwise operator.,"def is_Even(n) : 
+    if (n^1 == n+1) :
+        return True; 
+    else :
+        return False; ","['assert is_Even(1) == False' 'assert is_Even(2) == True'
+ 'assert is_Even(3) == False']",,[],"def is_Even(n):
+	""""""Write a python function to check whether the given number is even or not using bitwise operator."""""""

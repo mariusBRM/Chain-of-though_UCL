@@ -3,6 +3,8 @@ from tokenizer import *
 import sys
 import pandas as pd
 
+
+# make sure to add all device in needed time
 def eval(test_loader, model):
     """
     This function evaluate the model on the test data
