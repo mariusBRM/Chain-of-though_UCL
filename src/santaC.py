@@ -13,31 +13,45 @@ from tokenizer import *
 #################################
 
 class MySantaCoder(nn.Module):
-    def __init__(self):
+    def __init__(self, generation_method, num_sol = 1):
         super(MySantaCoder, self).__init__()
         self.checkpoint = "bigcode/santacoder"
         # self.checkpoint = model_path_to_hub
         self.model = AutoModelForCausalLM.from_pretrained(self.checkpoint, trust_remote_code=True)
         self.tokenizer = AutoTokenizer.from_pretrained(self.checkpoint)
-        self.max_new_tokens = 2048
-        self.num_solution_to_generate = 200
-        self.stop_words=["\nclass", "\ndef","\nassert", '\n"""', "\nprint", "\n<|"]
+        self.max_new_tokens = 128
 
-        self.generation_config = GenerationConfig( 
-            num_return_sequences = self.num_solution_to_generate,
-            max_length = self.max_new_tokens,
-            eos_token_id=self.model.generation_config.eos_token_id,
-            bos_token_id=self.model.generation_config.bos_token_id
-            )
-    
+        if generation_method == 'greedySearch':
+
+            self.generation_config = GenerationConfig(
+                num_beams = num_sol,
+                num_return_sequences = num_sol,
+                max_length = self.max_new_tokens,
+                eos_token_id=self.model.generation_config.eos_token_id,
+                bos_token_id=self.model.generation_config.bos_token_id
+                )
+        elif generation_method == 'samplingMethod' : 
+     
+            self.generation_config = GenerationConfig(   
+                do_sample = True,  
+                num_beams = num_sol,
+                num_return_sequences = num_sol,
+                top_p = 0.8,
+                temperature = 0.95,
+                max_length = self.max_new_tokens,
+                eos_token_id=self.model.generation_config.eos_token_id,
+                bos_token_id=self.model.generation_config.bos_token_id
+                )
+
     def forward(self, input_ids):
+        # input_ids = input_ids.unsqueeze(0)
         outputs = self.model.generate(input_ids, self.generation_config)
         return outputs
-    
+
     def decode_output(self, encoded_output):
-        output = self.tokenizer.decode(encoded_output[0])
+        output = self.tokenizer.decode(encoded_output)
         return output
-    
+
     def post_generation_processing(self,code):
         # split it into list of blocks
         list_blocks = re.split('def |class |assert |print ', code)
