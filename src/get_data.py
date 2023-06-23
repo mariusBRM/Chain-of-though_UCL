@@ -77,7 +77,7 @@ def process_assertions(df):
     df['tests'] = list_assertions
     return df
 
-def processing(df, is_test):
+def processing_mbpp(df, is_test):
     """ Process both instruction and test_list"""
     df = preprocessing_instruction(df)
     if is_test == True:
@@ -86,7 +86,7 @@ def processing(df, is_test):
 
 def load_mbpp_data():
     """
-        Load the data from hugginface library
+        Load the mbpp data from huggingface library
     """
     # download raw dataset
     dataset = datasets.load_dataset('mbpp')
@@ -101,10 +101,10 @@ def load_mbpp_data():
     os.makedirs(path, exist_ok=True)
 
     # preprocess the data
-    df_train = processing(df_train, False)
-    df_test = processing(df_test, False)
-    df_val = processing(df_val, False)
-    df_prompt = processing(df_prompt, False)
+    df_train = processing_mbpp(df_train, False)
+    df_test = processing_mbpp(df_test, False)
+    df_val = processing_mbpp(df_val, False)
+    df_prompt = processing_mbpp(df_prompt, False)
 
     # save it
     df_train.to_csv(path + "/mbpp_train.csv", index=False)
@@ -113,6 +113,23 @@ def load_mbpp_data():
     df_prompt.to_csv(path + "/mbpp_prompt.csv", index=False)
 
     return None
+
+def load_mtpb(path_mtpb):
+    # charge the file as a dataframe
+    mtpb_data = pd.read_json(path_mtpb)
+    return mtpb_data
+
+
+def load_Human_eval():
+    """
+    load the HumanEval from huggingface library
+    """
+    # download raw dataset
+    dataset = datasets.load_dataset("openai_humaneval")
+    df_test = dataset['test'].to_pandas()
+
+    # preprocessing data
+
 
 
 # to modify
@@ -145,7 +162,7 @@ def generate_X_shot(path_to_prompt, path_to_test, path_to_save, nm_shot):
 
 
 def main():
-    load_mbpp_data()
+    # load_mbpp_data()
     # generate Few-Shot
     return None
 

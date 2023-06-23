@@ -107,6 +107,22 @@ def write(reports):
         for report in reports:
             writer.writerow(report)
 
+def calculate_pass_percentage(reports):
+
+    # Get the total number of tests conducted
+    total_test = 0
+    results =  []
+    for i in range(len(reports)):
+        pass_ones = ast.literal_eval(reports.iloc[i]['Pass_one'])
+        total_test += len(pass_ones)
+        results.append(sum(pass_ones))
+
+    # Count the total number of passed tests
+    total_passed = sum(results)
+
+    # Calculate and return the percentage of passed tests
+    return (total_passed / total_test) * 100
+
 ############################################ --> need to process the generated 
 
 import pandas as pd
