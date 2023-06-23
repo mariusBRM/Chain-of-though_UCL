@@ -13,24 +13,24 @@ from tokenizer import *
 #################################
 
 class MySantaCoder(nn.Module):
-    def __init__(self, generation_method, num_sol = 1):
+    def __init__(self, generation_method, max_tokens = 128, num_sol = 1):
         super(MySantaCoder, self).__init__()
         self.checkpoint = "bigcode/santacoder"
         # self.checkpoint = model_path_to_hub
         self.model = AutoModelForCausalLM.from_pretrained(self.checkpoint, trust_remote_code=True)
         self.tokenizer = AutoTokenizer.from_pretrained(self.checkpoint)
-        self.max_new_tokens = 128
+        self.max_new_tokens = max_tokens
 
-        if generation_method == 'greedySearch':
+        if generation_method == 'GrdS':
 
             self.generation_config = GenerationConfig(
                 num_beams = num_sol,
                 num_return_sequences = num_sol,
-                max_length = self.max_new_tokens,
+                max_new_tokens = self.max_new_tokens,
                 eos_token_id=self.model.generation_config.eos_token_id,
                 bos_token_id=self.model.generation_config.bos_token_id
                 )
-        elif generation_method == 'samplingMethod' : 
+        elif generation_method == 'SmplM' : 
      
             self.generation_config = GenerationConfig(   
                 do_sample = True,  
@@ -38,7 +38,7 @@ class MySantaCoder(nn.Module):
                 num_return_sequences = num_sol,
                 top_p = 0.8,
                 temperature = 0.95,
-                max_length = self.max_new_tokens,
+                max_new_tokens = self.max_new_tokens,
                 eos_token_id=self.model.generation_config.eos_token_id,
                 bos_token_id=self.model.generation_config.bos_token_id
                 )
@@ -62,6 +62,23 @@ class MySantaCoder(nn.Module):
         # keep only the first block
         result = list_blocks[0] + fill_word + list_blocks[1]
         return result
+
+# in case we want to fix the right generation token that we want 
+def find_max_token(df):
+    max_token = 0
+    avg = 0
+    nm_to_be_generated = 0
+    for i in range(len(df)):
+        
+        text = len(df.iloc[i]['text'])
+        code = len(df.iloc[i]['code'])
+        nm_to_be_generated += 10 + text
+        avg += code + text
+        nm_tokens = 1.1 * (text + code)
+        if  nm_tokens > max_token:
+            max_token = nm_tokens
+    
+    return max_token, avg/len(df), nm_to_be_generated/len(df)
     
 #################################
 #       Define Training         #
