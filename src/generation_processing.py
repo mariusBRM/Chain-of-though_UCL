@@ -1,4 +1,4 @@
-
+import re
 
 #####################################################
 #               Remove Context                      #
@@ -180,5 +180,49 @@ def generation_cut_off(gen_code, stop_words, keep_context = False, index_prompt 
     codes = lines[:index_last_prompt+1] + chunks_of_code
             
     return '\n'.join(codes)
+
+def extract_function(text):
+    """
+        Function that extracts the function out of a text.
+    """
+    function_start = text.find("def")
+    function_end = text.find("\n\n", function_start)
+    if function_end == -1:
+        function_end = len(text)
+    return text[function_start:function_end]
+
+def cut_off_function_baselines(df):
+    processed_func = []
+    for i in range(len(df)):
+        processed_func.append(df.iloc[i]['generated_code'])
+    df['gen_code'] = processed_func
+    
+    return df
+
+
+def replace_print_with_return(func_str):
+    # The regex pattern matches 'print' at the start of a line (considering leading whitespaces)
+    pattern = r'^(\s*)print\((.*)\)'
+    
+    # Use a regex sub() function with a lambda function to replace 'print' with 'return'
+    result = re.sub(pattern, lambda match: f"{match.group(1)}return({match.group(2)})", func_str, flags=re.MULTILINE)
+    
+    return result
+
+def format_for_testing(data):
+    """
+        Replace all the print(..) instances with return(..) in order to get the right format for the testing.
+    """
+    processed_gen_code = []
+
+    for i in range(len(data)):
+        # replace for all the problem
+        processed_gen_code.append(replace_print_with_return(data.iloc[i]['gen_code']))
+    
+    data["code_test"] = processed_gen_code
+
+    return data
+
+
 
 
