@@ -181,6 +181,18 @@ def generation_cut_off(gen_code, stop_words, keep_context = False, index_prompt 
             
     return '\n'.join(codes)
 
+################ Testing ###################
+# test1 = 'def count_zeros(ars):\n\t# Initialize counter to zero\n\tcounter = 0\n\t# Loop over each element in the list\n\tfor i in ars:\n\t\t# Increment counter if the element is zero\n\t\tif i == 0:\n\t\t\tcounter += 1\n\t# Return the count of zeros\n\treturn counter'
+# test2 = 'def first_element(ars):\n\t# Assign the first element of the list to a variable\n\tfirst = ars[0]\n\t# Return the first element\n\treturn first'
+# test3 = 'def sum_while(ars):\n\t# Initialize variables\n\ttotal = 0\n\ti = 0\n\t# While loop until reaching the end of the list\n\twhile i < len(ars):\n\t\t# Add current value to total\n\t\ttotal += ars[i]\n\t\t# Increment the index\n\t\ti += 1\n\t# Return the total sum\n\treturn total'
+# test4 = 'def filter_negatives(ars):\n\t# Initialize an empty list for positive numbers\n\tpositives = []\n\t# Loop over each element in the list\n\tfor num in ars:\n\t\t# Add number to the list if it\'s non-negative\n\t\tif num >= 0:\n\t\t\tpositives.append(num)\n\t# Return the list of non-negative numbers\n\treturn positives'
+# test5 = 'def flatten_list(ars):\n\t# Initialize an empty list for the result\n\tflattened = []\n\t# Loop over each element in the list\n\tfor sublist in ars:\n\t\t# Loop over each element in the sublist\n\t\tfor item in sublist:\n\t\t\t# Add item to the flattened list\n\t\t\tflattened.append(item)\n\t# Return the flattened list\n\treturn flattened'
+# lines1 = test1.split('\n')
+# lines2 = test2.split('\n')
+# lines3 = test3.split('\n')
+# lines4 = test4.split('\n')
+# lines5 = test5.split('\n')
+
 def extract_function(text):
     """
         Function that extracts the function out of a text.
@@ -194,7 +206,7 @@ def extract_function(text):
 def cut_off_function_baselines(df):
     processed_func = []
     for i in range(len(df)):
-        processed_func.append(df.iloc[i]['generated_code'])
+        processed_func.append(extract_function(df.iloc[i]['generated_code']))
     df['gen_code'] = processed_func
     
     return df

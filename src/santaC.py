@@ -6,7 +6,7 @@ import numpy as np
 import random
 from torch.utils.data import DataLoader
 from tokenizer import *
-
+from generation_processing import *
 
 #################################
 #       Define SantaCoder       #
@@ -197,6 +197,47 @@ def training_model(nb_epochs, train_dataloader, val_dataloader, patience):
     torch.save(dict_model, 'Fine_Tuned_SantaCoder.pt')
     
     return summary
+
+##################################################
+#            generation Step by Step             #
+##################################################
+def generating_step_by_step(model, data, stop_words, keep_context = True, early_stopping = None):
+    """Generating code step by step 
+    """
+    codes = []
+    for j in range(len(data)):
+        if early_stopping is not None and j > early_stopping:
+            break
+        # start with the signature for the incoming problem
+        code = data.iloc[j]['signature']
+        # initiate the list of prompt to generate
+        prompts = data.iloc[j]['prompts']
+        # Iterate over each prompt
+        for i, prompt in enumerate(prompts):
+            # Add the prompt to the previously generated code
+            input_text = code + '\n\t' + '#' + prompt
+
+            # Encode the input text
+            input_ids = model.tokenizer.encode(input_text, return_tensors='pt')
+
+            # Generate the output
+            output_ids = model.forward(input_ids)
+
+            # Decode the output
+            output_text = model.decode_output(output_ids[0])
+
+            code = generation_cut_off(output_text, stop_words, keep_context, i)
+            
+            # keep only the last code generated after the output
+            if keep_context==False:
+                # remove context if set to False
+                code = remove_context(code)
+
+        # print("Final generated code:\n", code)
+        codes.append(code)
+
+    return codes
+
 
 def seed_worker(worker_id):
     worker_seed = torch.initial_seed() % 2**32
