@@ -221,6 +221,9 @@ def replace_print_with_return(func_str):
     
     return result
 
+# list of all the library that must be imported
+Imported_libraries = "import pandas\nfrom sklearn import LinearRegression\nimport math\nimport numpy\nimport re\nimport datetime\nimport sklearn\nfrom sklearn.model_selection import train_test_split\nimport collections\nfrom collections import OrderedDict\n\n"
+
 def format_for_testing(data):
     """
         Replace all the print(..) instances with return(..) in order to get the right format for the testing.
@@ -229,12 +232,11 @@ def format_for_testing(data):
 
     for i in range(len(data)):
         # replace for all the problem
-        processed_gen_code.append(replace_print_with_return(data.iloc[i]['gen_code']))
+        new_processing = Imported_libraries + replace_print_with_return(data.iloc[i]['gen_code'])
+        processed_gen_code.append(new_processing)
     
     data["code_test"] = processed_gen_code
 
     return data
-
-
 
 
