@@ -6,6 +6,8 @@ import ast
 import re
 import numpy as np
 import json
+import random 
+import string
 
 ####################
 # Download mbpp data
@@ -213,7 +215,47 @@ def create_signature_for_function(data):
     return data
 
 
+#############################################################
+#               Prompts vs Context                          #
+#############################################################
 
+def generate_random_name(signature):
+    # Find the function name using regular expression
+    match = re.match(r'def ([\w\-_%.]+)\((.*)\):', signature)
+    if match:
+        original_name, parameters = match.groups()
+        
+        # Generate a random name with a reasonable length (e.g., length of original name)
+        random_name = ''.join(random.choice(string.ascii_lowercase) for _ in range(len(original_name)))
+
+        # Replace the original name with the random name
+        new_signature = f'def {random_name}({parameters}):'
+        return new_signature
+    else:
+        print(signature)
+        # raise ValueError("Invalid function signature")
+        return signature
+
+def custom_dataset_context_investigation(mtbp_converted, mtbp):
+
+    # select only features that are interesting
+    features_name_converted = ['text', 'signature','test_list']
+    mtbp_converted = mtbp_converted[features_name_converted]
+    features_name = ['prompts']
+    mtbp = mtbp[features_name]
+    
+    data = pd.concat([mtbp, mtbp_converted], axis=1)
+
+    random_names = []
+
+    for i in range(len(data)):
+        signature = data.iloc[i]['signature']
+        random_name = generate_random_name(signature)
+        random_names.append(random_name)
+
+    data['random_signatures'] = random_names
+
+    return data
 
 
 

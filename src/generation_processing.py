@@ -1,4 +1,5 @@
 import re
+import numpy as np
 
 #####################################################
 #               Remove Context                      #
@@ -239,4 +240,58 @@ def format_for_testing(data):
 
     return data
 
+##############################################
+#            Prompt vs Context               #
+##############################################
 
+def find_all_indices(text, substring):
+    indices = []
+    index = text.find(substring)
+    while index != -1:
+        indices.append(index)
+        index = text.find(substring, index + 1)
+    return indices
+
+def starts_with_def(text):
+    """ Check if the generated text start with a def or not."""
+    lines = text.split('\n')
+    found_comment = False
+
+    for line in lines:
+        stripped_line = line.strip()
+
+        if not found_comment and stripped_line.startswith('#'):
+            found_comment = True
+            continue
+
+        if found_comment and stripped_line:
+            return stripped_line.startswith('def')
+
+    return False
+
+def cut_off_generated_text(text):
+    # Finding the index of the pattern '\n\nprint('
+    index_print = text.find('\n\nprint(')
+    # Finding the index of the pattern '\n\ndef'
+    index_def = text.find('\n\ndef')
+    startwith_def = starts_with_def(text)
+    indexes_def = find_all_indices(text, '\n\ndef')
+    # Finding the minimum index among the two patterns (if found)
+    index = -1
+    if index_print != -1 and index_def != -1:
+        # there are both 'def's and 'print()'s within the text
+        if startwith_def:
+            if len(indexes_def) > 1:
+                index_def = indexes_def[1]
+            else:
+                index_def = np.inf
+        index = min(index_print, index_def)
+    elif index_print != -1:
+        index = index_print
+    elif index_def != -1:
+        index = index_def
+
+    # If any pattern is found, slicing the text accordingly
+    if index != -1:
+        return text[:index]
+    return text
