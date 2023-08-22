@@ -13,7 +13,7 @@ from generation_processing import *
 #################################
 
 class MySantaCoder(nn.Module):
-    def __init__(self, generation_method, max_tokens = 128, num_sol = 1):
+    def __init__(self, generation_method, max_tokens = 128, num_beam = 1, num_sol = 1):
         super(MySantaCoder, self).__init__()
         self.checkpoint = "bigcode/santacoder"
         # self.checkpoint = model_path_to_hub
@@ -24,7 +24,7 @@ class MySantaCoder(nn.Module):
         if generation_method == 'GrdS':
 
             self.generation_config = GenerationConfig(
-                num_beams = num_sol,
+                num_beams = num_beam,
                 num_return_sequences = num_sol,
                 max_new_tokens = self.max_new_tokens,
                 eos_token_id=self.model.generation_config.eos_token_id,
@@ -34,7 +34,7 @@ class MySantaCoder(nn.Module):
      
             self.generation_config = GenerationConfig(   
                 do_sample = True,  
-                num_beams = num_sol,
+                num_beams = num_beam,
                 num_return_sequences = num_sol,
                 top_p = 0.8,
                 temperature = 0.95,
@@ -52,16 +52,46 @@ class MySantaCoder(nn.Module):
         output = self.tokenizer.decode(encoded_output)
         return output
 
-    def post_generation_processing(self,code):
+    def post_generation_processing(self, code):
         # split it into list of blocks
         list_blocks = re.split('def |class |assert |print ', code)
+        
         if 'init' in list_blocks[1]:
             fill_word = '\nclass '
         else:
             fill_word = '\ndef '
+        
         # keep only the first block
         result = list_blocks[0] + fill_word + list_blocks[1]
+        
+        # remove all trailing newlines
+        while result.endswith('\n'):
+            result = result[:-1]
+        
         return result
+    
+    def extract_function_block(self, text):
+        lines = text.split('\n')
+        result = []
+
+        indent_level = None
+        for line in lines:
+            if line.strip() == '':  # Ignore empty lines
+                continue
+
+            current_indent = len(line) - len(line.lstrip())
+
+            if indent_level is None:  # For the first 'def' line
+                indent_level = current_indent
+                result.append(line)
+                continue
+
+            if current_indent > indent_level:  # Inside the function's scope
+                result.append(line)
+            else:  # Outside the function's scope or another function
+                break
+
+        return '\n'.join(result)
 
 # in case we want to fix the right generation token that we want 
 def find_max_token(df):
