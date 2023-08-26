@@ -80,12 +80,42 @@ def process_assertions(df):
     df['tests'] = list_assertions
     return df
 
+
 def processing_mbpp(df, is_test):
     """ Process both instruction and test_list"""
     df = preprocessing_instruction(df)
     if is_test == True:
         df = process_assertions(df)
     return df
+
+
+def generate_X_shot_prompt(df, nm_shot):
+    """ Build a few shot prompt."""
+    # build the list of prompts
+    prompts = ''
+
+    for i in range(nm_shot):
+        prompts += '# ' + df.iloc[i]['text'] + '\n' + df.iloc[i]['code'] + '\n\n'
+
+    return prompts
+
+def generate_X_shot(path_to_prompt, path_to_test, path_to_save, nm_shot):
+    """ Generate few shot prompt for a dataset. """
+    # instantiate the dataframes
+    df = pd.read_csv(path_to_prompt)
+    data = pd.read_csv(path_to_test)
+
+    # generate the X-shot instructions
+    prompt = generate_X_shot_prompt(df, nm_shot)
+
+    # Add it to the data
+    for i in range(len(data)):
+        instruction = data.iloc[i]['instruction']
+        data.at[i,'instruction'] = prompt + instruction
+    
+    data.to_csv(f"{path_to_save}/mbpp_test_FS_{nm_shot}", index=False )
+
+    return None
 
 def load_mbpp_data():
     """
@@ -117,19 +147,6 @@ def load_mbpp_data():
 
     return None
 
-################################################
-#               Human Eval                     #
-################################################
-
-def load_Human_eval():
-    """
-    load the HumanEval from huggingface library
-    """
-    # download raw dataset
-    dataset = datasets.load_dataset("openai_humaneval")
-    df_test = dataset['test'].to_pandas()
-
-    return None
 
 #################################################
 #                 MTBP dataset                  #
@@ -147,32 +164,6 @@ def read_json_line_format(path_to_file):
     df = pd.json_normalize(data)
     return df
 ########################### Unused yet ###############################
-def extract_bracket_content(text):
-    pattern = "{(.*?)}"
-    match = re.search(pattern, text)
-    if match is not None:
-        return match.group(1)
-    else:
-        return None
-    
-def managing_prompts_with_input(prompts, input):
-    """
-        This function gives an example of the architecture of the input
-    """
-    # we will simply add an example of the architecture of the first input. eg {input} for example : 'input' = [1,2,3]
-    processed_prompts = []
-    # Look for the prompt to change
-    for prompt in prompts:
-        # extract the input key to replace with the for example
-        input_key = extract_bracket_content(prompt)
-        if input_key is None:
-            processed_prompts.append(prompt)
-        else:
-            added_prompt = '{' + input_key + '}' + f' for example : {input_key} = {input[input_key]} '
-            processed_prompt = prompt.replace(input_key,added_prompt)
-
-    return processed_prompt
-#######################################################################
 
 def get_keys(input_list):
     """Get the list of unique input keys and list it (comma separated).
@@ -214,12 +205,15 @@ def create_signature_for_function(data):
     data['signature'] = signatures
     return data
 
+#######################################################################
+
 
 #############################################################
 #               Prompts vs Context                          #
 #############################################################
 
 def generate_random_name(signature):
+    """ Generate random function names """
     # Find the function name using regular expression
     match = re.match(r'def ([\w\-_%.]+)\((.*)\):', signature)
     if match:
@@ -237,6 +231,7 @@ def generate_random_name(signature):
         return signature
 
 def custom_dataset_context_investigation(mtbp_converted, mtbp):
+    """ Create a custom dataset out of the converted_mtbp and the mtbp with a random function name."""
 
     # select only features that are interesting
     features_name_converted = ['text', 'signature','test_list']
@@ -258,40 +253,8 @@ def custom_dataset_context_investigation(mtbp_converted, mtbp):
     return data
 
 
-
-
-# to modify
-def generate_X_shot_prompt(df, nm_shot):
-    # build the list of prompts
-    prompts = ''
-
-    for i in range(nm_shot):
-        prompts += '# ' + df.iloc[i]['text'] + '\n' + df.iloc[i]['code'] + '\n\n'
-
-    return prompts
-
-def generate_X_shot(path_to_prompt, path_to_test, path_to_save, nm_shot):
-    # instantiate the dataframes
-    df = pd.read_csv(path_to_prompt)
-    data = pd.read_csv(path_to_test)
-
-    # generate the X-shot instructions
-    prompt = generate_X_shot_prompt(df, nm_shot)
-
-    # Add it to the data
-    for i in range(len(data)):
-        instruction = data.iloc[i]['instruction']
-        data.at[i,'instruction'] = prompt + instruction
-    
-    data.to_csv(f"{path_to_save}/mbpp_test_FS_{nm_shot}", index=False )
-
-    return None
-    
-
-
 def main():
-    # load_mbpp_data()
-    # generate Few-Shot
+    # can be used to load the required dataset.
     return None
 
 if __name__=="__main__":

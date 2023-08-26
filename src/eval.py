@@ -6,6 +6,10 @@ import ast
 import csv
 os.environ["HF_ALLOW_CODE_EVAL"] = "1"
 
+##################################################################
+#           This script can only be executed on Ubuntu OS        #
+##################################################################
+
 def evaluate_mbpp_data(df):
     
     reports = []

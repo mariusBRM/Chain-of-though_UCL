@@ -13,17 +13,19 @@ from generation_processing import *
 #################################
 
 class MySantaCoder(nn.Module):
-    def __init__(self, generation_method, max_tokens = 128, num_beam = 1, num_sol = 1):
+    def __init__(self, generation_method, list_of_bad_words = ['#', '"""'], max_tokens = 128, num_beam = 1, num_sol = 1):
         super(MySantaCoder, self).__init__()
         self.checkpoint = "bigcode/santacoder"
         # self.checkpoint = model_path_to_hub
         self.model = AutoModelForCausalLM.from_pretrained(self.checkpoint, trust_remote_code=True)
         self.tokenizer = AutoTokenizer.from_pretrained(self.checkpoint)
         self.max_new_tokens = max_tokens
+        self.bad_words = self.get_input_ids_as_list(list_of_bad_words)
 
         if generation_method == 'GrdS':
 
             self.generation_config = GenerationConfig(
+                bad_words_ids = self.bad_words,
                 num_beams = num_beam,
                 num_return_sequences = num_sol,
                 max_new_tokens = self.max_new_tokens,
@@ -32,7 +34,8 @@ class MySantaCoder(nn.Module):
                 )
         elif generation_method == 'SmplM' : 
      
-            self.generation_config = GenerationConfig(   
+            self.generation_config = GenerationConfig( 
+                bad_words_ids = self.bad_words,  
                 do_sample = True,  
                 num_beams = num_beam,
                 num_return_sequences = num_sol,
@@ -42,7 +45,14 @@ class MySantaCoder(nn.Module):
                 eos_token_id=self.model.generation_config.eos_token_id,
                 bos_token_id=self.model.generation_config.bos_token_id
                 )
-
+    
+    def get_input_ids_as_list(self, list_of_bad_words):
+        """ Tokenize the list of bad words - meaning the word that should not be generated"""
+        token_list = []
+        for element in list_of_bad_words:
+            token_list.append(self.tokenizer.encode(element))
+        return token_list
+    
     def forward(self, input_ids):
         # input_ids = input_ids.unsqueeze(0)
         outputs = self.model.generate(input_ids, self.generation_config)
@@ -53,24 +63,31 @@ class MySantaCoder(nn.Module):
         return output
 
     def post_generation_processing(self, code):
+        """ Post processing that keeps only the fist def/class block and remove extra lines skipped."""
+
         # split it into list of blocks
         list_blocks = re.split('def |class |assert |print ', code)
-        
+
         if 'init' in list_blocks[1]:
             fill_word = '\nclass '
         else:
             fill_word = '\ndef '
-        
+
         # keep only the first block
         result = list_blocks[0] + fill_word + list_blocks[1]
-        
+
         # remove all trailing newlines
         while result.endswith('\n'):
             result = result[:-1]
-        
+
+        # remove all leading newlines
+        while result.startswith('\n'):
+            result = result[1:]
+
         return result
-    
+
     def extract_function_block(self, text):
+        """ Extraction of the function by counting the number of indentation"""
         lines = text.split('\n')
         result = []
 
@@ -93,22 +110,6 @@ class MySantaCoder(nn.Module):
 
         return '\n'.join(result)
 
-# in case we want to fix the right generation token that we want 
-def find_max_token(df):
-    max_token = 0
-    avg = 0
-    nm_to_be_generated = 0
-    for i in range(len(df)):
-        
-        text = len(df.iloc[i]['text'])
-        code = len(df.iloc[i]['code'])
-        nm_to_be_generated += 10 + text
-        avg += code + text
-        nm_tokens = 1.1 * (text + code)
-        if  nm_tokens > max_token:
-            max_token = nm_tokens
-    
-    return max_token, avg/len(df), nm_to_be_generated/len(df)
     
 #################################
 #       Define Training         #
@@ -231,6 +232,7 @@ def training_model(nb_epochs, train_dataloader, val_dataloader, patience):
 ##################################################
 #            generation Step by Step             #
 ##################################################
+
 def generating_step_by_step(model, data, stop_words, keep_context = True, early_stopping = None):
     """Generating code step by step 
     """
@@ -272,6 +274,7 @@ def generating_step_by_step(model, data, stop_words, keep_context = True, early_
 ###############################################
 #           COntext vs context less           #
 ###############################################
+
 STOP_WORDS = ['def', 'if', 'for', 'while']
 
 def context_and_contexless_generation(data, model, early_stopping = None):
