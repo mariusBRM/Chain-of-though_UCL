@@ -8,6 +8,9 @@ import numpy as np
 import json
 import random 
 import string
+from post_processing import *
+from output_analysis_utils import *
+
 
 ####################
 # Download mbpp data
@@ -249,6 +252,63 @@ def custom_dataset_context_investigation(mtbp_converted, mtbp):
         random_names.append(random_name)
 
     data['random_signatures'] = random_names
+
+    return data
+
+#########################################################################
+#                       Custom Alpha Dataset                            #
+#########################################################################
+
+def normalize(list_of_lists, a=0.5, b=1.5):
+    # normalizing between a and b
+    flat_list = [item for sublist in list_of_lists for item in sublist]
+    min_val = min(flat_list)
+    max_val = max(flat_list)
+    
+    normalized = []
+    for sublist in list_of_lists:
+        norm_sublist = [round(a + (x - min_val) * (b - a) / (max_val - min_val), 3) for x in sublist]
+        normalized.append(norm_sublist)
+    
+    return normalized
+
+def alphas_columns(lengths_prompt, lengths_context):
+    # create normalized diff
+    diff_length = []
+
+    for i in range(len(lengths_prompt)):
+        lenght_step = []
+        for j in range(len(lengths_prompt[i])):
+            
+            nominateur = lengths_prompt[i][j]
+            denominateur = lengths_context[i][j]
+            
+            if nominateur == 0 and denominateur!= 0:
+                lenght_step.append(1)
+            elif denominateur == 0 and nominateur!=0:
+                lenght_step.append(1)
+            elif denominateur == 0 and nominateur == 0:
+                lenght_step.append(1)
+            else:
+                lenght_step.append(nominateur/denominateur)
+
+        diff_length.append(lenght_step)
+
+    normalized_alphas = normalize(diff_length, 0.5, 1.5)
+
+    return normalized_alphas
+
+
+def custom_dataset(data):
+    # load 
+    gen_p, gen_c = process_generated_codes(data)
+    lengths_prompt, lengths_context = calculate_lengths(gen_p, gen_c)
+
+    # create alphas
+    alphas = alphas_columns(lengths_prompt, lengths_context)
+
+    # add to dataset
+    data['alphas'] = alphas
 
     return data
 

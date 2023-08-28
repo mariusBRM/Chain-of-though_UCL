@@ -7,7 +7,8 @@ import random
 from torch.utils.data import DataLoader
 from tokenizer import *
 from generation_processing import *
-
+from post_processing import *
+import ast
 #################################
 #       Define SantaCoder       #
 #################################
@@ -405,6 +406,64 @@ def generation_prompts_functions(data, model, early_stopping = None):
     
     return codes_by_prompts, codes_with_context
 
+def generation_functions_with_len_penalty(data, model, type_of_lenght = 'token', early_stopping = None):
+    """
+        Generation of the context functions with a evoluting length penalty.
+    """
+
+    # Codes for every problem
+    codes_with_context = []
+    model.to('cuda')
+    for j in range(len(data)):
+        if early_stopping is not None and j > early_stopping:
+            break
+
+        # Code for every prompt
+        code_with_context = []
+
+        # start with the signature for the incoming problem
+        code = data.iloc[j]['signature']
+        # initiate the list of prompt to generate
+        prompts = ast.literal_eval(data.iloc[j]['prompts'])
+        # inititate the alphas for the generation penalty
+        alphas = data.iloc[j]['alphas']
+
+        for i, prompt in enumerate(prompts):
+
+            # input text
+            function = code + '\n\t#' + prompt
+            # tokenization
+            ids_function = model.tokenizer.encode(function, return_tensors='pt').to('cuda')
+
+            # generation
+            output_function = model.forward(ids_function).to('cuda')
+
+            # post processing
+            # '\t' count --> set to x whenever it changes leave... --> Y decoded outputs --> log likelihood
+            processed_output_ids, output_text_processed = generation_post_processing(model, output_function)
+
+            # length penalty algorithm
+            # select within the list of sequence generated the best one according of their log-likelihood
+            best_output = pick_best_length(model, processed_output_ids, alphas[i], type_of_lenght, output_text_processed, i)
+
+            # decoding
+            text_function = model.decode_output(best_output)
+
+            # post processing
+            text_function = model.post_generation_processing(text_function)
+
+            # enlarge the context
+            code = text_function
+
+            # add to the list
+            code_with_context.append(text_function)
+
+        codes_with_context.append(code_with_context)
+
+    data['lenght_penalty_generation'] = codes_with_context
+    data.to_csv('data_length_penalty_words.csv')
+    
+    return codes_with_context
 
 def seed_worker(worker_id):
     worker_seed = torch.initial_seed() % 2**32
