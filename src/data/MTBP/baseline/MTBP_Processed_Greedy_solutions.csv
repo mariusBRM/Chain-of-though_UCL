@@ -1,0 +1,3136 @@
+,Unnamed: 0,instruction,test_list,generated_code,gen_code,code_test
+0,0,"def sandwich_string(A):
+	""""""Append a string in the middle of another string.""""""","[""assert sandwich_string('abcde') == ['a', 'b', 'c', 'd', 'e']"", ""assert sandwich_string('abcdecadeCADE') == ['a', 'b', 'c', 'd', 'e']"", ""assert sandwich_string('aaaaAAAAaaaa') == ['a']"", ""assert sandwich_string('Jerry jERRY JeRRRY') == [' ', 'e', 'j', 'r', 'y']"", ""assert sandwich_string('ddddc') == ['c', 'd']""]","def sandwich_string(A):
+	""""""Append a string in the middle of another string.""""""
+	return A[0] + A[1] + A[2] + A[3] + A[4] + A[5] + A[6] + A[7] + A[8] + A[9] + A[10] + A[11] + A[12] + A[13] + A[14] + A[15] + A[16] + A[17] + A[18] + A[19] + A[20] + A[21] + A[2","def sandwich_string(A):
+	""""""Append a string in the middle of another string.""""""
+	return A[0] + A[1] + A[2] + A[3] + A[4] + A[5] + A[6] + A[7] + A[8] + A[9] + A[10] + A[11] + A[12] + A[13] + A[14] + A[15] + A[16] + A[17] + A[18] + A[19] + A[20] + A[21] + A[2","def sandwich_string(A):
+	""""""Append a string in the middle of another string.""""""
+	return A[0] + A[1] + A[2] + A[3] + A[4] + A[5] + A[6] + A[7] + A[8] + A[9] + A[10] + A[11] + A[12] + A[13] + A[14] + A[15] + A[16] + A[17] + A[18] + A[19] + A[20] + A[21] + A[2"
+1,1,"def normalize_integer_list(numbers):
+	""""""Normalize a list of positive integers and print formatted percentages.""""""","[""assert normalize_integer_list([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == ['1.8', '3.6', '5.5', '7.3', '9.1', '10.9', '12.7', '14.5', '16.4', '18.2']"", ""assert normalize_integer_list([56, 97, 19, 57, 69]) == ['18.8', '32.6', '6.4', '19.1', '23.2']"", 'assert normalize_integer_list([]) == []', ""assert normalize_integer_list([1]) == ['100.0']"", ""assert normalize_integer_list([10000, 1]) == ['100.0', '0.0']""]","def normalize_integer_list(numbers):
+	""""""Normalize a list of positive integers and print formatted percentages.""""""
+	total = sum(numbers)
+	for i, n in enumerate(numbers):
+		numbers[i] = n / total * 100
+	print(f""{'%':<10}{'Total':<10}{'%':<10}{'%':<10}"")
+	for i, n in enumerate(numbers):
+		print(f""{i:<10}{n:<10}{numbers[i]:<10}{numbers[i]:<10}"")
+	print()
+
+def normalize_float_list(numbers):
+	","def normalize_integer_list(numbers):
+	""""""Normalize a list of positive integers and print formatted percentages.""""""
+	total = sum(numbers)
+	for i, n in enumerate(numbers):
+		numbers[i] = n / total * 100
+	print(f""{'%':<10}{'Total':<10}{'%':<10}{'%':<10}"")
+	for i, n in enumerate(numbers):
+		print(f""{i:<10}{n:<10}{numbers[i]:<10}{numbers[i]:<10}"")
+	print()","def normalize_integer_list(numbers):
+	""""""Normalize a list of positive integers and print formatted percentages.""""""
+	total = sum(numbers)
+	for i, n in enumerate(numbers):
+		numbers[i] = n / total * 100
+	return(f""{'%':<10}{'Total':<10}{'%':<10}{'%':<10}"")
+	for i, n in enumerate(numbers):
+		return(f""{i:<10}{n:<10}{numbers[i]:<10}{numbers[i]:<10}"")
+	return()"
+2,2,"def convert_time(a1,a2):
+	""""""Convert units of time.""""""","['assert convert_time(2,13) == 7980', 'assert convert_time(1,2) == 3720', 'assert convert_time(32,32) == 117120', 'assert convert_time(0,32) == 1920', 'assert convert_time(1,1) == 3660']","def convert_time(a1,a2):
+	""""""Convert units of time.""""""
+	if a1 =='s':
+		return a2
+	elif a1 =='m':
+		return a2*60
+	elif a1 == 'h':
+		return a2*3600
+	elif a1 == 'd':
+		return a2*86400
+	elif a1 == 'w':
+		return a2*604800
+	elif a1 == 'y':
+		return a2*31536000
+	else:
+		return a2
+
+def convert_","def convert_time(a1,a2):
+	""""""Convert units of time.""""""
+	if a1 =='s':
+		return a2
+	elif a1 =='m':
+		return a2*60
+	elif a1 == 'h':
+		return a2*3600
+	elif a1 == 'd':
+		return a2*86400
+	elif a1 == 'w':
+		return a2*604800
+	elif a1 == 'y':
+		return a2*31536000
+	else:
+		return a2","def convert_time(a1,a2):
+	""""""Convert units of time.""""""
+	if a1 =='s':
+		return a2
+	elif a1 =='m':
+		return a2*60
+	elif a1 == 'h':
+		return a2*3600
+	elif a1 == 'd':
+		return a2*86400
+	elif a1 == 'w':
+		return a2*604800
+	elif a1 == 'y':
+		return a2*31536000
+	else:
+		return a2"
+3,3,"def squared_fibonacci(a1):
+	""""""Print the squared fibonacci numbers.""""""","['assert squared_fibonacci(1) == 1', 'assert squared_fibonacci(2) == 1', 'assert squared_fibonacci(3) == 4', 'assert squared_fibonacci(4) == 9', 'assert squared_fibonacci(10) == 3025']","def squared_fibonacci(a1):
+	""""""Print the squared fibonacci numbers.""""""
+	a2 = 0
+	a3 = 1
+	while a3 < a1:
+		print(a3)
+		a2 = a3
+		a3 = a2 + a1
+
+squared_fibonacci(10)
+<|endoftext|>","def squared_fibonacci(a1):
+	""""""Print the squared fibonacci numbers.""""""
+	a2 = 0
+	a3 = 1
+	while a3 < a1:
+		print(a3)
+		a2 = a3
+		a3 = a2 + a1","def squared_fibonacci(a1):
+	""""""Print the squared fibonacci numbers.""""""
+	a2 = 0
+	a3 = 1
+	while a3 < a1:
+		return(a3)
+		a2 = a3
+		a3 = a2 + a1"
+4,4,"def count_negative_numbers(A):
+	""""""Count negative numbers in a given list.""""""","['assert count_negative_numbers([1, 2, 3, 4]) == 4', 'assert count_negative_numbers([-1, 2, 3, 4]) == 3', 'assert count_negative_numbers([-1, -2, -3, -4]) == 4', 'assert count_negative_numbers([-1000000, 1, 2]) == 2', 'assert count_negative_numbers([-1, 0.2, 0.3, 0.4]) == 3']","def count_negative_numbers(A):
+	""""""Count negative numbers in a given list.""""""
+	negative_numbers = 0
+	for i in A:
+		if i < 0:
+			negative_numbers += 1
+	return negative_numbers
+
+def count_positive_numbers(A):
+	""""""Count positive numbers in a given list.""""""
+	positive_numbers = 0
+	for i in A:
+		if i > 0:
+			positive_numbers += 1
+	return positive_numbers
+
+def count_odd_numbers(A):
+	""""""Count odd numbers in a given list.""""""
+	odd_numbers = 0
+	","def count_negative_numbers(A):
+	""""""Count negative numbers in a given list.""""""
+	negative_numbers = 0
+	for i in A:
+		if i < 0:
+			negative_numbers += 1
+	return negative_numbers","def count_negative_numbers(A):
+	""""""Count negative numbers in a given list.""""""
+	negative_numbers = 0
+	for i in A:
+		if i < 0:
+			negative_numbers += 1
+	return negative_numbers"
+5,5,"def pandas_mean(a1,a2,a3,a4):
+	""""""Construct and compute the mean of a pandas df.""""""","['assert pandas_mean(50,21,131,2) == [35.5, 66.5]', 'assert pandas_mean(-10,10,-20,20) == [0.0, 0.0]', 'assert pandas_mean(1,2,3,4) == [1.5, 3.5]', 'assert pandas_mean(-1,-2,-3,-4) == [-1.5, -3.5]', 'assert pandas_mean(-10,-20,-30,-40) == [-15.0, -35.0]']","def pandas_mean(a1,a2,a3,a4):
+	""""""Construct and compute the mean of a pandas df.""""""
+	return a1.mean()
+
+def pandas_median(a1,a2,a3,a4):
+	""""""Construct and compute the median of a pandas df.""""""
+	return a1.median()
+
+def pandas_std(a1,a2,a3,a4):
+	""""""Construct and compute the standard deviation of a pandas df.""""""
+	return a1.std()
+
+def pandas_var(a1,a2,a3,a4):
+	""""""Construct and compute the variance of a pandas df.""""""
+	return a1.var","def pandas_mean(a1,a2,a3,a4):
+	""""""Construct and compute the mean of a pandas df.""""""
+	return a1.mean()","def pandas_mean(a1,a2,a3,a4):
+	""""""Construct and compute the mean of a pandas df.""""""
+	return a1.mean()"
+6,6,"def fizz_buzz(a1,a2,a3,a4):
+	""""""Solve the fizz buzz problem.""""""","[""assert fizz_buzz(3,5,0,4) == ['fizzbuzz', 1, 2, 'fizz', 4]"", ""assert fizz_buzz(5,3,0,9) == ['fizzbuzz', 1, 2, 'buzz', 4, 'fizz', 'buzz', 7, 8, 'buzz']"", ""assert fizz_buzz(9,3,0,2) == ['fizzbuzz', 1, 2]"", ""assert fizz_buzz(2,4,0,7) == ['fizzbuzz', 1, 'fizz', 3, 'fizzbuzz', 5, 'fizz', 7]"", ""assert fizz_buzz(2,4,4,7) == ['fizzbuzz', 5, 'fizz', 7]""]","def fizz_buzz(a1,a2,a3,a4):
+	""""""Solve the fizz buzz problem.""""""
+	for i in range(a1,a2+1):
+		if i%3==0 and i%5==0:
+			print(""FizzBuzz"")
+		elif i%3==0:
+			print(""Fizz"")
+		elif i%5==0:
+			print(""Buzz"")
+		else:
+			print(i)
+
+fizz_buzz(1,100,1000,10000)
+<|endoftext|>","def fizz_buzz(a1,a2,a3,a4):
+	""""""Solve the fizz buzz problem.""""""
+	for i in range(a1,a2+1):
+		if i%3==0 and i%5==0:
+			print(""FizzBuzz"")
+		elif i%3==0:
+			print(""Fizz"")
+		elif i%5==0:
+			print(""Buzz"")
+		else:
+			print(i)","def fizz_buzz(a1,a2,a3,a4):
+	""""""Solve the fizz buzz problem.""""""
+	for i in range(a1,a2+1):
+		if i%3==0 and i%5==0:
+			return(""FizzBuzz"")
+		elif i%3==0:
+			return(""Fizz"")
+		elif i%5==0:
+			return(""Buzz"")
+		else:
+			return(i)"
+7,7,"def bi-grams(a1):
+	""""""Print the bi-grams of a sentence.""""""","[""assert bi-grams('Have free hours and love children? Drive kids to school, soccer practice and other activities.') == [['Have', 'free'], ['free', 'hours'], ['hours', 'and'], ['and', 'love'], ['love', 'children?'], ['children?', 'Drive'], ['Drive', 'kids'], ['kids', 'to'], ['to', 'school,'], ['school,', 'soccer'], ['soccer', 'practice'], ['practice', 'and'], ['and', 'other'], ['other', 'activities.']]"", ""assert bi-grams('Hello World Foo Bar') == [['Hello', 'World'], ['World', 'Foo'], ['Foo', 'Bar']]"", ""assert bi-grams('AA BB CC') == [['AA', 'BB'], ['BB', 'CC']]"", ""assert bi-grams('abc de') == [['abc', 'de']]"", ""assert bi-grams('AB CD EF') == [['AB', 'CD'], ['CD', 'EF']]""]","def bi-grams(a1):
+	""""""Print the bi-grams of a sentence.""""""
+	for i in range(len(a1)-1):
+		print(a1[i], a1[i+1])
+
+def main():
+	""""""Main function.""""""
+	# Get the input from the user
+	sentence = input(""Enter a sentence: "")
+	# Split the sentence into words
+	words = sentence.split()
+	# Print the words
+	print("" "".join(words))
+	# Print the first 3 words
+	print("" "".join(words[:3]))
+	# Print the last 3 words
+	print("" "".join(","def bi-grams(a1):
+	""""""Print the bi-grams of a sentence.""""""
+	for i in range(len(a1)-1):
+		print(a1[i], a1[i+1])","def bi-grams(a1):
+	""""""Print the bi-grams of a sentence.""""""
+	for i in range(len(a1)-1):
+		return(a1[i], a1[i+1])"
+8,8,"def top_note(a1,a2,a3,a4):
+	""""""Print name with top note out of a dict.""""""","[""assert top_note([3, 5, 4],[3, 1, 1],[1, 2, 3],[0, 4, 4]) == 'Kevin'"", ""assert top_note([0],[1],[2],[3]) == 'Mitch'"", ""assert top_note([0, 7],[1, 9],[2, 7],[3, 6]) == 'Mike'"", ""assert top_note([-1],[-1],[1],[-1]) == 'Mike'"", ""assert top_note([0],[10000],[1000],[9999]) == 'John'""]","def top_note(a1,a2,a3,a4):
+	""""""Print name with top note out of a dict.""""""
+	print(a1,a2,a3,a4)
+	print(a1.get('top_note'))
+	print(a2.get('top_note'))
+	print(a3.get('top_note'))
+	print(a4.get('top_note'))
+
+def top_note_list(a1,a2,a3,a4):
+	""""""Print name with top note out of a list.""""""
+	print(a1,a2,a3,a4)
+	print(a1[0].get","def top_note(a1,a2,a3,a4):
+	""""""Print name with top note out of a dict.""""""
+	print(a1,a2,a3,a4)
+	print(a1.get('top_note'))
+	print(a2.get('top_note'))
+	print(a3.get('top_note'))
+	print(a4.get('top_note'))","def top_note(a1,a2,a3,a4):
+	""""""Print name with top note out of a dict.""""""
+	return(a1,a2,a3,a4)
+	return(a1.get('top_note'))
+	return(a2.get('top_note'))
+	return(a3.get('top_note'))
+	return(a4.get('top_note'))"
+9,9,"def hex_to_binary(a1):
+	""""""Hex to binary and reverse.""""""","['assert hex_to_binary(255) == 255', 'assert hex_to_binary(170) == 170', 'assert hex_to_binary(175) == 175', 'assert hex_to_binary(18) == 18', 'assert hex_to_binary(170) == 170']","def hex_to_binary(a1):
+	""""""Hex to binary and reverse.""""""
+	return bin(int(a1, 16))[2:].zfill(len(a1))[::-1]
+
+def binary_to_hex(a1):
+	""""""Binary to hex and reverse.""""""
+	return hex(int(a1, 2))[2:].zfill(len(a1))[::-1]
+
+def binary_to_decimal(a1):
+	""""""Binary to decimal and reverse.""""""
+	return int(a1, 2)
+
+def decimal_to_binary(a1):
+	""""""Decimal to binary and reverse.""""""
+	return","def hex_to_binary(a1):
+	""""""Hex to binary and reverse.""""""
+	return bin(int(a1, 16))[2:].zfill(len(a1))[::-1]","def hex_to_binary(a1):
+	""""""Hex to binary and reverse.""""""
+	return bin(int(a1, 16))[2:].zfill(len(a1))[::-1]"
+10,10,"def invert_dict(a1,a2,a3):
+	""""""Detect inversion of dict.""""""","[""assert invert_dict(['a', 'b'],[1, 2],'') == False"", ""assert invert_dict(['a', 'b'],[1, 2],'inverted') == True"", ""assert invert_dict(['a', 'b', 'c'],[1, 2, -1],'') == False"", ""assert invert_dict(['a', 'b', 'c'],[1, 2, -1],'inverted') == True"", ""assert invert_dict(['1'],[1],'') == False""]","def invert_dict(a1,a2,a3):
+	""""""Detect inversion of dict.""""""
+	if a1 in a2:
+		if a2[a1] in a3:
+			return a3[a2[a1]]
+		else:
+			return a1
+	else:
+		return a1
+
+def get_dict_value(a1,a2,a3):
+	""""""Get value of dict.""""""
+	if a1 in a2:
+		if a2[a1] in a3:
+			return a3[a2[a1]]
+		else:
+			return a1
+	else:
+		return","def invert_dict(a1,a2,a3):
+	""""""Detect inversion of dict.""""""
+	if a1 in a2:
+		if a2[a1] in a3:
+			return a3[a2[a1]]
+		else:
+			return a1
+	else:
+		return a1","def invert_dict(a1,a2,a3):
+	""""""Detect inversion of dict.""""""
+	if a1 in a2:
+		if a2[a1] in a3:
+			return a3[a2[a1]]
+		else:
+			return a1
+	else:
+		return a1"
+11,11,"def class_definition(a1,a2,a3,a4,a5):
+	""""""Create POJO class.""""""","[""assert class_definition('David Jones',25,175,75,'age') == 'David Jones is age 25'"", ""assert class_definition('Paul Smith',50,160,60,'weight') == 'Paul Smith weighs 60 kg'"", ""assert class_definition('Paul Smith',50,160,60,'height') == 'Paul Smith is 160 cm'"", ""assert class_definition('Herr Schmidth Gold',50,210,60,'height') == 'Herr Schmidth Gold is 210 cm'"", ""assert class_definition('Paul Smith',5,160,60,'age') == 'Paul Smith is age 5'""]","def class_definition(a1,a2,a3,a4,a5):
+	""""""Create POJO class.""""""
+	class_name = a1
+	class_doc = a2
+	class_methods = a3
+	class_attributes = a4
+	class_methods_doc = a5
+	class_attributes_doc = a5
+	class_methods_attributes = a4
+	class_methods_attributes_doc = a5
+	class_methods_attributes_doc_2 = a5
+	class_methods_attributes_doc_3 = a5
+	class_methods_attributes_doc_4 = a5
+	class_methods_attributes_doc_5 =","def class_definition(a1,a2,a3,a4,a5):
+	""""""Create POJO class.""""""
+	class_name = a1
+	class_doc = a2
+	class_methods = a3
+	class_attributes = a4
+	class_methods_doc = a5
+	class_attributes_doc = a5
+	class_methods_attributes = a4
+	class_methods_attributes_doc = a5
+	class_methods_attributes_doc_2 = a5
+	class_methods_attributes_doc_3 = a5
+	class_methods_attributes_doc_4 = a5
+	class_methods_attributes_doc_5 =","def class_definition(a1,a2,a3,a4,a5):
+	""""""Create POJO class.""""""
+	class_name = a1
+	class_doc = a2
+	class_methods = a3
+	class_attributes = a4
+	class_methods_doc = a5
+	class_attributes_doc = a5
+	class_methods_attributes = a4
+	class_methods_attributes_doc = a5
+	class_methods_attributes_doc_2 = a5
+	class_methods_attributes_doc_3 = a5
+	class_methods_attributes_doc_4 = a5
+	class_methods_attributes_doc_5 ="
+12,12,"def longest_number(a1):
+	""""""Print longest number.""""""","['assert longest_number([1, 2, 3, 12]) == 12', 'assert longest_number([-123, 2, 3, 12]) == -123', 'assert longest_number([1]) == 1', 'assert longest_number([-12, 1]) == -12', 'assert longest_number([1, 22, 333, 4444, -55555]) == -55555']","def longest_number(a1):
+	""""""Print longest number.""""""
+	a2 = a1.split()
+	a3 = []
+	for i in a2:
+		a3.append(int(i))
+	a4 = max(a3)
+	print(a4)
+
+longest_number(""1234567890123456789012345678901234567890123456789012345678901234567890","def longest_number(a1):
+	""""""Print longest number.""""""
+	a2 = a1.split()
+	a3 = []
+	for i in a2:
+		a3.append(int(i))
+	a4 = max(a3)
+	print(a4)","def longest_number(a1):
+	""""""Print longest number.""""""
+	a2 = a1.split()
+	a3 = []
+	for i in a2:
+		a3.append(int(i))
+	a4 = max(a3)
+	return(a4)"
+13,13,"def linear_regression(a1):
+	""""""Fit linear regression model with specified function and sk-learn.""""""","['assert linear_regression(1) == 2', 'assert linear_regression(2) == 4', 'assert linear_regression(3) == 6', 'assert linear_regression(4) == 8', 'assert linear_regression(5) == 10']","def linear_regression(a1):
+	""""""Fit linear regression model with specified function and sk-learn.""""""
+	# Fitting model
+	model = LinearRegression()
+	model.fit(a1.reshape(-1,1), a1)
+	# Predicting the output
+	y_pred = model.predict(a1.reshape(-1,1))
+	# Returning the model
+	return model, y_pred
+
+def linear_regression_with_sk_learn(a1):
+	""""""Fit linear regression model with specified function and sklearn.""""""
+	# Fitting model
+	model = LinearRegression()
+	model.fit(a1.reshape(-1,1","def linear_regression(a1):
+	""""""Fit linear regression model with specified function and sk-learn.""""""
+	# Fitting model
+	model = LinearRegression()
+	model.fit(a1.reshape(-1,1), a1)
+	# Predicting the output
+	y_pred = model.predict(a1.reshape(-1,1))
+	# Returning the model
+	return model, y_pred","def linear_regression(a1):
+	""""""Fit linear regression model with specified function and sk-learn.""""""
+	# Fitting model
+	model = LinearRegression()
+	model.fit(a1.reshape(-1,1), a1)
+	# Predicting the output
+	y_pred = model.predict(a1.reshape(-1,1))
+	# Returning the model
+	return model, y_pred"
+14,14,"def encrypt_and_decrypt(a1):
+	""""""Rotate alphabet for encryption. Write a function for decryption (inverse of encrypt()). Concat should give identity function.""""""","[""assert encrypt_and_decrypt('hi') == ['hi', 'jk']"", ""assert encrypt_and_decrypt('asdfghjkl') == ['asdfghjkl', 'cufhijlmn']"", ""assert encrypt_and_decrypt('gf') == ['gf', 'ih']"", ""assert encrypt_and_decrypt('Hello World') == ['Hello World', 'Hgnnq Wqtnf']"", ""assert encrypt_and_decrypt('This is a LONG string for our encryption algOrithm.') == ['This is a LONG string for our encryption algOrithm.', 'Tjku ku c LONG uvtkpi hqt qwt gpetarvkqp cniOtkvjo.']""]","def encrypt_and_decrypt(a1):
+	""""""Rotate alphabet for encryption. Write a function for decryption (inverse of encrypt()). Concat should give identity function.""""""
+	a2 = a1
+	for i in range(len(a1)):
+		a2 = a2[1:] + a2[0]
+	return a2
+
+def encrypt(a1):
+	""""""Rotate alphabet for encryption. Write a function for decryption (inverse of encrypt()). Concat should give identity function.""""""
+	a2 = a1
+	for i in range(len(a1)):
+		a2 = a2[1:] + a2[0]
+	return a2
+
+def decrypt(a1):
+	""""""Rotate alphabet for encryption","def encrypt_and_decrypt(a1):
+	""""""Rotate alphabet for encryption. Write a function for decryption (inverse of encrypt()). Concat should give identity function.""""""
+	a2 = a1
+	for i in range(len(a1)):
+		a2 = a2[1:] + a2[0]
+	return a2","def encrypt_and_decrypt(a1):
+	""""""Rotate alphabet for encryption. Write a function for decryption (inverse of encrypt()). Concat should give identity function.""""""
+	a2 = a1
+	for i in range(len(a1)):
+		a2 = a2[1:] + a2[0]
+	return a2"
+15,15,"def compare_object_equivalence(a1,a2,a3):
+	""""""Implement a class with __hash__ and obtain a count unique objects.""""""","[""assert compare_object_equivalence(<built-in function id>,(1, 2, 2),'C') == 2"", ""assert compare_object_equivalence('name',(1, 2, 2),'C') == 3"", ""assert compare_object_equivalence(<built-in function id>,(2, 2, 2),'C') == 1"", ""assert compare_object_equivalence(<built-in function id>,(1, 2, 3),'C') == 3"", ""assert compare_object_equivalence('name',(1, 1, 1),'B') == 2""]","def compare_object_equivalence(a1,a2,a3):
+	""""""Implement a class with __hash__ and obtain a count unique objects.""""""
+	return hash(a1) == hash(a2) == hash(a3)
+
+def compare_object_equivalence_with_hash(a1,a2,a3):
+	""""""Implement a class with __hash__ and obtain a count unique objects.""""""
+	return hash(a1) == hash(a2) == hash(a3)
+
+def compare_object_equivalence_with_hash_and_equality(a1,a2,a3):
+	""""""Implement a class with __hash__ and obtain a count unique objects.""""""
+	return hash","def compare_object_equivalence(a1,a2,a3):
+	""""""Implement a class with __hash__ and obtain a count unique objects.""""""
+	return hash(a1) == hash(a2) == hash(a3)","def compare_object_equivalence(a1,a2,a3):
+	""""""Implement a class with __hash__ and obtain a count unique objects.""""""
+	return hash(a1) == hash(a2) == hash(a3)"
+16,16,"def drunken_python(a1):
+	""""""Overload built-in functions, and write functions which correct drunken functions.""""""","[""assert drunken_python(29348) == [29348, '29348']"", ""assert drunken_python(1) == [1, '1']"", ""assert drunken_python(123) == [123, '123']"", ""assert drunken_python(2344) == [2344, '2344']"", ""assert drunken_python(-1) == [-1, '-1']""]","def drunken_python(a1):
+	""""""Overload built-in functions, and write functions which correct drunken functions.""""""
+	a2 = a1 + 1
+	a3 = a2 + 1
+	a4 = a3 + 1
+	a5 = a4 + 1
+	a6 = a5 + 1
+	a7 = a6 + 1
+	a8 = a7 + 1
+	a9 = a8 + 1
+	a10 = a9 + 1
+	a11 = a10 + 1
+	a12 = a11 + 1
+	a13 = a12 + 1
+","def drunken_python(a1):
+	""""""Overload built-in functions, and write functions which correct drunken functions.""""""
+	a2 = a1 + 1
+	a3 = a2 + 1
+	a4 = a3 + 1
+	a5 = a4 + 1
+	a6 = a5 + 1
+	a7 = a6 + 1
+	a8 = a7 + 1
+	a9 = a8 + 1
+	a10 = a9 + 1
+	a11 = a10 + 1
+	a12 = a11 + 1
+	a13 = a12 + 1
+","def drunken_python(a1):
+	""""""Overload built-in functions, and write functions which correct drunken functions.""""""
+	a2 = a1 + 1
+	a3 = a2 + 1
+	a4 = a3 + 1
+	a5 = a4 + 1
+	a6 = a5 + 1
+	a7 = a6 + 1
+	a8 = a7 + 1
+	a9 = a8 + 1
+	a10 = a9 + 1
+	a11 = a10 + 1
+	a12 = a11 + 1
+	a13 = a12 + 1
+"
+17,17,"def morse_code(a1):
+	""""""Encode a string into morse code given its conversion rule.""""""","[""assert morse_code('Hello World') == 'HELLO WORLD'"", ""assert morse_code('Hello Foo') == 'HELLO FOO'"", ""assert morse_code('Hello WORLD') == 'HELLO WORLD'"", ""assert morse_code('foo BAR') == 'FOO BAR'"", ""assert morse_code('This is a long string') == 'THIS IS A LONG STRING'""]","def morse_code(a1):
+	""""""Encode a string into morse code given its conversion rule.""""""
+	morse = """"
+	for letter in a1:
+		if letter == "" "":
+			morse += "" ""
+		elif letter.isupper():
+			morse += ""A""
+		elif letter.islower():
+			morse += ""B""
+		elif letter.isdigit():
+			morse += ""C""
+		elif letter.isalpha():
+			morse += ""D""
+		elif letter == "" "":
+			morse += "" ""
+		else:
+			morse += ""E""
+	return morse
+
+def morse_","def morse_code(a1):
+	""""""Encode a string into morse code given its conversion rule.""""""
+	morse = """"
+	for letter in a1:
+		if letter == "" "":
+			morse += "" ""
+		elif letter.isupper():
+			morse += ""A""
+		elif letter.islower():
+			morse += ""B""
+		elif letter.isdigit():
+			morse += ""C""
+		elif letter.isalpha():
+			morse += ""D""
+		elif letter == "" "":
+			morse += "" ""
+		else:
+			morse += ""E""
+	return morse","def morse_code(a1):
+	""""""Encode a string into morse code given its conversion rule.""""""
+	morse = """"
+	for letter in a1:
+		if letter == "" "":
+			morse += "" ""
+		elif letter.isupper():
+			morse += ""A""
+		elif letter.islower():
+			morse += ""B""
+		elif letter.isdigit():
+			morse += ""C""
+		elif letter.isalpha():
+			morse += ""D""
+		elif letter == "" "":
+			morse += "" ""
+		else:
+			morse += ""E""
+	return morse"
+18,18,"def two-sum(a1,a2):
+	""""""Implement the two-sum problem on a given input pair.""""""","['assert two-sum([0, 1, 2, 3],4) == [1, 3]', 'assert two-sum([1, 11, 111],122) == [1, 2]', 'assert two-sum([-1, 0, 2, 4],3) == [0, 3]', 'assert two-sum([10, 20, 30, 40],70) == [2, 3]', 'assert two-sum([-1, -1, 123, -123],0) == [2, 3]']","def two-sum(a1,a2):
+	""""""Implement the two-sum problem on a given input pair.""""""
+	# Write your code here
+	a1.sort()
+	a2.sort()
+	for i in range(len(a1)):
+		for j in range(len(a2)):
+			if a1[i]+a2[j] == 0:
+				return [a1[i],a2[j]]
+	return []
+
+def two_sum_2(a1,a2):
+	""""""Implement the two-sum problem on a given input pair.""""""
+	# Write your code here
+	a1.sort()
+	a2","def two-sum(a1,a2):
+	""""""Implement the two-sum problem on a given input pair.""""""
+	# Write your code here
+	a1.sort()
+	a2.sort()
+	for i in range(len(a1)):
+		for j in range(len(a2)):
+			if a1[i]+a2[j] == 0:
+				return [a1[i],a2[j]]
+	return []","def two-sum(a1,a2):
+	""""""Implement the two-sum problem on a given input pair.""""""
+	# Write your code here
+	a1.sort()
+	a2.sort()
+	for i in range(len(a1)):
+		for j in range(len(a2)):
+			if a1[i]+a2[j] == 0:
+				return [a1[i],a2[j]]
+	return []"
+19,19,"def k-means(a1):
+	""""""Implement and run k-means on sampled points.""""""","['assert k-means(10) == ((-10, -10), (10, 10))', 'assert k-means(20) == ((-20, -20), (20, 20))', 'assert k-means(30) == ((-30, -30), (30, 30))', 'assert k-means(40) == ((-40, -40), (40, 40))', 'assert k-means(50) == ((-50, -50), (50, 50))']","def k-means(a1):
+	""""""Implement and run k-means on sampled points.""""""
+	# Initialize the centroids randomly
+	centroids = np.random.rand(k, dim)
+	# Initialize the cluster labels as -1
+	labels = -1 * np.ones(n)
+	# Initialize the cluster centers as the first point
+	cluster_centers = a1[0]
+	# Initialize the number of iterations
+	iterations = 0
+	# Repeat until the number of iterations is less than 100
+	while iterations < 100:
+		# Assign each point to the closest centroid
+		for i in range(n):
+			#","def k-means(a1):
+	""""""Implement and run k-means on sampled points.""""""
+	# Initialize the centroids randomly
+	centroids = np.random.rand(k, dim)
+	# Initialize the cluster labels as -1
+	labels = -1 * np.ones(n)
+	# Initialize the cluster centers as the first point
+	cluster_centers = a1[0]
+	# Initialize the number of iterations
+	iterations = 0
+	# Repeat until the number of iterations is less than 100
+	while iterations < 100:
+		# Assign each point to the closest centroid
+		for i in range(n):
+			#","def k-means(a1):
+	""""""Implement and run k-means on sampled points.""""""
+	# Initialize the centroids randomly
+	centroids = np.random.rand(k, dim)
+	# Initialize the cluster labels as -1
+	labels = -1 * np.ones(n)
+	# Initialize the cluster centers as the first point
+	cluster_centers = a1[0]
+	# Initialize the number of iterations
+	iterations = 0
+	# Repeat until the number of iterations is less than 100
+	while iterations < 100:
+		# Assign each point to the closest centroid
+		for i in range(n):
+			#"
+20,20,"def even_odd_sum(numbers):
+	""""""Print the sum of even and odd numbers in an array.""""""","['assert even_odd_sum([1]) == [0, 1]', 'assert even_odd_sum([2e+100, 5e+100, -11, 10]) == [7e+100, -11]', 'assert even_odd_sum([]) == [0, 0]', 'assert even_odd_sum([-5, 1, 6, -25, -36, 6]) == [-24, -29]', 'assert even_odd_sum([73, 4, 14, 95, 69, 57, 82, 4, 75, 50, 91, 4, 83, 89, 61, 67, 53, 54, 48, 10]) == [270, 813]']","def even_odd_sum(numbers):
+	""""""Print the sum of even and odd numbers in an array.""""""
+	even_sum = 0
+	odd_sum = 0
+	for number in numbers:
+		if number % 2 == 0:
+			even_sum += number
+		else:
+			odd_sum += number
+	print(f""The sum of even numbers is {even_sum}"")
+	print(f""The sum of odd numbers is {odd_sum}"")
+
+
+def even_odd_sum_2(numbers):
+	""""""Print the sum of even and odd numbers in an array.""""""
+	even_sum = 0
+	odd_sum =","def even_odd_sum(numbers):
+	""""""Print the sum of even and odd numbers in an array.""""""
+	even_sum = 0
+	odd_sum = 0
+	for number in numbers:
+		if number % 2 == 0:
+			even_sum += number
+		else:
+			odd_sum += number
+	print(f""The sum of even numbers is {even_sum}"")
+	print(f""The sum of odd numbers is {odd_sum}"")","def even_odd_sum(numbers):
+	""""""Print the sum of even and odd numbers in an array.""""""
+	even_sum = 0
+	odd_sum = 0
+	for number in numbers:
+		if number % 2 == 0:
+			even_sum += number
+		else:
+			odd_sum += number
+	return(f""The sum of even numbers is {even_sum}"")
+	return(f""The sum of odd numbers is {odd_sum}"")"
+21,21,"def shift_zeros(lst):
+	""""""Move all the zeroes in a list to the right.""""""","[""assert shift_zeros(['a', 'b', 'c', 'd', 'e', 'f', 'g']) == ['a', 'b', 'c', 'd', 'e', 'f', 'g']"", ""assert shift_zeros(['a', 0, 0, 'b', 'c', 'd', 0, 1, 0, 1, 0, 3, 0, 1, 9, 0, 0, 0, 0, 9]) == ['a', 'b', 'c', 'd', 1, 1, 3, 1, 9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"", 'assert shift_zeros([0]) == [0]', 'assert shift_zeros([-1, 0, 1e-05, 0, 1e-30, 0]) == [-1, 1e-05, 1e-30, 0, 0, 0]', 'assert shift_zeros([0, 1, None, 2, False, 1, 0]) == [1, None, 2, False, 1, 0, 0]']","def shift_zeros(lst):
+	""""""Move all the zeroes in a list to the right.""""""
+	for i in range(len(lst)):
+		if lst[i] == 0:
+			lst.insert(i, 0)
+			lst.pop(i+1)
+	return lst
+
+def get_next_state(state, action):
+	""""""Get the next state given the current state and action.""""""
+	if action == 0:
+		return state + 1
+	elif action == 1:
+		return state - 1
+	elif action == 2:
+		return state + 10
+	elif action == 3:","def shift_zeros(lst):
+	""""""Move all the zeroes in a list to the right.""""""
+	for i in range(len(lst)):
+		if lst[i] == 0:
+			lst.insert(i, 0)
+			lst.pop(i+1)
+	return lst","def shift_zeros(lst):
+	""""""Move all the zeroes in a list to the right.""""""
+	for i in range(len(lst)):
+		if lst[i] == 0:
+			lst.insert(i, 0)
+			lst.pop(i+1)
+	return lst"
+22,22,"def bootstrap_95%_ci(array,n):
+	""""""Define an array, sample N times, calculate means, calculate the percentile.""""""","['assert bootstrap_95%_ci([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49],1000) == [20.525, 28.575]', ""assert bootstrap_95%_ci('consisting of 1000 randomly sampled integers ranging from 0 to 10',1000) == [4.8025, 5.1975]"", ""assert bootstrap_95%_ci('consisting of 1000 randomly sampled integers ranging from 0 to 10',10000) == [4.8025, 5.1975]"", ""assert bootstrap_95%_ci('consisting of 1000 uniformly sampled floats in [0, 1)',1000) == [0.4825, 0.5175]"", 'assert bootstrap_95%_ci([1, 1, 1, 1, 1, 1, 1, 1, 1, 1],100) == [1, 1]']","def bootstrap_95%_ci(array,n):
+	""""""Define an array, sample N times, calculate means, calculate the percentile.""""""
+	mean = np.mean(array)
+	array = np.array(array)
+	array = array.reshape(len(array),1)
+	array = array.repeat(n,axis=1)
+	array = array.reshape(len(array),n)
+	array = array.mean(axis=1)
+	array = array.reshape(len(array),1)
+	array = array.repeat(n,axis=1)
+	array = array.reshape(len(array),n)
+	array = array.mean(axis=1)","def bootstrap_95%_ci(array,n):
+	""""""Define an array, sample N times, calculate means, calculate the percentile.""""""
+	mean = np.mean(array)
+	array = np.array(array)
+	array = array.reshape(len(array),1)
+	array = array.repeat(n,axis=1)
+	array = array.reshape(len(array),n)
+	array = array.mean(axis=1)
+	array = array.reshape(len(array),1)
+	array = array.repeat(n,axis=1)
+	array = array.reshape(len(array),n)
+	array = array.mean(axis=1)","def bootstrap_95%_ci(array,n):
+	""""""Define an array, sample N times, calculate means, calculate the percentile.""""""
+	mean = np.mean(array)
+	array = np.array(array)
+	array = array.reshape(len(array),1)
+	array = array.repeat(n,axis=1)
+	array = array.reshape(len(array),n)
+	array = array.mean(axis=1)
+	array = array.reshape(len(array),1)
+	array = array.repeat(n,axis=1)
+	array = array.reshape(len(array),n)
+	array = array.mean(axis=1)"
+23,23,"def sum_even_digits(a,b):
+	""""""Sum even digits between two numbers.""""""","['assert sum_even_digits(8,2) == 20', 'assert sum_even_digits(2,8) == 20', 'assert sum_even_digits(2,6) == 12', 'assert sum_even_digits(132,6) == 14', 'assert sum_even_digits(17,96) == 0']","def sum_even_digits(a,b):
+	""""""Sum even digits between two numbers.""""""
+	return sum(int(i) for i in str(a) if int(i)%2==0) + sum(int(i) for i in str(b) if int(i)%2==0)
+
+def sum_odd_digits(a,b):
+	""""""Sum odd digits between two numbers.""""""
+	return sum(int(i) for i in str(a) if int(i)%2!=0) + sum(int(i) for i in str(b) if int(i)%2!=0)
+
+def sum_digits(a,","def sum_even_digits(a,b):
+	""""""Sum even digits between two numbers.""""""
+	return sum(int(i) for i in str(a) if int(i)%2==0) + sum(int(i) for i in str(b) if int(i)%2==0)","def sum_even_digits(a,b):
+	""""""Sum even digits between two numbers.""""""
+	return sum(int(i) for i in str(a) if int(i)%2==0) + sum(int(i) for i in str(b) if int(i)%2==0)"
+24,24,"def min-max_diff(A):
+	""""""Compute the difference between maximum and minimum numbers in a list.""""""","['assert min-max_diff([0, 4]) == 4', 'assert min-max_diff([4, 0]) == 4', 'assert min-max_diff([0]) == 0', 'assert min-max_diff([0, 7, 6]) == 7', 'assert min-max_diff([2, 4, 7, 20, 6]) == 18']","def min-max_diff(A):
+	""""""Compute the difference between maximum and minimum numbers in a list.""""""
+	return max(A) - min(A)
+
+def min_max_diff_list(A):
+	""""""Compute the difference between maximum and minimum numbers in a list.""""""
+	return max(A) - min(A)
+
+def min_max_diff_dict(A):
+	""""""Compute the difference between maximum and minimum numbers in a list.""""""
+	return max(A) - min(A)
+
+def min_max_diff_tuple(A):
+	""""""Compute the difference between maximum and minimum numbers in a list.""""""
+	return max(A) -","def min-max_diff(A):
+	""""""Compute the difference between maximum and minimum numbers in a list.""""""
+	return max(A) - min(A)","def min-max_diff(A):
+	""""""Compute the difference between maximum and minimum numbers in a list.""""""
+	return max(A) - min(A)"
+25,25,"def distinct_chars(A):
+	""""""Print the sorted, case-insensitive unique characters of a string.""""""","[""assert distinct_chars('abcde') == ['a', 'b', 'c', 'd', 'e']"", ""assert distinct_chars('abcdecadeCADE') == ['a', 'b', 'c', 'd', 'e']"", ""assert distinct_chars('aaaaAAAAaaaa') == ['a']"", ""assert distinct_chars('Jerry jERRY JeRRRY') == [' ', 'e', 'j', 'r', 'y']"", ""assert distinct_chars('ddddc') == ['c', 'd']""]","def distinct_chars(A):
+	""""""Print the sorted, case-insensitive unique characters of a string.""""""
+	return sorted(set(A.lower()))
+
+def distinct_chars_count(A):
+	""""""Print the number of unique characters of a string.""""""
+	return len(set(A.lower()))
+
+def distinct_chars_count_sorted(A):
+	""""""Print the number of unique characters of a string, sorted.""""""
+	return sorted(set(A.lower()))
+
+def distinct_chars_count_sorted_unique(A):
+	""""""Print the number of unique characters of a string, sorted, ignoring case.""""""
+	return sorted(set(A.lower","def distinct_chars(A):
+	""""""Print the sorted, case-insensitive unique characters of a string.""""""
+	return sorted(set(A.lower()))","def distinct_chars(A):
+	""""""Print the sorted, case-insensitive unique characters of a string.""""""
+	return sorted(set(A.lower()))"
+26,26,"def longer_string(A,B):
+	""""""Compare and print the longer string given two strings.""""""","[""assert longer_string('abcde','ab') == 'abcde'"", ""assert longer_string('ab','abcde') == 'abcde'"", ""assert longer_string('a','aa') == 'aa'"", ""assert longer_string('aaaaaaaaaa','cdeee') == 'aaaaaaaaaa'"", ""assert longer_string('f','gg') == 'gg'""]","def longer_string(A,B):
+	""""""Compare and print the longer string given two strings.""""""
+	if len(A) > len(B):
+		print(A)
+	else:
+		print(B)
+
+longer_string(""Hello"",""World"")
+longer_string(""Hello"",""Hello"")
+longer_string(""Hello"",""Hello World"")
+longer_string(""Hello"",""Hello World Hello"")
+longer_string(""Hello"",""Hello World Hello World"")
+longer_string(""Hello"",""Hello World Hello World Hello World"")
+longer_string(""Hello"",""Hello World Hello World Hello World Hello World"")
+longer_string(""Hello"",""Hello World Hello","def longer_string(A,B):
+	""""""Compare and print the longer string given two strings.""""""
+	if len(A) > len(B):
+		print(A)
+	else:
+		print(B)","def longer_string(A,B):
+	""""""Compare and print the longer string given two strings.""""""
+	if len(A) > len(B):
+		return(A)
+	else:
+		return(B)"
+27,27,"def sum_float_digits(A):
+	""""""Sum numbers before an after the decimal point of a float.""""""","['assert sum_float_digits(17.82) == 99', 'assert sum_float_digits(1.1) == 2', 'assert sum_float_digits(1000000.0000001) == 1000001', 'assert sum_float_digits(0.0101) == 101', 'assert sum_float_digits(100.5) == 105']","def sum_float_digits(A):
+	""""""Sum numbers before an after the decimal point of a float.""""""
+	return sum(int(i) for i in str(A))
+
+def sum_float_digits_with_decimal_point(A):
+	""""""Sum numbers before an after the decimal point of a float.""""""
+	return sum(int(i) for i in str(A).split('.')[0])
+
+def sum_float_digits_with_decimal_point_and_exponent(A):
+	""""""Sum numbers before an after the decimal point of a float.""""""
+	return sum(int(i) for i in str(A).split('.')[1])
+
+def sum","def sum_float_digits(A):
+	""""""Sum numbers before an after the decimal point of a float.""""""
+	return sum(int(i) for i in str(A))","def sum_float_digits(A):
+	""""""Sum numbers before an after the decimal point of a float.""""""
+	return sum(int(i) for i in str(A))"
+28,28,"def count_vowels(s):
+	""""""Count the number of vowels in a string.""""""","[""assert count_vowels('CelebrAtion') == 5"", ""assert count_vowels('PaLm') == 1"", ""assert count_vowels('PrEdictiOn') == 4"", ""assert count_vowels('') == 0"", ""assert count_vowels('ABC') == 1""]","def count_vowels(s):
+	""""""Count the number of vowels in a string.""""""
+	vowels = ['a', 'e', 'i', 'o', 'u']
+	return sum(s.count(v) for v in vowels)
+
+def count_consonants(s):
+	""""""Count the number of consonants in a string.""""""
+	consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l','m', 'n', 'p', 'q', 'r','s', 't', 'v', 'w', 'x', 'y',","def count_vowels(s):
+	""""""Count the number of vowels in a string.""""""
+	vowels = ['a', 'e', 'i', 'o', 'u']
+	return sum(s.count(v) for v in vowels)","def count_vowels(s):
+	""""""Count the number of vowels in a string.""""""
+	vowels = ['a', 'e', 'i', 'o', 'u']
+	return sum(s.count(v) for v in vowels)"
+29,29,"def factorial(n):
+	""""""Compute the factorial of n.""""""","['assert factorial(2) == 2', 'assert factorial(4) == 24', 'assert factorial(10) == 3628800', 'assert factorial(1) == 1', 'assert factorial(5) == 120']","def factorial(n):
+	""""""Compute the factorial of n.""""""
+	if n == 0:
+		return 1
+	else:
+		return n * factorial(n - 1)
+
+def fibonacci(n):
+	""""""Compute the nth Fibonacci number.""""""
+	if n == 0:
+		return 0
+	elif n == 1:
+		return 1
+	else:
+		return fibonacci(n - 1) + fibonacci(n - 2)
+
+def fibonacci_recursive(n):
+	""""""Compute the nth Fibonacci number.""""""
+	if n == 0:
+		return","def factorial(n):
+	""""""Compute the factorial of n.""""""
+	if n == 0:
+		return 1
+	else:
+		return n * factorial(n - 1)","def factorial(n):
+	""""""Compute the factorial of n.""""""
+	if n == 0:
+		return 1
+	else:
+		return n * factorial(n - 1)"
+30,30,"def max_edge_triangle(a,b):
+	""""""Finds the maximum range of a triangle's third edge.""""""","['assert max_edge_triangle(8,9) == [17, 2]', 'assert max_edge_triangle(5,7) == [11, 3]', 'assert max_edge_triangle(9,2) == [10, 8]', 'assert max_edge_triangle(1,1) == [1, 1]', 'assert max_edge_triangle(1000,1000) == [1999, 1]']","def max_edge_triangle(a,b):
+	""""""Finds the maximum range of a triangle's third edge.""""""
+	return max(a,b) - min(a,b)
+
+def max_edge_square(a,b,c):
+	""""""Finds the maximum range of a square's third edge.""""""
+	return max(a,b,c) - min(a,b,c)
+
+def max_edge_rectangle(a,b,c,d):
+	""""""Finds the maximum range of a rectangle's third edge.""""""
+	return max(a,b,c,d) - min(a,b,c,d)
+
+def max_edge","def max_edge_triangle(a,b):
+	""""""Finds the maximum range of a triangle's third edge.""""""
+	return max(a,b) - min(a,b)","def max_edge_triangle(a,b):
+	""""""Finds the maximum range of a triangle's third edge.""""""
+	return max(a,b) - min(a,b)"
+31,31,"def factorial_and_remainder(n):
+	""""""Compute the factorial and its remainder when divided.""""""","['assert factorial_and_remainder(2) == 2', 'assert factorial_and_remainder(4) == 4', 'assert factorial_and_remainder(10) == 0', 'assert factorial_and_remainder(1) == 1', 'assert factorial_and_remainder(5) == 0']","def factorial_and_remainder(n):
+	""""""Compute the factorial and its remainder when divided.""""""
+	fact = 1
+	for i in range(1, n+1):
+		fact *= i
+	return fact, fact % n
+
+def main():
+	""""""Main function.""""""
+	n = int(input(""Enter a number: ""))
+	fact, rem = factorial_and_remainder(n)
+	print(""Factorial: "", fact)
+	print(""Remainder: "", rem)
+
+if __name__ == ""__main__"":
+	main()
+<|endoftext|>","def factorial_and_remainder(n):
+	""""""Compute the factorial and its remainder when divided.""""""
+	fact = 1
+	for i in range(1, n+1):
+		fact *= i
+	return fact, fact % n","def factorial_and_remainder(n):
+	""""""Compute the factorial and its remainder when divided.""""""
+	fact = 1
+	for i in range(1, n+1):
+		fact *= i
+	return fact, fact % n"
+32,32,"def sum_polygon_angles(n):
+	""""""Sum the angles in a polygon.""""""","['assert sum_polygon_angles(3) == 3.14', 'assert sum_polygon_angles(4) == 6.28', 'assert sum_polygon_angles(1000) == 3135.31', 'assert sum_polygon_angles(10) == 25.13', 'assert sum_polygon_angles(100) == 307.88']","def sum_polygon_angles(n):
+	""""""Sum the angles in a polygon.""""""
+	angles = 0
+	for i in range(n):
+		angles += (i + 1) * (i + 2) / 2
+	return angles
+
+def sum_polygon_area(n):
+	""""""Sum the area of a polygon.""""""
+	return sum_polygon_angles(n) / 2
+
+def sum_polygon_perimeter(n):
+	""""""Sum the perimeter of a polygon.""""""
+	return 2 * n + sum_polygon_angles(n)
+
+def sum_polygon_volume(n):
+	""""""Sum","def sum_polygon_angles(n):
+	""""""Sum the angles in a polygon.""""""
+	angles = 0
+	for i in range(n):
+		angles += (i + 1) * (i + 2) / 2
+	return angles","def sum_polygon_angles(n):
+	""""""Sum the angles in a polygon.""""""
+	angles = 0
+	for i in range(n):
+		angles += (i + 1) * (i + 2) / 2
+	return angles"
+33,33,"def sum_string_numbers(s1,s2):
+	""""""Add together two numbers represented in string.""""""","['assert sum_string_numbers(111,222) == 333', 'assert sum_string_numbers(2,4) == 6', 'assert sum_string_numbers(0,12) == 12', 'assert sum_string_numbers(50,100) == 150', 'assert sum_string_numbers(10000,1) == 10001']","def sum_string_numbers(s1,s2):
+	""""""Add together two numbers represented in string.""""""
+	return int(s1) + int(s2)
+
+def sum_string_numbers_2(s1,s2):
+	""""""Add together two numbers represented in string.""""""
+	return int(s1) + int(s2)
+
+def sum_string_numbers_3(s1,s2):
+	""""""Add together two numbers represented in string.""""""
+	return int(s1) + int(s2)
+
+def sum_string_numbers_4(s1,s2):
+	""""""Add together two numbers represented in string.""""""
+	","def sum_string_numbers(s1,s2):
+	""""""Add together two numbers represented in string.""""""
+	return int(s1) + int(s2)","def sum_string_numbers(s1,s2):
+	""""""Add together two numbers represented in string.""""""
+	return int(s1) + int(s2)"
+34,34,"def min-max_sum(l):
+	""""""Sum the range from the minimum to the maximum of a list.""""""","['assert min-max_sum([4, 3, 8, 2]) == 35', 'assert min-max_sum([17, 16, 15, 10, 11, 12]) == 108', 'assert min-max_sum([1, 2]) == 3', 'assert min-max_sum([10]) == 10', 'assert min-max_sum([1, 100]) == 5050']","def min-max_sum(l):
+	""""""Sum the range from the minimum to the maximum of a list.""""""
+	return sum(range(min(l), max(l) + 1))
+
+def min_max_sum_list(l):
+	""""""Sum the range from the minimum to the maximum of a list.""""""
+	return sum(range(min(l), max(l) + 1))
+
+def min_max_sum_dict(d):
+	""""""Sum the range from the minimum to the maximum of a list.""""""
+	return sum(range(min(d.values()), max(d.values()) + 1))
+
+def min_max_sum_","def min-max_sum(l):
+	""""""Sum the range from the minimum to the maximum of a list.""""""
+	return sum(range(min(l), max(l) + 1))","def min-max_sum(l):
+	""""""Sum the range from the minimum to the maximum of a list.""""""
+	return sum(range(min(l), max(l) + 1))"
+35,35,"def vowel_overlap(s1,s2):
+	""""""Find the number of overlaped vowels of two words.""""""","[""assert vowel_overlap('meaty','apple') == 2"", ""assert vowel_overlap('fan','forsook') == 0"", ""assert vowel_overlap('spout','shout') == 2"", ""assert vowel_overlap('happiness','fitness') == 2"", ""assert vowel_overlap('code','fork') == 1""]","def vowel_overlap(s1,s2):
+	""""""Find the number of overlaped vowels of two words.""""""
+	vowels = ['a','e','i','o','u']
+	overlap = 0
+	for i in range(len(s1)):
+		if s1[i] in vowels and s2[i] in vowels:
+			overlap += 1
+	return overlap
+
+def vowel_overlap_count(s1,s2):
+	""""""Find the number of overlaped vowels of two words.""""""
+	vowels = ['a','e','i','o','u']
+	overlap = 0
+	for i in range(len(s","def vowel_overlap(s1,s2):
+	""""""Find the number of overlaped vowels of two words.""""""
+	vowels = ['a','e','i','o','u']
+	overlap = 0
+	for i in range(len(s1)):
+		if s1[i] in vowels and s2[i] in vowels:
+			overlap += 1
+	return overlap","def vowel_overlap(s1,s2):
+	""""""Find the number of overlaped vowels of two words.""""""
+	vowels = ['a','e','i','o','u']
+	overlap = 0
+	for i in range(len(s1)):
+		if s1[i] in vowels and s2[i] in vowels:
+			overlap += 1
+	return overlap"
+36,36,"def sum_neg(l):
+	""""""Sum of negative numbers in a list.""""""","['assert sum_neg([-1, -2, 0, 1, 5]) == -3', 'assert sum_neg([5, 2, 0, 5, 10]) == 0', 'assert sum_neg([-100, -20, -3, 0, 0]) == -123', 'assert sum_neg([-23, -2, -5, 1000, 23, -10, -100, -10]) == -150', 'assert sum_neg([5, 1000, 0, 1, 0, 0, 0, 1, 1]) == 0']","def sum_neg(l):
+	""""""Sum of negative numbers in a list.""""""
+	return sum(filter(lambda x: x < 0, l))
+
+def sum_pos(l):
+	""""""Sum of positive numbers in a list.""""""
+	return sum(filter(lambda x: x > 0, l))
+
+def sum_pos_neg(l):
+	""""""Sum of positive and negative numbers in a list.""""""
+	return sum(filter(lambda x: x > 0, filter(lambda x: x < 0, l)))
+
+def sum_pos_neg_zero(l):
+	""""""Sum of positive and negative numbers in","def sum_neg(l):
+	""""""Sum of negative numbers in a list.""""""
+	return sum(filter(lambda x: x < 0, l))","def sum_neg(l):
+	""""""Sum of negative numbers in a list.""""""
+	return sum(filter(lambda x: x < 0, l))"
+37,37,"def load_dataset(a1):
+	""""""Load from a file and print statistics.""""""","[""assert load_dataset('alco') == 44369"", ""assert load_dataset('age') == 25"", ""assert load_dataset('smoke') == 44717"", ""assert load_dataset('active') == 36516"", ""assert load_dataset('weight') == 2770""]","def load_dataset(a1):
+	""""""Load from a file and print statistics.""""""
+	print(""Loading data..."")
+	data = np.loadtxt(a1, delimiter="","")
+	print(""Data shape: "", data.shape)
+	print(""Data min: "", np.min(data))
+	print(""Data max: "", np.max(data))
+	print(""Data mean: "", np.mean(data))
+	print(""Data std: "", np.std(data))
+	print(""Data median: "", np.median(data))
+	print(""Data 95%: "", np.percentile(data, 95))
+	print(""","def load_dataset(a1):
+	""""""Load from a file and print statistics.""""""
+	print(""Loading data..."")
+	data = np.loadtxt(a1, delimiter="","")
+	print(""Data shape: "", data.shape)
+	print(""Data min: "", np.min(data))
+	print(""Data max: "", np.max(data))
+	print(""Data mean: "", np.mean(data))
+	print(""Data std: "", np.std(data))
+	print(""Data median: "", np.median(data))
+	print(""Data 95%: "", np.percentile(data, 95))
+	print(""","def load_dataset(a1):
+	""""""Load from a file and print statistics.""""""
+	return(""Loading data..."")
+	data = np.loadtxt(a1, delimiter="","")
+	return(""Data shape: "", data.shape)
+	return(""Data min: "", np.min(data))
+	return(""Data max: "", np.max(data))
+	return(""Data mean: "", np.mean(data))
+	return(""Data std: "", np.std(data))
+	return(""Data median: "", np.median(data))
+	return(""Data 95%: "", np.percentile(data, 95))
+	print("""
+38,38,"def char_length_list(s):
+	""""""Return a list of non-punctuation character lengths of a list of strings.""""""","[""assert char_length_list('Hello, World!') == [5, 6]"", ""assert char_length_list('Raising Skinny Elephants Is Utterly Boring') == [7, 6, 9, 2, 7, 6]"", ""assert char_length_list('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ') == [5, 5, 5, 3, 4, 11, 10, 4, 3, 2, 7, 6, 10, 2, 6, 2, 6, 5, 6]"", ""assert char_length_list(',.') == []"", ""assert char_length_list('Wow! Is this a real sentence?') == [4, 2, 4, 1, 4, 9]""]","def char_length_list(s):
+	""""""Return a list of non-punctuation character lengths of a list of strings.""""""
+	return [len(c) for c in s if c not in string.punctuation]
+
+def char_length_list_with_punctuation(s):
+	""""""Return a list of non-punctuation character lengths of a list of strings.""""""
+	return [len(c) for c in s if c not in string.punctuation]
+
+def char_length_list_with_punctuation_and_numbers(s):
+	""""""Return a list of non-punctuation character lengths of a list of strings.""""""
+	return [len(c) for c in s if c not in string.","def char_length_list(s):
+	""""""Return a list of non-punctuation character lengths of a list of strings.""""""
+	return [len(c) for c in s if c not in string.punctuation]","def char_length_list(s):
+	""""""Return a list of non-punctuation character lengths of a list of strings.""""""
+	return [len(c) for c in s if c not in string.punctuation]"
+39,39,"def hex_to_rgb(s):
+	""""""Convert a six hexadecimal digit string into list of RGB values.""""""","[""assert hex_to_rgb('#FFF') == True"", ""assert hex_to_rgb('#egacea') == False"", ""assert hex_to_rgb('#12') == False"", 'assert hex_to_rgb(123456) == False', ""assert hex_to_rgb('#ffb600') == True""]","def hex_to_rgb(s):
+	""""""Convert a six hexadecimal digit string into list of RGB values.""""""
+	return [int(s[i:i+2], 16) for i in range(0, len(s), 2)]
+
+def rgb_to_hex(r, g, b):
+	""""""Convert a list of RGB values into six hexadecimal digit strings.""""""
+	return ''.join(['%02x' % c for c in (r, g, b)])
+
+def rgb_to_hsv(r, g, b):
+	""""""Convert a list of RGB values into HSV values.""""""
+	r, g, b = [float(c) /","def hex_to_rgb(s):
+	""""""Convert a six hexadecimal digit string into list of RGB values.""""""
+	return [int(s[i:i+2], 16) for i in range(0, len(s), 2)]","def hex_to_rgb(s):
+	""""""Convert a six hexadecimal digit string into list of RGB values.""""""
+	return [int(s[i:i+2], 16) for i in range(0, len(s), 2)]"
+40,40,"def majority_vote(lst):
+	""""""Check if a certain element is the majority of a given list.""""""","['assert majority_vote([1, 1, 2, 2, 2, 2]) == 2', 'assert majority_vote([]) == None', 'assert majority_vote([100, 100, 0]) == 100', 'assert majority_vote([0, 0, 0, 0, 0, 1, 1, 1, 1]) == 0', 'assert majority_vote([1, 2, 3, 4, 5, 6, 6, 6, 6, 6]) == None']","def majority_vote(lst):
+	""""""Check if a certain element is the majority of a given list.""""""
+	count = 0
+	for i in lst:
+		if i == lst[count]:
+			count += 1
+		else:
+			count = 0
+	return count > len(lst) // 2
+
+def main():
+	""""""Main function.""""""
+	# Read the input file
+	with open(sys.argv[1], 'r') as f:
+		lines = f.readlines()
+
+	# Parse the input file
+	votes = [int(line.strip()) for line in lines]
+
+	# Calculate the majority vote
+	majority","def majority_vote(lst):
+	""""""Check if a certain element is the majority of a given list.""""""
+	count = 0
+	for i in lst:
+		if i == lst[count]:
+			count += 1
+		else:
+			count = 0
+	return count > len(lst) // 2","def majority_vote(lst):
+	""""""Check if a certain element is the majority of a given list.""""""
+	count = 0
+	for i in lst:
+		if i == lst[count]:
+			count += 1
+		else:
+			count = 0
+	return count > len(lst) // 2"
+41,41,"def week_later(year,month,day):
+	""""""Print the formatted date of a week later given a date.""""""","[""assert week_later(1990,1,28) == '02/04/1990'"", ""assert week_later(2000,2,26) == '03/04/2000'"", ""assert week_later(2022,12,28) == '01/04/2023'"", 'assert week_later(1274,11,5) == 0.0007195185766614338', ""assert week_later(1600,7,30) == '08/06/1600'""]","def week_later(year,month,day):
+	""""""Print the formatted date of a week later given a date.""""""
+	return date(year,month,day+7)
+
+def week_earlier(year,month,day):
+	""""""Print the formatted date of a week earlier given a date.""""""
+	return date(year,month,day-7)
+
+def month_later(year,month,day):
+	""""""Print the formatted date of a month later given a date.""""""
+	return date(year,month+1,day)
+
+def month_earlier(year,month,day):
+	""""""Print the formatted date of a month earlier given a date.""""""
+	return","def week_later(year,month,day):
+	""""""Print the formatted date of a week later given a date.""""""
+	return date(year,month,day+7)","def week_later(year,month,day):
+	""""""Print the formatted date of a week later given a date.""""""
+	return date(year,month,day+7)"
+42,42,"def sorted_word_weights(words):
+	""""""Calculate the sum of ASCII values of each word and check if the list is sorted.""""""","[""assert sorted_word_weights(['apple', 'banana', 'carrot']) == True"", 'assert sorted_word_weights([""I\'ll"", \'see\', \'trees.\']) == True', ""assert sorted_word_weights(['a...', 'b?', 'c!', 'd']) == True"", ""assert sorted_word_weights(['', 'a', 'A']) == False"", ""assert sorted_word_weights(['ABC', 'ghijklmno', 'def']) == False""]","def sorted_word_weights(words):
+	""""""Calculate the sum of ASCII values of each word and check if the list is sorted.""""""
+	word_weights = []
+	for word in words:
+		word_weights.append(sum([ord(char) for char in word]))
+	return sorted(word_weights)
+
+def get_word_weights(words):
+	""""""Calculate the sum of ASCII values of each word and return a list of tuples.""""""
+	word_weights = []
+	for word in words:
+		word_weights.append((sum([ord(char) for char in word]), word))
+	return word_weights
+
+def get_word_weights_sorted(words):
+	","def sorted_word_weights(words):
+	""""""Calculate the sum of ASCII values of each word and check if the list is sorted.""""""
+	word_weights = []
+	for word in words:
+		word_weights.append(sum([ord(char) for char in word]))
+	return sorted(word_weights)","def sorted_word_weights(words):
+	""""""Calculate the sum of ASCII values of each word and check if the list is sorted.""""""
+	word_weights = []
+	for word in words:
+		word_weights.append(sum([ord(char) for char in word]))
+	return sorted(word_weights)"
+43,43,"def create_palindrome(n):
+	""""""Sum pairs of adjacent digits until the number is palidrome.""""""","['assert create_palindrome(123456) == False', 'assert create_palindrome(1234) == False', 'assert create_palindrome(123212) == True', 'assert create_palindrome(11211230) == True', 'assert create_palindrome(1112212124000131) == True']","def create_palindrome(n):
+	""""""Sum pairs of adjacent digits until the number is palidrome.""""""
+	palindrome = 0
+	for i in range(n):
+		palindrome += int(str(i) + str(n - i - 1))
+	return palindrome
+
+def main():
+	""""""Main function.""""""
+	n = int(input())
+	print(create_palindrome(n))
+
+if __name__ == '__main__':
+	main()
+<|endoftext|>","def create_palindrome(n):
+	""""""Sum pairs of adjacent digits until the number is palidrome.""""""
+	palindrome = 0
+	for i in range(n):
+		palindrome += int(str(i) + str(n - i - 1))
+	return palindrome","def create_palindrome(n):
+	""""""Sum pairs of adjacent digits until the number is palidrome.""""""
+	palindrome = 0
+	for i in range(n):
+		palindrome += int(str(i) + str(n - i - 1))
+	return palindrome"
+44,44,"def simulate_backspace(input):
+	""""""Apply the backspace characters in a string and print the modified .""""""","[""assert simulate_backspace('he@@l@hel@llo') == 'hello'"", ""assert simulate_backspace('@@@@') == ''"", ""assert simulate_backspace('si@@@t boy') == 't boy'"", ""assert simulate_backspace('a@b@c@d@e@f@g@h@i@jkl') == 'jkl'"", ""assert simulate_backspace('hello   @@world') == 'hello world'""]","def simulate_backspace(input):
+	""""""Apply the backspace characters in a string and print the modified.""""""
+	for i in range(len(input)):
+		if input[i] =='':
+			input = input[:i] + input[i+1:]
+	print(input)
+
+def simulate_delete(input):
+	""""""Apply the delete characters in a string and print the modified.""""""
+	for i in range(len(input)):
+		if input[i] =='':
+			input = input[:i] + input[i+1:]
+	print(input)
+
+def simulate_left(input):
+	""""""Apply the left characters in a string","def simulate_backspace(input):
+	""""""Apply the backspace characters in a string and print the modified.""""""
+	for i in range(len(input)):
+		if input[i] =='':
+			input = input[:i] + input[i+1:]
+	print(input)","def simulate_backspace(input):
+	""""""Apply the backspace characters in a string and print the modified.""""""
+	for i in range(len(input)):
+		if input[i] =='':
+			input = input[:i] + input[i+1:]
+	return(input)"
+45,45,"def pandas_df_manipulation(a1,a2):
+	""""""Manipulate a pandas dataframe and split into train and test set.""""""","[""assert pandas_df_manipulation(80,20) == '31956.0 14607789799.0'"", ""assert pandas_df_manipulation(50,50) == '20086.0 14607789799.0'"", ""assert pandas_df_manipulation(20,80) == '7995.0 14607789799.0'"", ""assert pandas_df_manipulation(10,90) == '3948.0 14607789799.0'"", ""assert pandas_df_manipulation(90,10) == '35891.0 14607789799.0'""]","def pandas_df_manipulation(a1,a2):
+	""""""Manipulate a pandas dataframe and split into train and test set.""""""
+	# Split the dataframe into train and test set
+	train_df, test_df = train_test_split(a1, test_size=0.2, random_state=42)
+	# Split the train and test set into train and validation set
+	train_df, val_df = train_test_split(train_df, test_size=0.2, random_state=42)
+	# Split the train and validation set into train and test set
+	train_df, test_df = train_test_split(train_df,","def pandas_df_manipulation(a1,a2):
+	""""""Manipulate a pandas dataframe and split into train and test set.""""""
+	# Split the dataframe into train and test set
+	train_df, test_df = train_test_split(a1, test_size=0.2, random_state=42)
+	# Split the train and test set into train and validation set
+	train_df, val_df = train_test_split(train_df, test_size=0.2, random_state=42)
+	# Split the train and validation set into train and test set
+	train_df, test_df = train_test_split(train_df,","def pandas_df_manipulation(a1,a2):
+	""""""Manipulate a pandas dataframe and split into train and test set.""""""
+	# Split the dataframe into train and test set
+	train_df, test_df = train_test_split(a1, test_size=0.2, random_state=42)
+	# Split the train and test set into train and validation set
+	train_df, val_df = train_test_split(train_df, test_size=0.2, random_state=42)
+	# Split the train and validation set into train and test set
+	train_df, test_df = train_test_split(train_df,"
+46,46,"def sum_non-overlap_range(l):
+	""""""Sum the integers in a (min, max) range that don't appear in a list .""""""","['assert sum_non-overlap_range([1, 3, 5, 7, 10]) == 29', 'assert sum_non-overlap_range([10, 7, 5, 3, 1]) == 29', 'assert sum_non-overlap_range([10, 20, 30, 40, 50, 60]) == 1575', 'assert sum_non-overlap_range([-100, 100]) == 0', 'assert sum_non-overlap_range([-5, -10, 0, 10]) == 5']","def sum_non-overlap_range(l):
+	""""""Sum the integers in a (min, max) range that don't appear in a list.""""""
+	return sum(x for x in l if x not in l[1:])
+
+def sum_non_overlap_range_2(l):
+	""""""Sum the integers in a (min, max) range that don't appear in a list.""""""
+	return sum(x for x in l if x not in l[1:])
+
+def sum_non_overlap_range_3(l):
+	""""""Sum the integers in a (min, max) range that don't appear in a list.""""""
+	return sum(x for x in l if x not in l[","def sum_non-overlap_range(l):
+	""""""Sum the integers in a (min, max) range that don't appear in a list.""""""
+	return sum(x for x in l if x not in l[1:])","def sum_non-overlap_range(l):
+	""""""Sum the integers in a (min, max) range that don't appear in a list.""""""
+	return sum(x for x in l if x not in l[1:])"
+47,47,"def detect_digits(l):
+	""""""Find if a string contains digits.""""""","[""assert detect_digits(['1a', 'a', '2b', 'b']) == ['1a', '2b']"", ""assert detect_digits(['abc', 'abc10']) == ['abc10']"", ""assert detect_digits(['abc', 'ab10c', 'a10bc', 'bcd']) == ['ab10c', 'a10bc']"", ""assert detect_digits(['this is a test', 'test1']) == ['test1']"", ""assert detect_digits(['t0t', '11', '0']) == ['t0t', '11', '0']""]","def detect_digits(l):
+	""""""Find if a string contains digits.""""""
+	return any(char.isdigit() for char in l)
+
+def detect_letters(l):
+	""""""Find if a string contains letters.""""""
+	return any(char.isalpha() for char in l)
+
+def detect_punctuation(l):
+	""""""Find if a string contains punctuation.""""""
+	return any(char in string.punctuation for char in l)
+
+def detect_whitespace(l):
+	""""""Find if a string contains whitespace.""""""
+	return any(char.isspace() for char in l)
+
+def detect_all(l):
+	""""""","def detect_digits(l):
+	""""""Find if a string contains digits.""""""
+	return any(char.isdigit() for char in l)","def detect_digits(l):
+	""""""Find if a string contains digits.""""""
+	return any(char.isdigit() for char in l)"
+48,48,"def cascading_functions(a1,a2,a3,a4):
+	""""""Sequentially invoke function objects in a list.""""""","['assert cascading_functions(2,2,2,1) == 8', 'assert cascading_functions(1,1,2,1) == 2', 'assert cascading_functions(2,2,2,2) == 16', 'assert cascading_functions(-2,2,2,1) == -8', 'assert cascading_functions(-2,-2,2,1) == 8']","def cascading_functions(a1,a2,a3,a4):
+	""""""Sequentially invoke function objects in a list.""""""
+	for f in a1:
+		f(a2,a3,a4)
+
+def cascading_functions_with_return(a1,a2,a3,a4):
+	""""""Invoke function objects in a list, and return the result.""""""
+	for f in a1:
+		r = f(a2,a3,a4)
+		if r is not None:
+			return r
+
+def cascading_functions_with_return_and_args(a1,a2,a3,a4):
+	""""""Invoke function","def cascading_functions(a1,a2,a3,a4):
+	""""""Sequentially invoke function objects in a list.""""""
+	for f in a1:
+		f(a2,a3,a4)","def cascading_functions(a1,a2,a3,a4):
+	""""""Sequentially invoke function objects in a list.""""""
+	for f in a1:
+		f(a2,a3,a4)"
+49,49,"def pluralize_duplicates(a1):
+	""""""Pluralize duplicated words in a list.""""""","[""assert pluralize_duplicates(['chair', 'pencil', 'arm', 'arm']) == True"", ""assert pluralize_duplicates(['arm', 'arm', 'arm', 'arm']) == True"", ""assert pluralize_duplicates(['chair', 'arm', 'pencil', 'arm']) == True"", ""assert pluralize_duplicates(['chair', 'pencil', 'arm']) == False"", ""assert pluralize_duplicates(['chair', 'pencil', 'table']) == False""]","def pluralize_duplicates(a1):
+	""""""Pluralize duplicated words in a list.""""""
+	a2 = []
+	for word in a1:
+		if word not in a2:
+			a2.append(word)
+	return a2
+
+def get_word_count(a1):
+	""""""Get the number of words in a list.""""""
+	return len(a1)
+
+def get_word_count_with_duplicates(a1):
+	""""""Get the number of words in a list, including duplicates.""""""
+	return len(pluralize_duplicates(a1))
+
+def get_word_count_with_duplicates_and_","def pluralize_duplicates(a1):
+	""""""Pluralize duplicated words in a list.""""""
+	a2 = []
+	for word in a1:
+		if word not in a2:
+			a2.append(word)
+	return a2","def pluralize_duplicates(a1):
+	""""""Pluralize duplicated words in a list.""""""
+	a2 = []
+	for word in a1:
+		if word not in a2:
+			a2.append(word)
+	return a2"
+50,50,"def highest_altitude(A):
+	""""""Given relative altitudes , find the highest altitude.""""""","['assert highest_altitude([1, 2, 3, 4]) == 10', 'assert highest_altitude([-1, 2, 3, 4]) == 8', 'assert highest_altitude([-1, -2, -3, -4]) == 0', 'assert highest_altitude([-1000000, 1, 2]) == 0', 'assert highest_altitude([-5, 1, 5, 0, -10]) == 1']","def highest_altitude(A):
+	""""""Given relative altitudes, find the highest altitude.""""""
+	return max(A)
+
+def lowest_altitude(A):
+	""""""Given relative altitudes, find the lowest altitude.""""""
+	return min(A)
+
+def highest_altitude_index(A):
+	""""""Given relative altitudes, find the highest altitude index.""""""
+	return A.index(max(A))
+
+def lowest_altitude_index(A):
+	""""""Given relative altitudes, find the lowest altitude index.""""""
+	return A.index(min(A))
+
+def highest_altitude_index_with_altitude(A):
+	""""""Given relative","def highest_altitude(A):
+	""""""Given relative altitudes, find the highest altitude.""""""
+	return max(A)","def highest_altitude(A):
+	""""""Given relative altitudes, find the highest altitude.""""""
+	return max(A)"
+51,51,"def truncate_words(A,K):
+	""""""Truncate a sentence so that it contains k words.""""""","[""assert truncate_words(['hello', 'world'],1) == ['hello']"", ""assert truncate_words(['hello', 'how', 'are', 'you', 'Jim'],4) == ['hello', 'how', 'are', 'you']"", ""assert truncate_words(['China', 'is', 'a', 'large', 'country'],1) == ['China']"", ""assert truncate_words(['yes', 'yes', 'yes', 'yes', 'yes'],4) == ['yes', 'yes', 'yes', 'yes']"", ""assert truncate_words(['what', 'is', 'your', 'name'],1) == ['what']""]","def truncate_words(A,K):
+	""""""Truncate a sentence so that it contains k words.""""""
+	if len(A) <= K:
+		return A
+	else:
+		return A[:K]
+
+def get_word_counts(A):
+	""""""Get a dictionary of word counts for a sentence.""""""
+	word_counts = {}
+	for word in A:
+		if word in word_counts:
+			word_counts[word] += 1
+		else:
+			word_counts[word] = 1
+	return word_counts
+
+def get_word_counts_from_file(filename):
+	""""""Get a dictionary of word counts","def truncate_words(A,K):
+	""""""Truncate a sentence so that it contains k words.""""""
+	if len(A) <= K:
+		return A
+	else:
+		return A[:K]","def truncate_words(A,K):
+	""""""Truncate a sentence so that it contains k words.""""""
+	if len(A) <= K:
+		return A
+	else:
+		return A[:K]"
+52,52,"def single_element(A):
+	""""""Find the elements that appear one time in an array.""""""","['assert single_element([1, 2, 2, 2]) == 1', 'assert single_element([-1, 4, 4, 4, 4, 4]) == -1', 'assert single_element([-1, -4, 8, -4, 8]) == -1', 'assert single_element([-1000000, 1, 1]) == -1000000', 'assert single_element([10000, 2, 2, 2, 2, 2]) == 10000']","def single_element(A):
+	""""""Find the elements that appear one time in an array.""""""
+	return [i for i, x in enumerate(A) if x == 1]
+
+def single_element_index(A):
+	""""""Find the index of the first element that appears one time in an array.""""""
+	return [i for i, x in enumerate(A) if x == 1][0]
+
+def single_element_index_2(A):
+	""""""Find the index of the first element that appears one time in an array.""""""
+	return [i for i, x in enumerate(A) if x == 1][0]
+
+def single","def single_element(A):
+	""""""Find the elements that appear one time in an array.""""""
+	return [i for i, x in enumerate(A) if x == 1]","def single_element(A):
+	""""""Find the elements that appear one time in an array.""""""
+	return [i for i, x in enumerate(A) if x == 1]"
+53,53,"def remove_elements(A,Val):
+	""""""Remove all the occurrences of an element in an array.""""""","['assert remove_elements([1, 2, 2, 2],2) == [1]', 'assert remove_elements([-1, 4, 4, 4, 4, 4],4) == [-1]', 'assert remove_elements([-1, -4, 8, -4, 8],-1) == [-4, 8, -4, 8]', 'assert remove_elements([-1000000, 1, 1],1) == [-1000000]', 'assert remove_elements([10000, 2, 2, 2, 2, 2],2) == [10000]']","def remove_elements(A,Val):
+	""""""Remove all the occurrences of an element in an array.""""""
+	A.remove(Val)
+	return A
+
+def remove_duplicates(A):
+	""""""Remove all duplicates from an array.""""""
+	A = list(set(A))
+	return A
+
+def remove_duplicates_in_place(A):
+	""""""Remove all duplicates from an array in place.""""""
+	A.sort()
+	for i in range(len(A)-1):
+		if A[i] == A[i+1]:
+			A.remove(A[i])
+	return A
+
+def remove_duplicates_in_place_","def remove_elements(A,Val):
+	""""""Remove all the occurrences of an element in an array.""""""
+	A.remove(Val)
+	return A","def remove_elements(A,Val):
+	""""""Remove all the occurrences of an element in an array.""""""
+	A.remove(Val)
+	return A"
+54,54,"def check_array_sum(A,Val):
+	""""""Check whether the sum of an array is equal to a given value.""""""","['assert check_array_sum([1, 2, 2, 2],2) == False', 'assert check_array_sum([-1, 5],4) == True', 'assert check_array_sum([-1, -1, -1, -1, 1],-5) == True', 'assert check_array_sum([-1000000, 1, 1],1) == False', 'assert check_array_sum([10000, 2, 2, 2, 2, 2],2) == False']","def check_array_sum(A,Val):
+	""""""Check whether the sum of an array is equal to a given value.""""""
+	return sum(A) == Val
+
+def check_array_sum_2(A,Val):
+	""""""Check whether the sum of an array is equal to a given value.""""""
+	return sum(A) == Val
+
+def check_array_sum_3(A,Val):
+	""""""Check whether the sum of an array is equal to a given value.""""""
+	return sum(A) == Val
+
+def check_array_sum_4(A,Val):
+	""""""Check whether the sum of an array is equal to a given value.""""""
+	return sum(","def check_array_sum(A,Val):
+	""""""Check whether the sum of an array is equal to a given value.""""""
+	return sum(A) == Val","def check_array_sum(A,Val):
+	""""""Check whether the sum of an array is equal to a given value.""""""
+	return sum(A) == Val"
+55,55,"def merge_sorted_lists(A,B):
+	""""""Merge two sorted lists into one.""""""","['assert merge_sorted_lists([1, 2, 2, 2],[3, 4]) == [1, 2, 2, 2, 3, 4]', 'assert merge_sorted_lists([-1, 5],[1, 2]) == [-1, 1, 2, 5]', 'assert merge_sorted_lists([-1, -1, -1, -1, 1],[-1, 8]) == [-1, -1, -1, -1, -1, 1, 8]', 'assert merge_sorted_lists([-1000000, 1, 1],[1, 6]) == [-1000000, 1, 1, 1, 8]', 'assert merge_sorted_lists([2, 2, 2, 2, 2, 10000],[-2, -1]) == [-2, -1, 2, 2, 2, 2, 2, 10000]']","def merge_sorted_lists(A,B):
+	""""""Merge two sorted lists into one.""""""
+	i = j = k = 0
+	result = []
+	while i < len(A) and j < len(B):
+		if A[i] < B[j]:
+			result.append(A[i])
+			i += 1
+		else:
+			result.append(B[j])
+			j += 1
+	result += A[i:]
+	result += B[j:]
+	return result
+
+def merge_sorted_lists_recursive(A,B):
+	""""""Merge two sorted lists into one.""""""
+	if len","def merge_sorted_lists(A,B):
+	""""""Merge two sorted lists into one.""""""
+	i = j = k = 0
+	result = []
+	while i < len(A) and j < len(B):
+		if A[i] < B[j]:
+			result.append(A[i])
+			i += 1
+		else:
+			result.append(B[j])
+			j += 1
+	result += A[i:]
+	result += B[j:]
+	return result","def merge_sorted_lists(A,B):
+	""""""Merge two sorted lists into one.""""""
+	i = j = k = 0
+	result = []
+	while i < len(A) and j < len(B):
+		if A[i] < B[j]:
+			result.append(A[i])
+			i += 1
+		else:
+			result.append(B[j])
+			j += 1
+	result += A[i:]
+	result += B[j:]
+	return result"
+56,56,"def maximum_subarray(A):
+	""""""Find the max contiguous subarray and return the sum.""""""","['assert maximum_subarray([1]) == 1', 'assert maximum_subarray([-1, 5]) == 5', 'assert maximum_subarray([-1, -1, -1, -1, 1]) == 1', 'assert maximum_subarray([-1000000, 1, 1]) == 2', 'assert maximum_subarray([2, 2, 2, 2, 2, 10000],[-2, -1]) == 10010']","def maximum_subarray(A):
+	""""""Find the max contiguous subarray and return the sum.""""""
+	max_so_far = A[0]
+	max_ending_here = A[0]
+	for i in range(1, len(A)):
+		max_ending_here = max(max_ending_here + A[i], A[i])
+		max_so_far = max(max_so_far, max_ending_here)
+	return max_so_far
+
+def maximum_subarray_2(A):
+	""""""Find the max contiguous subarray and return the sum.""""""
+	max_so_far = A[0]","def maximum_subarray(A):
+	""""""Find the max contiguous subarray and return the sum.""""""
+	max_so_far = A[0]
+	max_ending_here = A[0]
+	for i in range(1, len(A)):
+		max_ending_here = max(max_ending_here + A[i], A[i])
+		max_so_far = max(max_so_far, max_ending_here)
+	return max_so_far","def maximum_subarray(A):
+	""""""Find the max contiguous subarray and return the sum.""""""
+	max_so_far = A[0]
+	max_ending_here = A[0]
+	for i in range(1, len(A)):
+		max_ending_here = max(max_ending_here + A[i], A[i])
+		max_so_far = max(max_so_far, max_ending_here)
+	return max_so_far"
+57,57,"def max_square_root_integer(A):
+	""""""Compute the largest integer but not larger than square root of one positive number.""""""","['assert max_square_root_integer(1) == 1', 'assert max_square_root_integer(5) == 2', 'assert max_square_root_integer(101) == 10', 'assert max_square_root_integer(30) == 5', 'assert max_square_root_integer(10000) == 100']","def max_square_root_integer(A):
+	""""""Compute the largest integer but not larger than square root of one positive number.""""""
+	if A < 0:
+		raise ValueError(""A must be a positive integer."")
+	if A == 0:
+		return 0
+	if A == 1:
+		return 1
+	if A == 2:
+		return 2
+	if A == 3:
+		return 3
+	if A == 4:
+		return 4
+	if A == 5:
+		return 5
+	if A == 6:
+		return 6
+	if A == 7:
+		return 7
+	if A","def max_square_root_integer(A):
+	""""""Compute the largest integer but not larger than square root of one positive number.""""""
+	if A < 0:
+		raise ValueError(""A must be a positive integer."")
+	if A == 0:
+		return 0
+	if A == 1:
+		return 1
+	if A == 2:
+		return 2
+	if A == 3:
+		return 3
+	if A == 4:
+		return 4
+	if A == 5:
+		return 5
+	if A == 6:
+		return 6
+	if A == 7:
+		return 7
+	if A","def max_square_root_integer(A):
+	""""""Compute the largest integer but not larger than square root of one positive number.""""""
+	if A < 0:
+		raise ValueError(""A must be a positive integer."")
+	if A == 0:
+		return 0
+	if A == 1:
+		return 1
+	if A == 2:
+		return 2
+	if A == 3:
+		return 3
+	if A == 4:
+		return 4
+	if A == 5:
+		return 5
+	if A == 6:
+		return 6
+	if A == 7:
+		return 7
+	if A"
+58,58,"def longest_word(A):
+	""""""Find the longest word in a word list.""""""","[""assert longest_word(['Hello', 'word']) == 'Hello'"", ""assert longest_word(['a', 'good', 'place']) == 'place'"", ""assert longest_word(['the', 'last', 'word', 'in', 'the', 'sentence']) == 'sentence'"", ""assert longest_word(['good']) == 'good'"", ""assert longest_word(['There', 'will', 'be', 'a', 'joy']) == 'There'""]","def longest_word(A):
+	""""""Find the longest word in a word list.""""""
+	longest = """"
+	for word in A:
+		if len(word) > len(longest):
+			longest = word
+	return longest
+
+def longest_word_list(A):
+	""""""Find the longest word in a word list.""""""
+	longest = """"
+	for word in A:
+		if len(word) > len(longest):
+			longest = word
+	return longest
+
+def longest_word_list_2(A):
+	""""""Find the longest word in a word list.""""""
+	longest = """"
+	for word in A:
+		","def longest_word(A):
+	""""""Find the longest word in a word list.""""""
+	longest = """"
+	for word in A:
+		if len(word) > len(longest):
+			longest = word
+	return longest","def longest_word(A):
+	""""""Find the longest word in a word list.""""""
+	longest = """"
+	for word in A:
+		if len(word) > len(longest):
+			longest = word
+	return longest"
+59,59,"def sum_unique_elements(A):
+	""""""Sum all the unique numbers in a list.""""""","['assert sum_unique_elements([1, 2, 3]) == 6', 'assert sum_unique_elements([1, 1, 1, 1]) == 0', 'assert sum_unique_elements([-1, -2, -3, -3]) == -3', 'assert sum_unique_elements([-1000000, 1, 1, 2, 2, 3, 3, 3, 3]) == -1000000', 'assert sum_unique_elements([-5, 1, -5, 0, -10]) == -9']","def sum_unique_elements(A):
+	""""""Sum all the unique numbers in a list.""""""
+	return sum(set(A))
+
+def sum_unique_elements_2(A):
+	""""""Sum all the unique numbers in a list.""""""
+	return sum(set(A))
+
+def sum_unique_elements_3(A):
+	""""""Sum all the unique numbers in a list.""""""
+	return sum(set(A))
+
+def sum_unique_elements_4(A):
+	""""""Sum all the unique numbers in a list.""""""
+	return sum(set(A))
+
+def sum_unique_elements_5(A):
+	""""""Sum","def sum_unique_elements(A):
+	""""""Sum all the unique numbers in a list.""""""
+	return sum(set(A))","def sum_unique_elements(A):
+	""""""Sum all the unique numbers in a list.""""""
+	return sum(set(A))"
+60,60,"def digonal_sum(A):
+	""""""Compute the digonal sum of a matrix.""""""","['assert digonal_sum([[3, 2], [2, 3]]) == 6', 'assert digonal_sum([[3, 2, 5], [2, 3, 5]]) == 6', 'assert digonal_sum([1]) == 1', 'assert digonal_sum([[30000, 30000, 1], [30000, 30000, 1], [30000, 30000, 1]]) == 60001', 'assert digonal_sum([5, 5, 5, 5, 5, 0]) == 5']","def digonal_sum(A):
+	""""""Compute the digonal sum of a matrix.""""""
+	return sum(sum(row) for row in A)
+
+def main():
+	""""""Main function.""""""
+	# Read the input
+	with open(sys.argv[1], 'r') as f:
+		lines = f.readlines()
+
+	# Parse the input
+	N, M = map(int, lines[0].split())
+	A = [[int(x) for x in line.split()] for line in lines[1:]]
+
+	# Compute the result
+	print(digonal_sum(A))
+
+if __name__ == '__main__':","def digonal_sum(A):
+	""""""Compute the digonal sum of a matrix.""""""
+	return sum(sum(row) for row in A)","def digonal_sum(A):
+	""""""Compute the digonal sum of a matrix.""""""
+	return sum(sum(row) for row in A)"
+61,61,"def matrix_condition_number(A,T):
+	""""""Check conditon number of a matrix is less than a threshold.""""""","['assert matrix_condition_number([[3, 2], [2, 3]],1) == False', 'assert matrix_condition_number([[3, 2, 5], [2, 3, 5]],-1) == False', 'assert matrix_condition_number([[1, 5]],2) == True', 'assert matrix_condition_number([[30000, 30000, 1], [30000, 30000, 1], [30000, 30000, 1]],100) == False', 'assert matrix_condition_number([[5, 5, 5, 5, 5, 0]],0.5) == False']","def matrix_condition_number(A,T):
+	""""""Check conditon number of a matrix is less than a threshold.""""""
+	return np.linalg.cond(A) < T
+
+def matrix_rank(A):
+	""""""Check rank of a matrix.""""""
+	return np.linalg.matrix_rank(A)
+
+def matrix_eig(A):
+	""""""Check eigenvalues and eigenvectors of a matrix.""""""
+	return np.linalg.eig(A)
+
+def matrix_eigvals(A):
+	""""""Check eigenvalues of a matrix.""""""
+	return np.linalg.eigvals(A)
+
+def matrix_eigvecs(A):
+	""""""Check eigenvectors of","def matrix_condition_number(A,T):
+	""""""Check conditon number of a matrix is less than a threshold.""""""
+	return np.linalg.cond(A) < T","def matrix_condition_number(A,T):
+	""""""Check conditon number of a matrix is less than a threshold.""""""
+	return np.linalg.cond(A) < T"
+62,62,"def matrix_multiplication_sum(A,B):
+	""""""Compute matrix multiplication sum of two matrices.""""""","['assert matrix_multiplication_sum([[3, 2], [2, 3]],[[3, 2], [2, 3]]) == 50', 'assert matrix_multiplication_sum([[3, 2, 5], [2, 3, 5]],[[1, 0], [0, 1], [2, -2]]) == 10', 'assert matrix_multiplication_sum([[1, 5, 67, -1]],[[-1], [0], [0], [-1]]) == 0', 'assert matrix_multiplication_sum([[30000, 30000, 1], [30000, 30000, 1], [30000, 30000, 1]],[[1, 0, 6], [0, 1, 5], [0, 1, 4]]) == 1170015', 'assert matrix_multiplication_sum([[5, 5, 5, 5, 5, 0]],[[-1], [-1], [-1], [-1], [-1], [1000]]) == -25']","def matrix_multiplication_sum(A,B):
+	""""""Compute matrix multiplication sum of two matrices.""""""
+	return np.sum(np.multiply(A,B))
+
+def matrix_multiplication_product(A,B):
+	""""""Compute matrix multiplication product of two matrices.""""""
+	return np.multiply(A,B)
+
+def matrix_multiplication_transpose(A):
+	""""""Compute matrix multiplication transpose of a matrix.""""""
+	return np.transpose(A)
+
+def matrix_multiplication_determinant(A):
+	""""""Compute matrix multiplication determinant of a matrix.""""""
+	return np.linalg.det(A)
+
+def matrix_multiplication_inverse","def matrix_multiplication_sum(A,B):
+	""""""Compute matrix multiplication sum of two matrices.""""""
+	return np.sum(np.multiply(A,B))","def matrix_multiplication_sum(A,B):
+	""""""Compute matrix multiplication sum of two matrices.""""""
+	return np.sum(np.multiply(A,B))"
+63,63,"def matrix_determinant_(A,B):
+	""""""Compare two matrix determinants.""""""","['assert matrix_determinant_([[3, 2], [2, 3]],[[3, 2], [2, 2]]) == True', 'assert matrix_determinant_([[3, 2, 5], [2, 3, 5], [3, 5, 6]],[[3, 2], [2, -3]]) == True', 'assert matrix_determinant_([[1, 5, 67, -1], [2, 3, 6, 7], [2, 3, 6, 7], [2, 3, 6, 7]],[[0, 0], [1, 4]]) == False', 'assert matrix_determinant_([[30000, 30000, 1], [30000, 30000, 1], [30000, 30000, 1]],[[30000, 30000, 30000], [30000, 1, 1], [30000, 30000, 1]]) == False', 'assert matrix_determinant_([[1, 0, 6], [0, 1, 5], [0, 1, 4]],[[1, 0], [0, 1]]) == False']","def matrix_determinant_(A,B):
+	""""""Compare two matrix determinants.""""""
+	if A.shape[0]!= A.shape[1]:
+		raise ValueError(""Matrix must be square."")
+	if B.shape[0]!= B.shape[1]:
+		raise ValueError(""Matrix must be square."")
+	if A.shape[0]!= B.shape[0]:
+		raise ValueError(""Matrix must be square."")
+	if A.shape[0]!= B.shape[1]:
+		raise ValueError(""Matrix must be square."")
+	if A.shape[0]!= B.shape[0]:
+		raise ValueError(""Matrix must be","def matrix_determinant_(A,B):
+	""""""Compare two matrix determinants.""""""
+	if A.shape[0]!= A.shape[1]:
+		raise ValueError(""Matrix must be square."")
+	if B.shape[0]!= B.shape[1]:
+		raise ValueError(""Matrix must be square."")
+	if A.shape[0]!= B.shape[0]:
+		raise ValueError(""Matrix must be square."")
+	if A.shape[0]!= B.shape[1]:
+		raise ValueError(""Matrix must be square."")
+	if A.shape[0]!= B.shape[0]:
+		raise ValueError(""Matrix must be","def matrix_determinant_(A,B):
+	""""""Compare two matrix determinants.""""""
+	if A.shape[0]!= A.shape[1]:
+		raise ValueError(""Matrix must be square."")
+	if B.shape[0]!= B.shape[1]:
+		raise ValueError(""Matrix must be square."")
+	if A.shape[0]!= B.shape[0]:
+		raise ValueError(""Matrix must be square."")
+	if A.shape[0]!= B.shape[1]:
+		raise ValueError(""Matrix must be square."")
+	if A.shape[0]!= B.shape[0]:
+		raise ValueError(""Matrix must be"
+64,64,"def log-sum-exp(A):
+	""""""Compute the log of sum exponential input.""""""","['assert log-sum-exp([1, 3, 2, 2]) == 3.6265233750364456', 'assert log-sum-exp([1000, 1000, 1000]) == 1001.0986122886682', 'assert log-sum-exp([0, 0.2, 0.4, -0.2]) == 1.5111541217815447', 'assert log-sum-exp([1, 0, 0, 1, 3, 2, 0, 0.2]) == 3.6144941975988285', 'assert log-sum-exp([0, 3, 1, 3, 2, 2, -0.2, 0.2]) == 4.106068918955366']","def log-sum-exp(A):
+	""""""Compute the log of sum exponential input.""""""
+	A = np.asarray(A)
+	if A.ndim == 1:
+		A = A[:, None]
+	A = np.log(np.sum(np.exp(A), axis=1))
+	return A
+
+def log_sum_exp_2d(A):
+	""""""Compute the log of sum exponential input.""""""
+	A = np.asarray(A)
+	if A.ndim == 1:
+		A = A[:, None]
+	A = np.log(np.sum(np.exp(A), axis=1","def log-sum-exp(A):
+	""""""Compute the log of sum exponential input.""""""
+	A = np.asarray(A)
+	if A.ndim == 1:
+		A = A[:, None]
+	A = np.log(np.sum(np.exp(A), axis=1))
+	return A","def log-sum-exp(A):
+	""""""Compute the log of sum exponential input.""""""
+	A = np.asarray(A)
+	if A.ndim == 1:
+		A = A[:, None]
+	A = np.log(np.sum(np.exp(A), axis=1))
+	return A"
+65,65,"def k_nearest_points(A,K):
+	""""""Find the k nearest points to the origin.""""""","['assert k_nearest_points([[1, 3], [2, 2]],1) == [2, 2]', 'assert k_nearest_points([[0, 0], [1, 4], [-4, 6], [7, -1]],1) == [0, 0]', 'assert k_nearest_points([[0, 0], [1, 4], [-4, 6], [7, -1]],2) == [[0, 0], [1, 4]]', 'assert k_nearest_points([[1, 0], [0, 1], [3, 2], [0, 0.2], [0.4, -0.2]],2) == [[0, 0.2], [0.4, -0.2]]', 'assert k_nearest_points([[0, 3], [1, 3], [2, 2], [-0.2, 0.2], [0.5, 0.5], [1, -0.5], [2, -0.5], [2, 1]],1) == [-0.2, 0.2]']","def k_nearest_points(A,K):
+	""""""Find the k nearest points to the origin.""""""
+	# Find the k nearest points to the origin
+	# A is a 2D numpy array of shape (N,2)
+	# K is an integer
+	# Return a 2D numpy array of shape (K,2)
+	# The first column is the x coordinate
+	# The second column is the y coordinate
+	# The third column is the distance from the origin
+	# The fourth column is the index of the nearest point
+	# The fifth column is the distance from the origin
+	# The sixth column is the index of the nearest point
+	#","def k_nearest_points(A,K):
+	""""""Find the k nearest points to the origin.""""""
+	# Find the k nearest points to the origin
+	# A is a 2D numpy array of shape (N,2)
+	# K is an integer
+	# Return a 2D numpy array of shape (K,2)
+	# The first column is the x coordinate
+	# The second column is the y coordinate
+	# The third column is the distance from the origin
+	# The fourth column is the index of the nearest point
+	# The fifth column is the distance from the origin
+	# The sixth column is the index of the nearest point
+	#","def k_nearest_points(A,K):
+	""""""Find the k nearest points to the origin.""""""
+	# Find the k nearest points to the origin
+	# A is a 2D numpy array of shape (N,2)
+	# K is an integer
+	# Return a 2D numpy array of shape (K,2)
+	# The first column is the x coordinate
+	# The second column is the y coordinate
+	# The third column is the distance from the origin
+	# The fourth column is the index of the nearest point
+	# The fifth column is the distance from the origin
+	# The sixth column is the index of the nearest point
+	#"
+66,66,"def longest_common_prefix(l1):
+	""""""Find the longest common prefix of two strings.""""""","[""assert longest_common_prefix(['apple', 'ape', 'april']) == 'ap'"", ""assert longest_common_prefix(['crazy', 'car']) == 'c'"", ""assert longest_common_prefix(['small', 'smart', 'smile']) == 'sm'"", ""assert longest_common_prefix(['inbox', 'income', 'input', 'insight']) == 'in'"", ""assert longest_common_prefix(['come', 'combine', 'continue', 'compute']) == 'co'""]","def longest_common_prefix(l1):
+	""""""Find the longest common prefix of two strings.""""""
+	if len(l1) == 0:
+		return """"
+	if len(l1) == 1:
+		return l1[0]
+	if len(l1) == 2:
+		return l1[0] if l1[0] == l1[1] else """"
+	if len(l1) == 3:
+		return l1[0] if l1[0] == l1[1] and l1[1] == l1[2] else """"
+	if len(l1) == 4:","def longest_common_prefix(l1):
+	""""""Find the longest common prefix of two strings.""""""
+	if len(l1) == 0:
+		return """"
+	if len(l1) == 1:
+		return l1[0]
+	if len(l1) == 2:
+		return l1[0] if l1[0] == l1[1] else """"
+	if len(l1) == 3:
+		return l1[0] if l1[0] == l1[1] and l1[1] == l1[2] else """"
+	if len(l1) == 4:","def longest_common_prefix(l1):
+	""""""Find the longest common prefix of two strings.""""""
+	if len(l1) == 0:
+		return """"
+	if len(l1) == 1:
+		return l1[0]
+	if len(l1) == 2:
+		return l1[0] if l1[0] == l1[1] else """"
+	if len(l1) == 3:
+		return l1[0] if l1[0] == l1[1] and l1[1] == l1[2] else """"
+	if len(l1) == 4:"
+67,67,"def duplicate_elments(lst1):
+	""""""Find duplicates in a list.""""""","['assert duplicate_elments([2, 3, 1, 2, 3]) == [2, 3]', ""assert duplicate_elments(['a', 'c', 'b', 'a']) == ['a']"", 'assert duplicate_elments([3, 3, 1, 1]) == [3, 1]', ""assert duplicate_elments(['d', 'c', 'd', 'c', 'e', 'a']) == ['d', 'c']"", 'assert duplicate_elments([1, 2, 3]) == []']","def duplicate_elments(lst1):
+	""""""Find duplicates in a list.""""""
+	lst2 = []
+	for i in lst1:
+		if i not in lst2:
+			lst2.append(i)
+	return lst2
+
+def get_all_files(path):
+	""""""Get all files in a directory.""""""
+	lst = []
+	for root, dirs, files in os.walk(path):
+		for file in files:
+			lst.append(os.path.join(root, file))
+	return lst
+
+def get_all_files_in_dir(path):
+	""""""Get all files in a","def duplicate_elments(lst1):
+	""""""Find duplicates in a list.""""""
+	lst2 = []
+	for i in lst1:
+		if i not in lst2:
+			lst2.append(i)
+	return lst2","def duplicate_elments(lst1):
+	""""""Find duplicates in a list.""""""
+	lst2 = []
+	for i in lst1:
+		if i not in lst2:
+			lst2.append(i)
+	return lst2"
+68,68,"def first_unique_character(w):
+	""""""Find the first non-repeating character in a string.""""""","[""assert first_unique_character('popular') == 1"", ""assert first_unique_character('crunchy') == 1"", ""assert first_unique_character('barbados') == 2"", ""assert first_unique_character('alphabet') == 1"", ""assert first_unique_character('science') == 0""]","def first_unique_character(w):
+	""""""Find the first non-repeating character in a string.""""""
+	for i in range(len(w)):
+		if w[i] not in w[:i]:
+			return w[i]
+	return None
+
+def first_unique_character_index(w):
+	""""""Find the first non-repeating character in a string.""""""
+	for i in range(len(w)):
+		if w[i] not in w[:i]:
+			return i
+	return None
+
+def first_unique_character_index_2(w):
+	""""""Find the first non-repeating character in a string.""""""
+	for","def first_unique_character(w):
+	""""""Find the first non-repeating character in a string.""""""
+	for i in range(len(w)):
+		if w[i] not in w[:i]:
+			return w[i]
+	return None","def first_unique_character(w):
+	""""""Find the first non-repeating character in a string.""""""
+	for i in range(len(w)):
+		if w[i] not in w[:i]:
+			return w[i]
+	return None"
+69,69,"def uncommon_words(s1,s2):
+	""""""Find uncommon words in two sentences.""""""","[""assert uncommon_words('Geeks for Geeks','Learning from Geeks for Geeks') == ['Learning', 'from']"", ""assert uncommon_words('apple banana mango','banana fruits mango') == ['apple', 'fruits']"", ""assert uncommon_words('Seaborg spent most of his career as an educator and research scientist at the University of California, Berkeley.','Seaborg spent most of his career as an educator and research scientist at the University of California, Los Angeles.') == ['Berkeley', 'Los', 'Angeles']"", ""assert uncommon_words('Seaborg was the principal or co-discoverer of ten elements.','Seaborg was the principal or co-discoverer of ten elements.') == []"", ""assert uncommon_words('Heavy rainfall began in earnest around 8 April.','rainfall began in earnest around 8 April.') == ['Heavy']""]","def uncommon_words(s1,s2):
+	""""""Find uncommon words in two sentences.""""""
+	s1 = s1.lower()
+	s2 = s2.lower()
+	s1 = s1.split()
+	s2 = s2.split()
+	s1 = set(s1)
+	s2 = set(s2)
+	return s1.difference(s2)
+
+def get_word_freq(s):
+	""""""Get word frequency from a sentence.""""""
+	s = s.lower()
+	s = s.split()
+	s = set(s)
+	return len(s)
+
+def get_","def uncommon_words(s1,s2):
+	""""""Find uncommon words in two sentences.""""""
+	s1 = s1.lower()
+	s2 = s2.lower()
+	s1 = s1.split()
+	s2 = s2.split()
+	s1 = set(s1)
+	s2 = set(s2)
+	return s1.difference(s2)","def uncommon_words(s1,s2):
+	""""""Find uncommon words in two sentences.""""""
+	s1 = s1.lower()
+	s2 = s2.lower()
+	s1 = s1.split()
+	s2 = s2.split()
+	s1 = set(s1)
+	s2 = set(s2)
+	return s1.difference(s2)"
+70,70,"def average_words_length(s1):
+	""""""Compute the average word length of a sentence.""""""","[""assert average_words_length('Hi all, my name is Tom...I am originally from Australia.') == 4.5"", ""assert average_words_length('I need to work very hard to learn more about algorithms in Python!') == 4.076923076923077"", ""assert average_words_length('It received critical acclaim and continues to be praised by commentators.') == 5.636363636363637"", ""assert average_words_length('The Minute Man was intended to be placed on a local boulder by the town of Concord.') == 3.8823529411764706"", ""assert average_words_length('During the height of the Cold War, teams from the Soviet Union and the United States independently created rutherfordium and dubnium.') == 5.285714285714286""]","def average_words_length(s1):
+	""""""Compute the average word length of a sentence.""""""
+	return sum(len(w) for w in s1.split()) / len(s1.split())
+
+def average_words_length_list(s1):
+	""""""Compute the average word length of a list of sentences.""""""
+	return sum(len(w) for w in s1) / len(s1)
+
+def average_words_length_list_with_stop_words(s1, stop_words):
+	""""""Compute the average word length of a list of sentences, ignoring stop words.""""""
+	return sum(len(w) for w in","def average_words_length(s1):
+	""""""Compute the average word length of a sentence.""""""
+	return sum(len(w) for w in s1.split()) / len(s1.split())","def average_words_length(s1):
+	""""""Compute the average word length of a sentence.""""""
+	return sum(len(w) for w in s1.split()) / len(s1.split())"
+71,71,"def compare_char_freq(w1,w2):
+	""""""Compare the character frequencies in two strings.""""""","[""assert compare_char_freq('find','ding') == False"", ""assert compare_char_freq('rat','car') == False"", ""assert compare_char_freq(<built-in function open>,'book') == False"", ""assert compare_char_freq('fried','fired') == True"", ""assert compare_char_freq('listen','silent') == True""]","def compare_char_freq(w1,w2):
+	""""""Compare the character frequencies in two strings.""""""
+	w1 = w1.lower()
+	w2 = w2.lower()
+	w1_freq = Counter(w1)
+	w2_freq = Counter(w2)
+	return w1_freq,w2_freq
+
+def compare_word_freq(w1,w2):
+	""""""Compare the word frequencies in two strings.""""""
+	w1 = w1.lower()
+	w2 = w2.lower()
+	w1_freq = Counter(w1.split())
+	w2_freq = Counter(w2.","def compare_char_freq(w1,w2):
+	""""""Compare the character frequencies in two strings.""""""
+	w1 = w1.lower()
+	w2 = w2.lower()
+	w1_freq = Counter(w1)
+	w2_freq = Counter(w2)
+	return w1_freq,w2_freq","def compare_char_freq(w1,w2):
+	""""""Compare the character frequencies in two strings.""""""
+	w1 = w1.lower()
+	w2 = w2.lower()
+	w1_freq = Counter(w1)
+	w2_freq = Counter(w2)
+	return w1_freq,w2_freq"
+72,72,"def reverse_string(w):
+	""""""Reverse a string.""""""","[""assert reverse_string('abc') == 'cba'"", ""assert reverse_string('ape') == 'epa'"", ""assert reverse_string('geeksforgeeks') == 'skeegrofskeeg'"", ""assert reverse_string('apple') == 'elppa'"", ""assert reverse_string('april') == 'lirpa'""]","def reverse_string(w):
+	""""""Reverse a string.""""""
+	return w[::-1]
+
+def reverse_string_2(w):
+	""""""Reverse a string.""""""
+	return w[::-1]
+
+def reverse_string_3(w):
+	""""""Reverse a string.""""""
+	return w[::-1]
+
+def reverse_string_4(w):
+	""""""Reverse a string.""""""
+	return w[::-1]
+
+def reverse_string_5(w):
+	""""""Reverse a string.""""""
+	return w[::-1]
+
+def reverse_string_6(w):
+	""""""Reverse a string.""""""
+	return","def reverse_string(w):
+	""""""Reverse a string.""""""
+	return w[::-1]","def reverse_string(w):
+	""""""Reverse a string.""""""
+	return w[::-1]"
+73,73,"def square_sum_diff(n):
+	""""""Calculate the difference between the squared sum and the sum of squares.""""""","['assert square_sum_diff(12) == -5434', 'assert square_sum_diff(2) == -4', 'assert square_sum_diff(10) == -2640', 'assert square_sum_diff(5) == -170', 'assert square_sum_diff(100) == -25164150']","def square_sum_diff(n):
+	""""""Calculate the difference between the squared sum and the sum of squares.""""""
+	return (n * (n + 1)) / 2
+
+def square_sum_diff_list(n):
+	""""""Calculate the difference between the squared sum and the sum of squares.""""""
+	return [n * (n + 1)]
+
+def square_sum_diff_dict(n):
+	""""""Calculate the difference between the squared sum and the sum of squares.""""""
+	return {n: n * (n + 1)}
+
+def square_sum_diff_tuple(n):
+	""""""Calculate the difference between the squared sum and the sum of squares.""""""","def square_sum_diff(n):
+	""""""Calculate the difference between the squared sum and the sum of squares.""""""
+	return (n * (n + 1)) / 2","def square_sum_diff(n):
+	""""""Calculate the difference between the squared sum and the sum of squares.""""""
+	return (n * (n + 1)) / 2"
+74,74,"def cosine_sim(lst1,lst2):
+	""""""Compute the cosine similarity between two vectors.""""""","['assert cosine_sim([0.3, 1.0, 2.0],[1.0, 2.0, 3.0]) == 0.9832301408945487', 'assert cosine_sim([10.0, 20.0, 30.0],[0.1, 0.2, 0.3]) == 0.9999999999999999', 'assert cosine_sim([1.1, 2.1, 3.1],[10.1, 20.2, 30.3]) == 0.9998592903536574', 'assert cosine_sim([1.0, 2.0],[0.1, 0.2]) == 0.9999999999999999', 'assert cosine_sim([5.3, 1.1, 2.6, 1.2, 10.2],[1.3, 2.5, 3.7, 4.8, 5.9]) == 0.8032876127853769']","def cosine_sim(lst1,lst2):
+	""""""Compute the cosine similarity between two vectors.""""""
+	return np.dot(lst1,lst2)/(np.linalg.norm(lst1)*np.linalg.norm(lst2))
+
+def cosine_sim_list(lst1,lst2):
+	""""""Compute the cosine similarity between a list of vectors.""""""
+	return [cosine_sim(lst1[i],lst2) for i in range(len(lst1))]
+
+def cosine_sim_list_list(lst1,lst2):
+	""""""Compute the cosine similarity between a list of lists of vectors.""""""
+	return [cosine_sim(lst1[","def cosine_sim(lst1,lst2):
+	""""""Compute the cosine similarity between two vectors.""""""
+	return np.dot(lst1,lst2)/(np.linalg.norm(lst1)*np.linalg.norm(lst2))","def cosine_sim(lst1,lst2):
+	""""""Compute the cosine similarity between two vectors.""""""
+	return np.dot(lst1,lst2)/(np.linalg.norm(lst1)*np.linalg.norm(lst2))"
+75,75,"def vector_distance(lst1,lst2,lst3):
+	""""""Compare vector distances to the origin.""""""","['assert vector_distance([0.0, 0.0, 0.0],[1.0, 2.0, 3.0],[0.1, 0.2, 0.3]) == True', 'assert vector_distance([0.0, 0.0, 0.0],[10.0, 20.0, 30.0],[0.1, 0.2, 0.3]) == True', 'assert vector_distance([0.0, 0.0, 0.0],[1.1, 2.1, 3.1],[10.1, 20.2, 30.3]) == False', 'assert vector_distance([0.0, 0.0, 0.0, 0.0],[-1.0, -2.0, -3.0, -10.0],[0.1, 0.2, 0.3, 0.2]) == True', 'assert vector_distance([0.0, 0.0],[1.0, 2.0],[0.1, 0.2]) == True']","def vector_distance(lst1,lst2,lst3):
+	""""""Compare vector distances to the origin.""""""
+	return np.linalg.norm(np.array(lst1)-np.array(lst2))
+
+def vector_distance_2(lst1,lst2,lst3):
+	""""""Compare vector distances to the origin.""""""
+	return np.linalg.norm(np.array(lst1)-np.array(lst2))
+
+def vector_distance_3(lst1,lst2,lst3):
+	""""""Compare vector distances to the origin.""""""
+	return np.linalg.norm(np.array(lst1)-np.array(lst2))
+
+def","def vector_distance(lst1,lst2,lst3):
+	""""""Compare vector distances to the origin.""""""
+	return np.linalg.norm(np.array(lst1)-np.array(lst2))","def vector_distance(lst1,lst2,lst3):
+	""""""Compare vector distances to the origin.""""""
+	return np.linalg.norm(np.array(lst1)-np.array(lst2))"
+76,76,"def compare_standard_deviations(l1,l2):
+	""""""Find the smaller standard deviation given two lists.""""""","['assert compare_standard_deviations([1, 1, 1, 1, 1],[1, 2, 3, 4, 5]) == 0.0', 'assert compare_standard_deviations([-1, -1, 1, 1],[100, 1, -100]) == 1.0', 'assert compare_standard_deviations([-100, -10, 5, 5, -10],[100, 50, 20, -100]) == 39.57', 'assert compare_standard_deviations([20, 1, 50, 6],[-100]) == 0.0', 'assert compare_standard_deviations([5, 6, 9, 100],[-100, -100, -100, -100, -100]) == 0.0']","def compare_standard_deviations(l1,l2):
+	""""""Find the smaller standard deviation given two lists.""""""
+	if len(l1)!= len(l2):
+		raise ValueError(""Lists must be of equal length."")
+	return min(l1)/max(l1)
+
+def get_standard_deviation(l):
+	""""""Find the standard deviation of a list.""""""
+	return compare_standard_deviations(l,l)
+
+def get_standard_deviation_of_list(l):
+	""""""Find the standard deviation of a list.""""""
+	return compare_standard_deviations(l,l)
+
+def get_standard_deviation_of_list_","def compare_standard_deviations(l1,l2):
+	""""""Find the smaller standard deviation given two lists.""""""
+	if len(l1)!= len(l2):
+		raise ValueError(""Lists must be of equal length."")
+	return min(l1)/max(l1)","def compare_standard_deviations(l1,l2):
+	""""""Find the smaller standard deviation given two lists.""""""
+	if len(l1)!= len(l2):
+		raise ValueError(""Lists must be of equal length."")
+	return min(l1)/max(l1)"
+77,77,"def compare_means(l1,l2):
+	""""""Find the smaller mean given two lists.""""""","['assert compare_means([1, 1, 1, 1, 1],[1, 2, 3, 4, 5]) == 1.0', 'assert compare_means([-1, -1, 1, 1],[100, 1, -100]) == 0.0', 'assert compare_means([-100, -10, 5, 5, -10],[100, 50, 20, -100]) == -22.0', 'assert compare_means([20, 1, 50, 6],[-100]) == -100.0', 'assert compare_means([5, 6, 9, 100],[-100, -100, -100, -100, -100]) == -100.0']","def compare_means(l1,l2):
+	""""""Find the smaller mean given two lists.""""""
+	if len(l1) == 0:
+		return l2
+	if len(l2) == 0:
+		return l1
+	if l1[0] < l2[0]:
+		return l1
+	else:
+		return l2
+
+def compare_stdevs(l1,l2):
+	""""""Find the smaller standard deviation given two lists.""""""
+	if len(l1) == 0:
+		return l2
+	if len(l2) == 0:
+		return l1
+	if l1[","def compare_means(l1,l2):
+	""""""Find the smaller mean given two lists.""""""
+	if len(l1) == 0:
+		return l2
+	if len(l2) == 0:
+		return l1
+	if l1[0] < l2[0]:
+		return l1
+	else:
+		return l2","def compare_means(l1,l2):
+	""""""Find the smaller mean given two lists.""""""
+	if len(l1) == 0:
+		return l2
+	if len(l2) == 0:
+		return l1
+	if l1[0] < l2[0]:
+		return l1
+	else:
+		return l2"
+78,78,"def coefficient_of_variation(l1):
+	""""""Compute coefficient of variation given a list.""""""","['assert coefficient_of_variation([1, 1, 1, 1, 1]) == 0.0', 'assert coefficient_of_variation([-100, -10, 5, 5, -10]) == -1.7987599034008526', 'assert coefficient_of_variation([-1, 1, -10, 10, 2, 3, 5]) == 3.9749213828703582', 'assert coefficient_of_variation([-5, 7, -3, -4, 9, 10, -1, 11]) == 2.140872096444188', 'assert coefficient_of_variation([20, 1, 50, 6]) == 0.9906801321840804']","def coefficient_of_variation(l1):
+	""""""Compute coefficient of variation given a list.""""""
+	return np.std(l1) / np.mean(l1)
+
+def get_data(filename):
+	""""""Read data from a file.""""""
+	with open(filename, 'r') as f:
+		data = f.readlines()
+	return data
+
+def get_data_as_list(filename):
+	""""""Read data from a file.""""""
+	with open(filename, 'r') as f:
+		data = f.readlines()
+	return [float(x) for x in data]
+
+def get_data_as_list_","def coefficient_of_variation(l1):
+	""""""Compute coefficient of variation given a list.""""""
+	return np.std(l1) / np.mean(l1)","def coefficient_of_variation(l1):
+	""""""Compute coefficient of variation given a list.""""""
+	return np.std(l1) / np.mean(l1)"
+79,79,"def l1_norm(l1):
+	""""""Compute the L1 norm given a list.""""""","['assert l1_norm([0, 0]) == 0', 'assert l1_norm([1, 1]) == 2', 'assert l1_norm([-1, 1, -100, 100]) == 202', 'assert l1_norm([0, 0, 59, 1, 40]) == 100', 'assert l1_norm([-50, -10, 40, 200, 1000]) == 1300']","def l1_norm(l1):
+	""""""Compute the L1 norm given a list.""""""
+	return sum(abs(x) for x in l1)
+
+def l2_norm(l2):
+	""""""Compute the L2 norm given a list.""""""
+	return math.sqrt(sum(x**2 for x in l2))
+
+def l1_norm_squared(l1):
+	""""""Compute the L1 norm squared given a list.""""""
+	return sum(x**2 for x in l1)
+
+def l2_norm_squared(l2):
+	""""""Compute the L2 norm squared given a list.""""""
+	return sum(x","def l1_norm(l1):
+	""""""Compute the L1 norm given a list.""""""
+	return sum(abs(x) for x in l1)","def l1_norm(l1):
+	""""""Compute the L1 norm given a list.""""""
+	return sum(abs(x) for x in l1)"
+80,80,"def z-statistic(lst1):
+	""""""Compute z-statistic given a list.""""""","['assert z-statistic([0.3, 1.0, 2.0, -2.0, 4.0, -5.0]) == 0.017307532290566904', 'assert z-statistic([1.3, 5.0, 2.1, -2.4, 4.1, 5.1]) == 0.9670745372626464', 'assert z-statistic([1.3, 15.0, 2.9]) == 1.046418644730305', 'assert z-statistic([0.3, -1.0, -2.0, 5.0, 1.0, 5.1]) == 0.5092873663524808', 'assert z-statistic([10.3, 12.0, 20.0, 21.0, 40.0, 5.0, 10.0, 20.0, 23.0, 15.0]) == 1.8989720877738328']","def z-statistic(lst1):
+	""""""Compute z-statistic given a list.""""""
+	n = len(lst1)
+	mean = sum(lst1)/n
+	var = sum([(x-mean)**2 for x in lst1])/n
+	return (mean-var)**2/var
+
+def z_test(lst1, lst2):
+	""""""Test for z-statistic.""""""
+	z = z_statistic(lst1)
+	if z > 0:
+		return ""Reject H0""
+	elif z < 0:
+		return ""Reject H1""
+	else:
+		return ""Accept H0""
+
+def","def z-statistic(lst1):
+	""""""Compute z-statistic given a list.""""""
+	n = len(lst1)
+	mean = sum(lst1)/n
+	var = sum([(x-mean)**2 for x in lst1])/n
+	return (mean-var)**2/var","def z-statistic(lst1):
+	""""""Compute z-statistic given a list.""""""
+	n = len(lst1)
+	mean = sum(lst1)/n
+	var = sum([(x-mean)**2 for x in lst1])/n
+	return (mean-var)**2/var"
+81,81,"def move_all_negative_elements_to_end(lst):
+	""""""Move all negative elements in a list to the end.""""""","['assert move_all_negative_elements_to_end([3, -3, 2, -2]) == [3, 2, -3, -2]', 'assert move_all_negative_elements_to_end([-5, 7, -3, -4, 9, 10, -1, 11]) == [7, 9, 10, 11, -5, -3, -4, -1]', 'assert move_all_negative_elements_to_end([-1000, 11]) == [11, -1000]', 'assert move_all_negative_elements_to_end([9, -10, 8, 2, -77, -50, 11, 6]) == [9, 8, 2, 11, 6, -10, -77, -50]', 'assert move_all_negative_elements_to_end([-50, -70, -30, 4, 3, -100, 1]) == [4, 3, 1, -50, -70, -30, -100]']","def move_all_negative_elements_to_end(lst):
+	""""""Move all negative elements in a list to the end.""""""
+	lst.sort(reverse=True)
+	for i in range(len(lst)):
+		if lst[i] < 0:
+			lst.insert(i, lst.pop(i + 1))
+	return lst
+
+def get_all_positive_elements(lst):
+	""""""Get all positive elements in a list.""""""
+	return [x for x in lst if x > 0]
+
+def get_all_negative_elements(lst):
+	""""""Get all negative elements in a list.""""""
+	return [x for x in lst if x <","def move_all_negative_elements_to_end(lst):
+	""""""Move all negative elements in a list to the end.""""""
+	lst.sort(reverse=True)
+	for i in range(len(lst)):
+		if lst[i] < 0:
+			lst.insert(i, lst.pop(i + 1))
+	return lst","def move_all_negative_elements_to_end(lst):
+	""""""Move all negative elements in a list to the end.""""""
+	lst.sort(reverse=True)
+	for i in range(len(lst)):
+		if lst[i] < 0:
+			lst.insert(i, lst.pop(i + 1))
+	return lst"
+82,82,"def remove_alphabetical_characters(w):
+	""""""Remove alphabetical characters in a string.""""""","[""assert remove_alphabetical_characters('2a4B') == 24"", ""assert remove_alphabetical_characters('br2ace') == 2"", 'assert remove_alphabetical_characters(100) == 100', ""assert remove_alphabetical_characters('3g4lc') == 34"", ""assert remove_alphabetical_characters('12Apple0') == 120""]","def remove_alphabetical_characters(w):
+	""""""Remove alphabetical characters in a string.""""""
+	return ''.join(c for c in w if c.isalpha())
+
+def remove_punctuation(w):
+	""""""Remove punctuation from a string.""""""
+	return ''.join(c for c in w if c not in string.punctuation)
+
+def remove_numbers(w):
+	""""""Remove numbers from a string.""""""
+	return ''.join(c for c in w if c.isdigit())
+
+def remove_stopwords(w):
+	""""""Remove stopwords from a string.""""""
+	return''.join([word for word in w.split() if word not in stopwords.words","def remove_alphabetical_characters(w):
+	""""""Remove alphabetical characters in a string.""""""
+	return ''.join(c for c in w if c.isalpha())","def remove_alphabetical_characters(w):
+	""""""Remove alphabetical characters in a string.""""""
+	return ''.join(c for c in w if c.isalpha())"
+83,83,"def largest_norm(X):
+	""""""Find the largest norm among n-dimensional points.""""""","['assert largest_norm([[0.884, 0.209], [0.067, 0.381], [0.503, 0.821], [0.306, 0.592], [0.417, 0.519]]) == 0.6399499999999999', 'assert largest_norm([[2, 2], [1, 0], [0, 4], [2, 4], [1, 1], [0, 3], [1, 0], [1, 0], [1, 3], [0, 1]]) == 16', 'assert largest_norm([[1, 0, 3], [4, 3, 4], [4, 1, 2], [0, 1, 0], [3, 3, 2]]) == 29', 'assert largest_norm([[1.022, -0.668], [-1.082, 0.063], [-0.181, 0.841], [0.891, 1.533], [1.195, -1.69]]) == 2.35021', 'assert largest_norm([[-8, 2, -3], [2, -10, -5], [-5, 5, -8], [-3, 2, -2], [3, 6, 2]]) == 74']","def largest_norm(X):
+	""""""Find the largest norm among n-dimensional points.""""""
+	return max(np.linalg.norm(x, axis=1) for x in X)
+
+def get_data(filename):
+	""""""Read the data from a file.""""""
+	with open(filename, 'r') as f:
+		data = f.read().splitlines()
+	return data
+
+def get_data_and_labels(filename):
+	""""""Read the data from a file and return the data and labels.""""""
+	data = get_data(filename)
+	labels = [int(x) for x in data[0].split(',')]
+	","def largest_norm(X):
+	""""""Find the largest norm among n-dimensional points.""""""
+	return max(np.linalg.norm(x, axis=1) for x in X)","def largest_norm(X):
+	""""""Find the largest norm among n-dimensional points.""""""
+	return max(np.linalg.norm(x, axis=1) for x in X)"
+84,84,"def f1_score(pred,y):
+	""""""Given two arrays (pred, gold), calculate the F1 score.""""""","['assert f1_score([1, 1, 1, 1, 1, 0, 1, 0, 0, 0],[0, 1, 1, 0, 1, 0, 0, 0, 0, 1]) == 0.6', 'assert f1_score([0, 1, 1, 1, 1, 0, 1, 0, 0, 0],[0, 1, 1, 0, 1, 0, 0, 0, 0, 0]) == 0.74999999999', 'assert f1_score([0, 1, 0, 0, 0],[0, 1, 0, 0, 0]) == 1.0', 'assert f1_score([1, 1, 1, 1, 1, 1, 1, 1, 1, 1],[0, 0, 0, 0, 0, 1, 0, 0, 0, 0]) == 0.1818181818182', 'assert f1_score([0, 1, 0, 0, 0],[0, 1, 1, 1, 1]) == 0.4']","def f1_score(pred,y):
+	""""""Given two arrays (pred, gold), calculate the F1 score.""""""
+	#pred = np.argmax(pred, axis=1)
+	#y = np.argmax(y, axis=1)
+	#print(pred)
+	#print(y)
+	#print(pred.shape)
+	#print(y.shape)
+	#print(pred)
+	#print(y)
+	#print(pred.shape)
+	#print(y.shape)
+	#print(pred)
+	#print(y)
+	#print(pred.shape)
+	#print(y.shape)
+	","def f1_score(pred,y):
+	""""""Given two arrays (pred, gold), calculate the F1 score.""""""
+	#pred = np.argmax(pred, axis=1)
+	#y = np.argmax(y, axis=1)
+	#print(pred)
+	#print(y)
+	#print(pred.shape)
+	#print(y.shape)
+	#print(pred)
+	#print(y)
+	#print(pred.shape)
+	#print(y.shape)
+	#print(pred)
+	#print(y)
+	#print(pred.shape)
+	#print(y.shape)
+	","def f1_score(pred,y):
+	""""""Given two arrays (pred, gold), calculate the F1 score.""""""
+	#pred = np.argmax(pred, axis=1)
+	#y = np.argmax(y, axis=1)
+	#print(pred)
+	#print(y)
+	#print(pred.shape)
+	#print(y.shape)
+	#print(pred)
+	#print(y)
+	#print(pred.shape)
+	#print(y.shape)
+	#print(pred)
+	#print(y)
+	#print(pred.shape)
+	#print(y.shape)
+	"
+85,85,"def add_space(x):
+	""""""Add spaces before capital letters.""""""","[""assert add_space('ACapitalLetterWords') == ' A Capital Letter Words'"", ""assert add_space('camelCaseMethod') == 'camel Case Method'"", ""assert add_space('ABCDE') == ' A B C D E'"", ""assert add_space('splitDB') == 'split D B'"", ""assert add_space('donotsplitanything') == 'donotsplitanything'""]","def add_space(x):
+	""""""Add spaces before capital letters.""""""
+	return'' + x
+
+def add_space_after_capital_letter(x):
+	""""""Add spaces after capital letters.""""""
+	return x +''
+
+def add_space_before_capital_letter(x):
+	""""""Add spaces before capital letters.""""""
+	return x +''
+
+def add_space_after_capital_letter_and_space(x):
+	""""""Add spaces after capital letters and spaces.""""""
+	return x +'' +''
+
+def add_space_before_capital_letter_and_space(x):","def add_space(x):
+	""""""Add spaces before capital letters.""""""
+	return'' + x","def add_space(x):
+	""""""Add spaces before capital letters.""""""
+	return'' + x"
+86,86,"def remove_outlier(x):
+	""""""Remove data points in the tail (2sigma) of normal distribution.""""""","['assert remove_outlier([0, 0, 0, 0, 100]) == [100]', 'assert remove_outlier([-100, 0, 1, 2, 3, 4, -1, -2, -10, 45, 120]) == [-100, 120]', 'assert remove_outlier([3, -1, 0, 3, -3, 5, -2, 0, 0, -3, 1, -4, 4, -7, -1, -1, 1, -1, -2, -3]) == [-7]', 'assert remove_outlier([0, 0, 4, 0, 3, 0, 0, -7, -2, 1, 1, -1, -7, -3, 1, 2, 0, -1, 4, 4]) == [-7, -7]', 'assert remove_outlier([4, -2, -2, -2, 0, 2, 3, -3, -3, 4, 1, 0, 2, 1, 4, -2, 2, -5, -4, 3, 0, 0, -2, -1, -1, 0, -2, 1, 1, -3]) == [-5]']","def remove_outlier(x):
+	""""""Remove data points in the tail (2sigma) of normal distribution.""""""
+	return x[np.abs(x - np.mean(x)) < 2 * np.std(x)]
+
+def remove_outlier_2(x):
+	""""""Remove data points in the tail (2sigma) of normal distribution.""""""
+	return x[np.abs(x - np.mean(x)) < 2 * np.std(x)]
+
+def remove_outlier_3(x):
+	""""""Remove data points in the tail (2sigma) of normal distribution.""""""
+	return x[np.abs(x - np.mean(x)) <","def remove_outlier(x):
+	""""""Remove data points in the tail (2sigma) of normal distribution.""""""
+	return x[np.abs(x - np.mean(x)) < 2 * np.std(x)]","def remove_outlier(x):
+	""""""Remove data points in the tail (2sigma) of normal distribution.""""""
+	return x[np.abs(x - np.mean(x)) < 2 * np.std(x)]"
+87,87,"def convert_to_categorical(x):
+	""""""Convert values into categorical variables.""""""","['assert convert_to_categorical([4, 2, 3, 1, 0, 3, 3, 3, 2, 1]) == [[0, 0, 0, 0, 1], [0, 0, 1, 0, 0], [0, 0, 0, 1, 0], [0, 1, 0, 0, 0], [1, 0, 0, 0, 0], [0, 0, 0, 1, 0], [0, 0, 0, 1, 0], [0, 0, 0, 1, 0], [0, 0, 1, 0, 0], [0, 1, 0, 0, 0]]', 'assert convert_to_categorical([0, 1, 2]) == [[1, 0, 0], [0, 1, 0], [0, 0, 1]]', 'assert convert_to_categorical([1, 1, 1, 1, 1]) == [[1], [1], [1], [1], [1]]', 'assert convert_to_categorical([0, 0, 0, 0, 0]) == [[1], [1], [1], [1], [1]]', 'assert convert_to_categorical([0, 0, 1, 1]) == [[1, 0], [1, 0], [0, 1], [0, 1]]']","def convert_to_categorical(x):
+	""""""Convert values into categorical variables.""""""
+	return np.argmax(x, axis=1)
+
+def get_data(data_dir, batch_size, num_classes):
+	""""""Load data from data directory.""""""
+	# Load data
+	print('Loading data...')
+	(x_train, y_train), (x_test, y_test) = cifar10.load_data()
+	x_train = x_train.astype('float32')
+	x_test = x_test.astype('float32')
+	x_train /= 255
+	x","def convert_to_categorical(x):
+	""""""Convert values into categorical variables.""""""
+	return np.argmax(x, axis=1)","def convert_to_categorical(x):
+	""""""Convert values into categorical variables.""""""
+	return np.argmax(x, axis=1)"
+88,88,"def group_by_key(fun,x):
+	""""""Group items in an array using a provided function.""""""","[""assert group_by_key(<built-in function len>,['a', 'b', 'c']) == {'1': ['a', 'b', 'c']}"", ""assert group_by_key(<built-in function len>,['apple', 'banana', 'orange', 'peach']) == {'5': ['apple', 'peach'], '6': ['banana', 'orange']}"", ""assert group_by_key(<class 'type'>,[1, 2, 3, 'a', 'b', 'c']) == {'int': [1, 2, 3], 'str': ['a', 'b', 'c']}"", ""assert group_by_key(<built-in function len>,[[1, 2, 3], 'a', 'b', 'c']) == {'1': ['a', 'b', 'c'], '3': [[1, 2, 3]]}"", ""assert group_by_key(<class 'str'>,[1, 2, 3, '1', '2', '3']) == {'2': [2, '2'], '3': [3, '3'], '1': [1, '1']}""]","def group_by_key(fun,x):
+	""""""Group items in an array using a provided function.""""""
+	return zip(*sorted(zip(fun(x),x),reverse=True))
+
+def group_by_key_and_value(fun,x):
+	""""""Group items in an array using a provided function.""""""
+	return zip(*sorted(zip(fun(x),x),reverse=True))
+
+def group_by_key_and_value_and_count(fun,x):
+	""""""Group items in an array using a provided function.""""""
+	return zip(*sorted(zip(fun(x),x),reverse=True))
+
+def group_by_","def group_by_key(fun,x):
+	""""""Group items in an array using a provided function.""""""
+	return zip(*sorted(zip(fun(x),x),reverse=True))","def group_by_key(fun,x):
+	""""""Group items in an array using a provided function.""""""
+	return zip(*sorted(zip(fun(x),x),reverse=True))"
+89,89,"def max_stock_profit(array):
+	""""""Given an array of ""prices"", find the max profit.""""""","['assert max_stock_profit([1, 2, 3, 4, 5]) == 4', 'assert max_stock_profit([5, 2, 3, 4, 0]) == 2', 'assert max_stock_profit([12, 7, 8, 5, 9, 5, 14, 9, 8, 9]) == 9', 'assert max_stock_profit([1, 10, 1, 10, 0]) == 9', 'assert max_stock_profit([1, 2, 3, 2, 1]) == 2']","def max_stock_profit(array):
+	""""""Given an array of ""prices"", find the max profit.""""""
+	max_profit = 0
+	for i in range(len(array)-1):
+		if array[i+1] - array[i] > max_profit:
+			max_profit = array[i+1] - array[i]
+	return max_profit
+
+def max_stock_profit_2(array):
+	""""""Given an array of ""prices"", find the max profit.""""""
+	max_profit = 0
+	for i in range(len(array)-1):
+		if array[i+1] - array[i] > max","def max_stock_profit(array):
+	""""""Given an array of ""prices"", find the max profit.""""""
+	max_profit = 0
+	for i in range(len(array)-1):
+		if array[i+1] - array[i] > max_profit:
+			max_profit = array[i+1] - array[i]
+	return max_profit","def max_stock_profit(array):
+	""""""Given an array of ""prices"", find the max profit.""""""
+	max_profit = 0
+	for i in range(len(array)-1):
+		if array[i+1] - array[i] > max_profit:
+			max_profit = array[i+1] - array[i]
+	return max_profit"
+90,90,"def sum_positions(target,nums):
+	""""""Sum of all position indices where a value appear.""""""","['assert sum_positions(1,[1, 2, 1, 2, 1]) == 6', 'assert sum_positions(1,[0, 0, 0]) == 0', 'assert sum_positions(1,[1.1, 2, 3, 2, 1]) == 4', 'assert sum_positions(1,[1, 2, 3, 2, 1]) == 0', ""assert sum_positions(1,[1, '1', 2, '1']) == 4""]","def sum_positions(target,nums):
+	""""""Sum of all position indices where a value appear.""""""
+	return sum(i for i,x in enumerate(nums) if x == target)
+
+def sum_positions_2(target,nums):
+	""""""Sum of all position indices where a value appear.""""""
+	return sum(i for i,x in enumerate(nums) if x == target)
+
+def sum_positions_3(target,nums):
+	""""""Sum of all position indices where a value appear.""""""
+	return sum(i for i,x in enumerate(nums) if x == target)
+
+def sum_positions_4(target,nums):
+	""""""","def sum_positions(target,nums):
+	""""""Sum of all position indices where a value appear.""""""
+	return sum(i for i,x in enumerate(nums) if x == target)","def sum_positions(target,nums):
+	""""""Sum of all position indices where a value appear.""""""
+	return sum(i for i,x in enumerate(nums) if x == target)"
+91,91,"def find_missing_num(nums,N):
+	""""""Find a missing number given a list and a max number.""""""","['assert find_missing_num([1, 3, 4],4) == 2', 'assert find_missing_num([1, 2, 3, 4],5) == 5', 'assert find_missing_num([4, 3, 9, 7, 8, 5, 2, 1, 10],10) == 6', 'assert find_missing_num([6, 15, 13, 2, 14, 17, 7, 16, 11, 9, 3, 10, 8, 5, 12, 1, 20, 4, 19],20) == 18', 'assert find_missing_num([],1) == 1']","def find_missing_num(nums,N):
+	""""""Find a missing number given a list and a max number.""""""
+	for i in range(N):
+		if nums[i]!= i+1:
+			return i+1
+	return N+1
+
+def find_missing_num_2(nums,N):
+	""""""Find a missing number given a list and a max number.""""""
+	for i in range(N):
+		if nums[i]!= i+1:
+			return i+1
+	return N+1
+
+def find_missing_num_3(nums,N):
+	""""""Find a missing number given a list and a max number.""""""
+	","def find_missing_num(nums,N):
+	""""""Find a missing number given a list and a max number.""""""
+	for i in range(N):
+		if nums[i]!= i+1:
+			return i+1
+	return N+1","def find_missing_num(nums,N):
+	""""""Find a missing number given a list and a max number.""""""
+	for i in range(N):
+		if nums[i]!= i+1:
+			return i+1
+	return N+1"
+92,92,"def common_num_in_matrix(x):
+	""""""Common numbers among rows in a matrix.""""""","['assert common_num_in_matrix([[1, 2, 3, 4, 5], [0, 1, 3, 5, 7], [0, 2, 3, 4, 5]]) == [3, 5]', 'assert common_num_in_matrix([[1, 1], [1, 1]]) == [1]', 'assert common_num_in_matrix([[1, 2, 3], [2, 3, 4], [3, 4, 5]]) == [3]', 'assert common_num_in_matrix([[1, 12, 56, 21, 5], [21, 2, 6, 11, 7], [5, 7, 13, 8, 21], [5, 21, -5, 6, 8]]) == [21]', 'assert common_num_in_matrix([[1, 2, 3, 4, 5], [1, 2, 3, 4, 5]]) == [1, 2, 3, 4, 5]']","def common_num_in_matrix(x):
+	""""""Common numbers among rows in a matrix.""""""
+	return len(set(x.flatten()))
+
+def common_num_in_matrix_row(x, row):
+	""""""Common numbers among rows in a matrix.""""""
+	return len(set(x[row].flatten()))
+
+def common_num_in_matrix_col(x, col):
+	""""""Common numbers among columns in a matrix.""""""
+	return len(set(x[:,col].flatten()))
+
+def common_num_in_matrix_row_col(x, row, col):
+	""""""Common numbers among rows and columns in a matrix.""""""
+","def common_num_in_matrix(x):
+	""""""Common numbers among rows in a matrix.""""""
+	return len(set(x.flatten()))","def common_num_in_matrix(x):
+	""""""Common numbers among rows in a matrix.""""""
+	return len(set(x.flatten()))"
+93,93,"def sum_collatz(start):
+	""""""Obtain the sum of Collatz sequence starting from given number.""""""","['assert sum_collatz(1) == 1', 'assert sum_collatz(9) == 55', 'assert sum_collatz(27) == 101440', 'assert sum_collatz(28) == 330', 'assert sum_collatz(123456789) == 1266590663']","def sum_collatz(start):
+	""""""Obtain the sum of Collatz sequence starting from given number.""""""
+	if start == 1:
+		return 1
+	else:
+		return start + sum_collatz(start // 2)
+
+def sum_collatz_list(start_list):
+	""""""Obtain the sum of Collatz sequence starting from given list of numbers.""""""
+	return sum(start_list)
+
+def sum_collatz_list_recursive(start_list):
+	""""""Obtain the sum of Collatz sequence starting from given list of numbers recursively.""""""
+	if len(start_list) == 1:
+		return start","def sum_collatz(start):
+	""""""Obtain the sum of Collatz sequence starting from given number.""""""
+	if start == 1:
+		return 1
+	else:
+		return start + sum_collatz(start // 2)","def sum_collatz(start):
+	""""""Obtain the sum of Collatz sequence starting from given number.""""""
+	if start == 1:
+		return 1
+	else:
+		return start + sum_collatz(start // 2)"
+94,94,"def cup_swap(start,swap):
+	""""""Name the location of a ""ball"" after cup swapping.""""""","[""assert cup_swap('A',['AB', 'BC', 'CA', 'BC', 'AC']) == 'C'"", ""assert cup_swap('B',['AC', 'CA']) == 'B'"", ""assert cup_swap('C',['AB', 'BC', 'CA', 'BC', 'AC', 'AB', 'CA', 'BC', 'AC', 'BA']) == 'B'"", ""assert cup_swap('C',['AB', 'AC']) == 'A'"", ""assert cup_swap('A',[]) == 'A'""]","def cup_swap(start,swap):
+	""""""Name the location of a ""ball"" after cup swapping.""""""
+	return start + swap
+
+def cup_swap_2(start,swap):
+	""""""Name the location of a ""ball"" after cup swapping.""""""
+	return start + swap
+
+def cup_swap_3(start,swap):
+	""""""Name the location of a ""ball"" after cup swapping.""""""
+	return start + swap
+
+def cup_swap_4(start,swap):
+	""""""Name the location of a ""ball"" after cup swapping.""""""
+	return start + swap
+
+def cup_swap_5(start","def cup_swap(start,swap):
+	""""""Name the location of a ""ball"" after cup swapping.""""""
+	return start + swap","def cup_swap(start,swap):
+	""""""Name the location of a ""ball"" after cup swapping.""""""
+	return start + swap"
+95,95,"def reverse_digits(x):
+	""""""Reverse digits in a number with a stack.""""""","['assert reverse_digits(123) == 321', 'assert reverse_digits(123456789) == 987654321', 'assert reverse_digits(100) == 1', 'assert reverse_digits(0) == 0', 'assert reverse_digits(1230) == 321']","def reverse_digits(x):
+	""""""Reverse digits in a number with a stack.""""""
+	stack = []
+	while x:
+		stack.append(x % 10)
+		x //= 10
+	stack.reverse()
+	return stack
+
+def reverse_digits_2(x):
+	""""""Reverse digits in a number with a stack.""""""
+	stack = []
+	while x:
+		stack.append(x % 10)
+		x //= 10
+	stack.reverse()
+	return stack
+
+def reverse_digits_3(x):
+	""""""Reverse digits in a number with a stack.""""""
+	stack =","def reverse_digits(x):
+	""""""Reverse digits in a number with a stack.""""""
+	stack = []
+	while x:
+		stack.append(x % 10)
+		x //= 10
+	stack.reverse()
+	return stack","def reverse_digits(x):
+	""""""Reverse digits in a number with a stack.""""""
+	stack = []
+	while x:
+		stack.append(x % 10)
+		x //= 10
+	stack.reverse()
+	return stack"
+96,96,"def calculate_arrows(x):
+	""""""Calculate arrowheads left and right.""""""","[""assert calculate_arrows(['<<', '>>>']) == '>'"", ""assert calculate_arrows(['<<<', '>>']) == '<'"", ""assert calculate_arrows(['<<', '>>', '<<', '>>>', '>>>']) == '>>>>'"", ""assert calculate_arrows(['<<', '>>']) == ''"", ""assert calculate_arrows(['<<<<<<<<<<<<', '>']) == '<<<<<<<<<<<'""]","def calculate_arrows(x):
+	""""""Calculate arrowheads left and right.""""""
+	x = np.array(x)
+	x_left = x - 0.05
+	x_right = x + 0.05
+	return x_left, x_right
+
+def plot_arrows(x, y, ax, color='black', alpha=0.5):
+	""""""Plot arrows.""""""
+	x_left, x_right = calculate_arrows(x)
+	ax.plot(x_left, y, color=color, alpha=alpha)
+	ax.plot(x_right, y, color=color, alpha","def calculate_arrows(x):
+	""""""Calculate arrowheads left and right.""""""
+	x = np.array(x)
+	x_left = x - 0.05
+	x_right = x + 0.05
+	return x_left, x_right","def calculate_arrows(x):
+	""""""Calculate arrowheads left and right.""""""
+	x = np.array(x)
+	x_left = x - 0.05
+	x_right = x + 0.05
+	return x_left, x_right"
+97,97,"def check_interval_num_(x):
+	""""""Check if the interval (max-min) is included in a list.""""""","['assert check_interval_num_([1, 2, 3, 4, 5, 6, 8]) == False', 'assert check_interval_num_([1, 7, 8]) == True', 'assert check_interval_num_([10]) == False', 'assert check_interval_num_([0, 1]) == True', 'assert check_interval_num_([1000, 2, 3, 4, 5, 6, 1000000]) == False']","def check_interval_num_(x):
+	""""""Check if the interval (max-min) is included in a list.""""""
+	if x in [0,1]:
+		return True
+	else:
+		return False
+
+def check_interval_num(x):
+	""""""Check if the interval (max-min) is included in a list.""""""
+	if x in [0,1]:
+		return True
+	else:
+		return False
+
+def check_interval_num_(x):
+	""""""Check if the interval (max-min) is included in a list.""""""
+	if x in [0,1]:
+		return True
+	else:
+		return False
+
+def check","def check_interval_num_(x):
+	""""""Check if the interval (max-min) is included in a list.""""""
+	if x in [0,1]:
+		return True
+	else:
+		return False","def check_interval_num_(x):
+	""""""Check if the interval (max-min) is included in a list.""""""
+	if x in [0,1]:
+		return True
+	else:
+		return False"
+98,98,"def length_encoding(x):
+	""""""Encode a string by converting repeated chars with counts.""""""","[""assert length_encoding('aabbddcc') == 'a2b2d2c2'"", ""assert length_encoding('abc') == 'a1b1c1'"", ""assert length_encoding('zzzzzyyyyyxxxxxa') == 'z5y5x5a1'"", ""assert length_encoding('aaa') == 'a3'"", ""assert length_encoding('') == ''""]","def length_encoding(x):
+	""""""Encode a string by converting repeated chars with counts.""""""
+	return ''.join(map(lambda c: c if c in x else str(x.count(c)), x))
+
+def encode_string(x):
+	""""""Encode a string by converting repeated chars with counts.""""""
+	return ''.join(map(lambda c: c if c in x else str(x.count(c)), x))
+
+def decode_string(x):
+	""""""Decode a string by converting repeated chars with counts.""""""
+	return ''.join(map(lambda c: c if c in x else chr(x.count(c)), x))
+
+def","def length_encoding(x):
+	""""""Encode a string by converting repeated chars with counts.""""""
+	return ''.join(map(lambda c: c if c in x else str(x.count(c)), x))","def length_encoding(x):
+	""""""Encode a string by converting repeated chars with counts.""""""
+	return ''.join(map(lambda c: c if c in x else str(x.count(c)), x))"
+99,99,"def convert_email(x):
+	""""""Use regex to match email addresses and remove special chars.""""""","[""assert convert_email('abc@example.com.') == 'abc'"", ""assert convert_email('a.b.c@example.com test.') == 'a b c'"", ""assert convert_email('a1b2c3.d4e_f6@example.com.') == 'a b c  d e f '"", ""assert convert_email('abc@example.com test. def@abc.def.') == 'abc'"", ""assert convert_email('example@@example.com test, example_email@abc.io .') == 'example email'""]","def convert_email(x):
+	""""""Use regex to match email addresses and remove special chars.""""""
+	return re.sub(r""[^@]+@[^@]+\.[^@]+"", """", x)
+
+def convert_phone(x):
+	""""""Use regex to match phone numbers and remove special chars.""""""
+	return re.sub(r""[^0-9]+"", """", x)
+
+def convert_date(x):
+	""""""Use regex to match dates and remove special chars.""""""
+	return re.sub(r""[^0-9]+"", """", x)
+
+def convert_time(x):
+	""""""Use regex to match times and remove special chars.""""""
+","def convert_email(x):
+	""""""Use regex to match email addresses and remove special chars.""""""
+	return re.sub(r""[^@]+@[^@]+\.[^@]+"", """", x)","def convert_email(x):
+	""""""Use regex to match email addresses and remove special chars.""""""
+	return re.sub(r""[^@]+@[^@]+\.[^@]+"", """", x)"
+100,100,"def second_largest(A):
+	""""""Print out the second largest element in an array.""""""","['assert second_largest([1, 3, 2, 2]) == 2', 'assert second_largest([1000, 1000, 1000]) == 1000', 'assert second_largest([0, 0.2, 0.4, -0.2]) == 0.2', 'assert second_largest([3, 3, 3, 2, 2, 1]) == 2', 'assert second_largest([0, 3, 1, 3, 2, 2, -0.2, 0.2]) == 2']","def second_largest(A):
+	""""""Print out the second largest element in an array.""""""
+	return max(A, key=A.count)
+
+def third_largest(A):
+	""""""Print out the third largest element in an array.""""""
+	return max(A, key=A.count)
+
+def fourth_largest(A):
+	""""""Print out the fourth largest element in an array.""""""
+	return max(A, key=A.count)
+
+def fifth_largest(A):
+	""""""Print out the fifth largest element in an array.""""""
+	return max(A, key=A.count)
+
+def sixth_largest(","def second_largest(A):
+	""""""Print out the second largest element in an array.""""""
+	return max(A, key=A.count)","def second_largest(A):
+	""""""Print out the second largest element in an array.""""""
+	return max(A, key=A.count)"
+101,101,"def largest_prefix_sum(A):
+	""""""Return the largest prefix sum in an array.""""""","['assert largest_prefix_sum([1, 3, 2, 2]) == 8', 'assert largest_prefix_sum([3, -3, -3]) == 3', 'assert largest_prefix_sum([0, 0.2, 0.4, -0.2]) == 0.6', 'assert largest_prefix_sum([3, 3, 3, -2, 2, 1]) == 10', 'assert largest_prefix_sum([-0.2, 5, -0.2]) == 4.8']","def largest_prefix_sum(A):
+	""""""Return the largest prefix sum in an array.""""""
+	if not A:
+		return 0
+	if len(A) == 1:
+		return A[0]
+	if len(A) == 2:
+		return max(A)
+	if len(A) == 3:
+		return max(A) + max(A[1:])
+	if len(A) == 4:
+		return max(A) + max(A[1:]) + max(A[2:])
+	if len(A) == 5:
+		return max(A) + max(A[1","def largest_prefix_sum(A):
+	""""""Return the largest prefix sum in an array.""""""
+	if not A:
+		return 0
+	if len(A) == 1:
+		return A[0]
+	if len(A) == 2:
+		return max(A)
+	if len(A) == 3:
+		return max(A) + max(A[1:])
+	if len(A) == 4:
+		return max(A) + max(A[1:]) + max(A[2:])
+	if len(A) == 5:
+		return max(A) + max(A[1","def largest_prefix_sum(A):
+	""""""Return the largest prefix sum in an array.""""""
+	if not A:
+		return 0
+	if len(A) == 1:
+		return A[0]
+	if len(A) == 2:
+		return max(A)
+	if len(A) == 3:
+		return max(A) + max(A[1:])
+	if len(A) == 4:
+		return max(A) + max(A[1:]) + max(A[2:])
+	if len(A) == 5:
+		return max(A) + max(A[1"
+102,102,"def closest_element_to_zero(A):
+	""""""Find the element which is the cloest to 0 and print the distance.""""""","['assert closest_element_to_zero([1, 3, 2, 2]) == 1', 'assert closest_element_to_zero([3, -3, -3]) == 3', 'assert closest_element_to_zero([0, 0.2, 0.4, -0.2]) == 0', 'assert closest_element_to_zero([3, 3, 3, -2, 2, 1]) == 1', 'assert closest_element_to_zero([-0.2, 5, -0.2]) == 0.2']","def closest_element_to_zero(A):
+	""""""Find the element which is the cloest to 0 and print the distance.""""""
+	min_distance = float('inf')
+	min_element = None
+	for i in range(len(A)):
+		if A[i] == 0:
+			distance = abs(i)
+			if distance < min_distance:
+				min_distance = distance
+				min_element = i
+	print(min_element, min_distance)
+
+def closest_element_to_zero_2(A):
+	""""""Find the element which is the cloest to 0 and print the distance.""""""
+	min_distance = float('inf')
+	","def closest_element_to_zero(A):
+	""""""Find the element which is the cloest to 0 and print the distance.""""""
+	min_distance = float('inf')
+	min_element = None
+	for i in range(len(A)):
+		if A[i] == 0:
+			distance = abs(i)
+			if distance < min_distance:
+				min_distance = distance
+				min_element = i
+	print(min_element, min_distance)","def closest_element_to_zero(A):
+	""""""Find the element which is the cloest to 0 and print the distance.""""""
+	min_distance = float('inf')
+	min_element = None
+	for i in range(len(A)):
+		if A[i] == 0:
+			distance = abs(i)
+			if distance < min_distance:
+				min_distance = distance
+				min_element = i
+	return(min_element, min_distance)"
+103,103,"def consecutive_unique_char(A):
+	""""""Find the max length contiguous subarray with unique characters.""""""","[""assert consecutive_unique_char('acc') == 2"", ""assert consecutive_unique_char('accccccccccccccccccccc') == 2"", ""assert consecutive_unique_char('abcdef') == 6"", ""assert consecutive_unique_char('acdeffce') == 5"", ""assert consecutive_unique_char('aaaaaaaaaaaaa') == 1""]","def consecutive_unique_char(A):
+	""""""Find the max length contiguous subarray with unique characters.""""""
+	max_len = 0
+	for i in range(len(A)):
+		for j in range(i+1, len(A)):
+			if A[i] == A[j]:
+				max_len = max(max_len, j-i+1)
+	return max_len
+
+def consecutive_unique_char_2(A):
+	""""""Find the max length contiguous subarray with unique characters.""""""
+	max_len = 0
+	for i in range(len(A)):
+		for j in range(i+1, len","def consecutive_unique_char(A):
+	""""""Find the max length contiguous subarray with unique characters.""""""
+	max_len = 0
+	for i in range(len(A)):
+		for j in range(i+1, len(A)):
+			if A[i] == A[j]:
+				max_len = max(max_len, j-i+1)
+	return max_len","def consecutive_unique_char(A):
+	""""""Find the max length contiguous subarray with unique characters.""""""
+	max_len = 0
+	for i in range(len(A)):
+		for j in range(i+1, len(A)):
+			if A[i] == A[j]:
+				max_len = max(max_len, j-i+1)
+	return max_len"
+104,104,"def highest_frequency_char(A):
+	""""""Obtain the frequency of the most frequent character.""""""","[""assert highest_frequency_char('abadb') == 2"", ""assert highest_frequency_char('aaaaaaaa') == 8"", ""assert highest_frequency_char('caaaaaaaaaaaa') == 12"", ""assert highest_frequency_char('cccccaaaaa') == 5"", ""assert highest_frequency_char('abcde') == 0""]","def highest_frequency_char(A):
+	""""""Obtain the frequency of the most frequent character.""""""
+	freq = {}
+	for c in A:
+		if c in freq:
+			freq[c] += 1
+		else:
+			freq[c] = 1
+	return max(freq, key=freq.get)
+
+def highest_frequency_word(A):
+	""""""Obtain the frequency of the most frequent word.""""""
+	freq = {}
+	for w in A:
+		if w in freq:
+			freq[w] += 1
+		else:
+			freq[w] = 1
+	return max(freq, key=freq","def highest_frequency_char(A):
+	""""""Obtain the frequency of the most frequent character.""""""
+	freq = {}
+	for c in A:
+		if c in freq:
+			freq[c] += 1
+		else:
+			freq[c] = 1
+	return max(freq, key=freq.get)","def highest_frequency_char(A):
+	""""""Obtain the frequency of the most frequent character.""""""
+	freq = {}
+	for c in A:
+		if c in freq:
+			freq[c] += 1
+		else:
+			freq[c] = 1
+	return max(freq, key=freq.get)"
+105,105,"def longest_palindrome(A):
+	""""""Find the length of longest palindrome substring.""""""","[""assert longest_palindrome('a') == 1"", ""assert longest_palindrome('abcba') == 5"", ""assert longest_palindrome('caaa') == 3"", ""assert longest_palindrome('cccccaaaaa') == 5"", ""assert longest_palindrome('abcde') == 1""]","def longest_palindrome(A):
+	""""""Find the length of longest palindrome substring.""""""
+	# Create a dictionary to store the longest palindrome substring
+	# and its length
+	longest_palindrome_dict = {}
+
+	# Iterate through the string
+	for i in range(len(A)):
+		# Iterate through the string
+		for j in range(i, len(A)):
+			# If the substring is a palindrome
+			if A[i:j+1] == A[i:j+1][::-1]:
+				# If the length of the substring is greater than the
+				# length of the longest palindrome substring
+				if len(","def longest_palindrome(A):
+	""""""Find the length of longest palindrome substring.""""""
+	# Create a dictionary to store the longest palindrome substring
+	# and its length
+	longest_palindrome_dict = {}","def longest_palindrome(A):
+	""""""Find the length of longest palindrome substring.""""""
+	# Create a dictionary to store the longest palindrome substring
+	# and its length
+	longest_palindrome_dict = {}"
+106,106,"def count_primes(A):
+	""""""Calcuate prime numbers in a range.""""""","['assert count_primes(10) == 4', 'assert count_primes(0) == 0', 'assert count_primes(1) == 0', 'assert count_primes(100) == 25', 'assert count_primes(17) == 6']","def count_primes(A):
+	""""""Calcuate prime numbers in a range.""""""
+	primes = []
+	for i in range(2, A):
+		if is_prime(i):
+			primes.append(i)
+	return primes
+
+def is_prime(n):
+	""""""Check if a number is prime.""""""
+	if n == 2:
+		return True
+	if n == 3:
+		return True
+	if n % 2 == 0 or n % 3 == 0:
+		return False
+	for i in range(5, int(n**0.5) + 1, 6):
+	","def count_primes(A):
+	""""""Calcuate prime numbers in a range.""""""
+	primes = []
+	for i in range(2, A):
+		if is_prime(i):
+			primes.append(i)
+	return primes","def count_primes(A):
+	""""""Calcuate prime numbers in a range.""""""
+	primes = []
+	for i in range(2, A):
+		if is_prime(i):
+			primes.append(i)
+	return primes"
+107,107,"def rotate_array(A,K):
+	""""""Rotate an array to the right k steps.""""""","['assert rotate_array([1, 2, 3, 4, 5],3) == [3, 4, 5, 1, 2]', 'assert rotate_array([-1, 30, 50, 3],2) == [50, 3, -1, 30]', 'assert rotate_array([2, 3, 5, -30],1) == [-30, 2, 3, 5]', 'assert rotate_array([1, 2, 0, 4],0) == [1, 2, 0, 4]', 'assert rotate_array([2, 3, 4],8) == [3, 4, 2]']","def rotate_array(A,K):
+	""""""Rotate an array to the right k steps.""""""
+	n = len(A)
+	if n == 0:
+		return A
+	if n == 1:
+		return A
+	if n == 2:
+		return A
+	if n == 3:
+		return A
+	if n == 4:
+		return A
+	if n == 5:
+		return A
+	if n == 6:
+		return A
+	if n == 7:
+		return A
+	if n == 8:
+		return A
+	if n == 9:
+		return A","def rotate_array(A,K):
+	""""""Rotate an array to the right k steps.""""""
+	n = len(A)
+	if n == 0:
+		return A
+	if n == 1:
+		return A
+	if n == 2:
+		return A
+	if n == 3:
+		return A
+	if n == 4:
+		return A
+	if n == 5:
+		return A
+	if n == 6:
+		return A
+	if n == 7:
+		return A
+	if n == 8:
+		return A
+	if n == 9:
+		return A","def rotate_array(A,K):
+	""""""Rotate an array to the right k steps.""""""
+	n = len(A)
+	if n == 0:
+		return A
+	if n == 1:
+		return A
+	if n == 2:
+		return A
+	if n == 3:
+		return A
+	if n == 4:
+		return A
+	if n == 5:
+		return A
+	if n == 6:
+		return A
+	if n == 7:
+		return A
+	if n == 8:
+		return A
+	if n == 9:
+		return A"
+108,108,"def partition_equal_sets(A):
+	""""""Check whether one array can be divided into two subsets which have equal sums.""""""","['assert partition_equal_sets([1, 2, 3, 4, 5]) == False', 'assert partition_equal_sets([1, 5, 11, 5]) == True', 'assert partition_equal_sets([1, 2, 3, 5]) == False', 'assert partition_equal_sets([1, 2, 0, 4]) == False', 'assert partition_equal_sets([2, 3, 4, 3]) == True']","def partition_equal_sets(A):
+	""""""Check whether one array can be divided into two subsets which have equal sums.""""""
+	if len(A) == 1:
+		return True
+	if len(A) == 2:
+		return A[0] == A[1]
+	if len(A) % 2 == 0:
+		return False
+	A.sort()
+	for i in range(len(A) - 1):
+		if A[i] + A[i + 1]!= A[i + 1] - A[i]:
+			return False
+	return True
+
+def partition_equal_sets_2(A):
+	","def partition_equal_sets(A):
+	""""""Check whether one array can be divided into two subsets which have equal sums.""""""
+	if len(A) == 1:
+		return True
+	if len(A) == 2:
+		return A[0] == A[1]
+	if len(A) % 2 == 0:
+		return False
+	A.sort()
+	for i in range(len(A) - 1):
+		if A[i] + A[i + 1]!= A[i + 1] - A[i]:
+			return False
+	return True","def partition_equal_sets(A):
+	""""""Check whether one array can be divided into two subsets which have equal sums.""""""
+	if len(A) == 1:
+		return True
+	if len(A) == 2:
+		return A[0] == A[1]
+	if len(A) % 2 == 0:
+		return False
+	A.sort()
+	for i in range(len(A) - 1):
+		if A[i] + A[i + 1]!= A[i + 1] - A[i]:
+			return False
+	return True"
+109,109,"def square_root_integer(A):
+	""""""Compute the integer part of square root.""""""","['assert square_root_integer(2) == 1', 'assert square_root_integer(5) == 2', 'assert square_root_integer(101) == 10', 'assert square_root_integer(8) == 2', 'assert square_root_integer(226) == 15']","def square_root_integer(A):
+	""""""Compute the integer part of square root.""""""
+	return int(math.sqrt(A))
+
+def square_root_fraction(A):
+	""""""Compute the fraction part of square root.""""""
+	return A - int(math.sqrt(A))
+
+def square_root_fraction_integer(A):
+	""""""Compute the integer part of square root.""""""
+	return int(math.sqrt(A))
+
+def square_root_fraction_fraction(A):
+	""""""Compute the fraction part of square root.""""""
+	return A - int(math.sqrt(A))
+
+def square_root_fraction_fraction","def square_root_integer(A):
+	""""""Compute the integer part of square root.""""""
+	return int(math.sqrt(A))","def square_root_integer(A):
+	""""""Compute the integer part of square root.""""""
+	return int(math.sqrt(A))"
+110,110,"def plus_1(A):
+	""""""Return the digits after an interger is plused by 1.""""""","['assert plus_1(2) == [3]', 'assert plus_1(5) == [6]', 'assert plus_1(101) == [1, 0, 2]', 'assert plus_1(2345) == [2, 3, 4, 6]', 'assert plus_1(229) == [2, 3, 0]']","def plus_1(A):
+	""""""Return the digits after an interger is plused by 1.""""""
+	return A + 1
+
+def plus_2(A):
+	""""""Return the digits after an interger is plused by 2.""""""
+	return A + 2
+
+def plus_3(A):
+	""""""Return the digits after an interger is plused by 3.""""""
+	return A + 3
+
+def plus_4(A):
+	""""""Return the digits after an interger is plused by 4.""""""
+	return A + 4
+
+def plus_5(A):
+	""""""Return the digits after an interger is plused","def plus_1(A):
+	""""""Return the digits after an interger is plused by 1.""""""
+	return A + 1","def plus_1(A):
+	""""""Return the digits after an interger is plused by 1.""""""
+	return A + 1"
+111,111,"def check_square_sum(A):
+	""""""Check whether one integer is a sum of  two square numbers.""""""","['assert check_square_sum(2) == True', 'assert check_square_sum(5) == True', 'assert check_square_sum(101) == True', 'assert check_square_sum(3) == False', 'assert check_square_sum(7) == False']","def check_square_sum(A):
+	""""""Check whether one integer is a sum of  two square numbers.""""""
+	for i in range(1, len(A)):
+		for j in range(i+1, len(A)):
+			if A[i] + A[j] == 2020:
+				return True
+	return False
+
+def check_square_sum_2(A):
+	""""""Check whether one integer is a sum of  two square numbers.""""""
+	for i in range(1, len(A)):
+		for j in range(i+1, len(A)):
+			if A[i] + A[j] == 40","def check_square_sum(A):
+	""""""Check whether one integer is a sum of  two square numbers.""""""
+	for i in range(1, len(A)):
+		for j in range(i+1, len(A)):
+			if A[i] + A[j] == 2020:
+				return True
+	return False","def check_square_sum(A):
+	""""""Check whether one integer is a sum of  two square numbers.""""""
+	for i in range(1, len(A)):
+		for j in range(i+1, len(A)):
+			if A[i] + A[j] == 2020:
+				return True
+	return False"
+112,112,"def comare_std._dev.(A):
+	""""""Determine whether standard deviation is less than 1.""""""","['assert comare_std._dev.([14, 8, 11, 10]) == False', 'assert comare_std._dev.([3, 3, 3, 4]) == True', 'assert comare_std._dev.([1, 1, 1, 1, 1, 101]) == False', 'assert comare_std._dev.([1, 2, 3, 4, 5, 6, 7]) == False', 'assert comare_std._dev.([1, 0, 1, 0]) == True']","def comare_std._dev.(A):
+	""""""Determine whether standard deviation is less than 1.""""""
+	return np.std(A) < 1
+
+def comare_std._dev.(B):
+	""""""Determine whether standard deviation is less than 1.""""""
+	return np.std(B) < 1
+
+def comare_std._dev.(C):
+	""""""Determine whether standard deviation is less than 1.""""""
+	return np.std(C) < 1
+
+def comare_std._dev.(D):
+	""""""Determine whether standard deviation is less than 1.""""""
+	return np.std(D) < 1
+
+def comare","def comare_std._dev.(A):
+	""""""Determine whether standard deviation is less than 1.""""""
+	return np.std(A) < 1","def comare_std._dev.(A):
+	""""""Determine whether standard deviation is less than 1.""""""
+	return np.std(A) < 1"
+113,113,"def matrix_size(A):
+	""""""Calculate the sum of row and column numbers.""""""","['assert matrix_size([[3, 2], [2, 3]]) == 4', 'assert matrix_size([[3, 2, 5], [2, 3, 5]]) == 5', 'assert matrix_size([[1]]) == 2', 'assert matrix_size([[30000, 30000, 1], [30000, 30000, 1], [30000, 30000, 1]]) == 6', 'assert matrix_size([[5, 5, 5, 5, 5, 0]]) == 7']","def matrix_size(A):
+	""""""Calculate the sum of row and column numbers.""""""
+	return A.shape[0] * A.shape[1]
+
+def matrix_sum(A):
+	""""""Calculate the sum of all elements.""""""
+	return np.sum(A)
+
+def matrix_product(A, B):
+	""""""Calculate the product of two matrices.""""""
+	return np.dot(A, B)
+
+def matrix_determinant(A):
+	""""""Calculate the determinant of a matrix.""""""
+	return np.linalg.det(A)
+
+def matrix_inverse(A):
+	""""""Calculate the inverse of a matrix.""""""
+","def matrix_size(A):
+	""""""Calculate the sum of row and column numbers.""""""
+	return A.shape[0] * A.shape[1]","def matrix_size(A):
+	""""""Calculate the sum of row and column numbers.""""""
+	return A.shape[0] * A.shape[1]"
+114,114,"def diff_mean_and_median(A):
+	""""""Calculate the difference between mean and median for an array.""""""","['assert diff_mean_and_median([3, 2, 2, 3]) == 0', 'assert diff_mean_and_median([3, 2, 5, 2, 3, 5]) == 0.3333333333333335', 'assert diff_mean_and_median([1]) == 0', 'assert diff_mean_and_median([30000, 30000, 1, 30000, 30000, 1, 30000, 30000, 1]) == -9999.666666666668', 'assert diff_mean_and_median([5, 5, 5, 5, 5, 0]) == -0.833333333333333']","def diff_mean_and_median(A):
+	""""""Calculate the difference between mean and median for an array.""""""
+	return (A - np.mean(A)) / np.median(A)
+
+def diff_mean_and_median_and_std(A):
+	""""""Calculate the difference between mean and median and standard deviation for an array.""""""
+	return (A - np.mean(A)) / np.median(A)
+
+def diff_mean_and_median_and_std_and_skew(A):
+	""""""Calculate the difference between mean and median and standard deviation and skewness for an array.""""""
+	return (A - np.mean(A)) / np.","def diff_mean_and_median(A):
+	""""""Calculate the difference between mean and median for an array.""""""
+	return (A - np.mean(A)) / np.median(A)","def diff_mean_and_median(A):
+	""""""Calculate the difference between mean and median for an array.""""""
+	return (A - np.mean(A)) / np.median(A)"
