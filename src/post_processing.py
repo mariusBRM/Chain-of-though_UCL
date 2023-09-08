@@ -170,7 +170,12 @@ def list_to_tensor(lst):
     
     return tensor
 
-def generation_post_processing(model, output_ids):
+def remove_return_lines(text):
+    lines = text.split('\n')
+    cleaned_lines = [line for line in lines if not re.match(r'^\s*return', line)]
+    return '\n'.join(cleaned_lines)
+
+def generation_post_processing(model, output_ids, index, lenght_prompt):
     """ Keep only generated code with the indentation """
     output_text = []
 
@@ -182,6 +187,9 @@ def generation_post_processing(model, output_ids):
         # cut off generation
         processed_output = model.extract_function_block(output_function)
 
+        # remove the 'return' line 
+        processed_output = remove_return_lines(processed_output)
+        
         # encode again
         encoded_output = model.tokenizer.encode(processed_output)
 

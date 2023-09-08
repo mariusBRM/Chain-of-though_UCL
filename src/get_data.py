@@ -258,6 +258,27 @@ def custom_dataset_context_investigation(mtbp_converted, mtbp):
 #########################################################################
 #                       Custom Alpha Dataset                            #
 #########################################################################
+def reverse_normalize(data, a, b):
+    """
+    Normalizes the 2D list 'data' such that its values are between 'a' and 'b',
+    but in a reversed manner.
+    """
+    # Flatten the data to a 1D list
+    flat_data = [item for sublist in data for item in sublist]
+    
+    # Find the original min and max values
+    orig_min = min(flat_data)
+    orig_max = max(flat_data)
+    
+    # Function to normalize a single value
+    def normalize(value, orig_min, orig_max, a, b):
+        # Normalization formula: (value - orig_min) / (orig_max - orig_min) * (b - a) + a
+        return (value - orig_min) / (orig_max - orig_min) * (b - a) + a
+    
+    # Apply the normalization
+    normalized_data = [[normalize(value, orig_max, orig_min, a, b) for value in sublist] for sublist in data]
+    
+    return normalized_data
 
 def normalize(list_of_lists, a=0.5, b=1.5):
     # normalizing between a and b

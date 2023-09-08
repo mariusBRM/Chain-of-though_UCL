@@ -7,7 +7,7 @@ import seaborn as sns
 from scipy import stats
 import numpy as np
 from scipy.stats import mannwhitneyu
-
+import pandas as pd
 #######################################################################################
 #                       Utils function to Analyse the output                          #
 #######################################################################################
@@ -73,7 +73,9 @@ def get_descriptive_stats(list_of_lists):
 
 
 def plot_and_test_distribution(list1, list2):
-    """ Plot and test if the two generated code's length differences have a normal distribution"""
+    """ 
+    Plot and test if the two generated code's length differences have a normal distribution
+    """
 
     # Flatten the lists
     flat_list1 = [num for sublist in list1 for num in sublist]
@@ -85,11 +87,20 @@ def plot_and_test_distribution(list1, list2):
     # Calculate the differences
     differences = np.subtract(flat_list1[:min_length], flat_list2[:min_length])
 
+    # Style settings
+    sns.set_style("whitegrid")
+    sns.set_context("talk")
+
     # Plot the distribution of differences
-    sns.histplot(differences, kde=True)
-    plt.title('Distribution of differences in code lengths')
-    plt.xlabel('Difference in length')
-    plt.ylabel('Frequency')
+    plt.figure(figsize=(12, 7))
+    sns.histplot(differences, kde=True, color='dodgerblue', linewidth=2)
+
+    plt.title('Distribution of differences in code lengths', fontsize=18)
+    plt.xlabel('Difference in length', fontsize=16)
+    plt.ylabel('Frequency', fontsize=16)
+    plt.xticks(fontsize=14)
+    plt.yticks(fontsize=14)
+    plt.tight_layout()
     plt.show()
 
     # Perform a normality test
@@ -100,6 +111,37 @@ def plot_and_test_distribution(list1, list2):
     else:
         print("The differences follow a normal distribution.")
 
+def plot_and_compare_distribution(list1, list2):
+    """
+    Compare the two lists, plot the proportion of instances where elements from
+    list1 are greater, lesser or equal to those from list2.
+    """
+
+    flat_list1 = np.array([num for sublist in list1 for num in sublist])
+    flat_list2 = np.array([num for sublist in list2 for num in sublist])
+
+    min_length = min(len(flat_list1), len(flat_list2))
+    flat_list1 = flat_list1[:min_length]
+    flat_list2 = flat_list2[:min_length]
+
+    # Calculate is_greater using numpy operations
+    is_greater = np.where(flat_list1 > flat_list2, -1, np.where(flat_list1 < flat_list2, 1, 0))
+
+    # Style settings
+    sns.set_style("whitegrid")
+    sns.set_context("talk")
+
+    # Plot the distribution of is_greater values
+    plt.figure(figsize=(10, 6))
+    sns.countplot(is_greater, palette="coolwarm", order=[-1, 0, 1])
+
+    plt.title('Comparison of list elements', fontsize=18)
+    plt.xlabel('Comparison Result', fontsize=16)
+    plt.ylabel('Count', fontsize=16)
+    plt.xticks(ticks=[0, 1, 2], labels=['List1 > List2', 'List1 = List2', 'List1 < List2'], fontsize=14)
+    plt.yticks(fontsize=14)
+    plt.tight_layout()
+    plt.show()
 
 def perform_hypothesis_testing(list1, list2):
     """ Perform a hypothesis test to see if the difference is statistically significant!    """
@@ -211,8 +253,22 @@ def run_hypothesis_testing(data, data_lenght_penalty = None, lenght_penalty = Fa
         # perform hypothesis testing
         statistic, p_value = perform_hypothesis_testing(lengths_prompt, lengths_context)
         plot_and_test_distribution(lengths_prompt, lengths_context)
+        plot_and_compare_distribution(lengths_prompt, lengths_context)
     
     return statistic, p_value
 
+def contains_return(text):
+    if 'return' in text:
+        return 1
+    return 0
 
+def count_rate_of_return(data):
+
+    count_return_first_prompt = 0
+    
+    for i in range(len(data)):
+        list_first_prompt = ast.literal_eval(data.iloc[i]['lenght_penalty_generation'])[0]
+        count_return_first_prompt += contains_return(list_first_prompt)
+
+    return count_return_first_prompt/len(data)
 
